@@ -1,0 +1,40 @@
+{
+  "eslint.useFlatConfig": true,
+  // do not want to autofix some rules on save
+  "eslint.codeActionsOnSave.rules": [
+    "!prefer-const",
+    "!unused-imports/no-unused-imports",
+    "*"
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "no-console",
+      "severity": "warn"
+    }
+  ],
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "mdx",
+    "json",
+    "jsonc",
+    "json5",
+    "yaml",
+    "yml",
+    "toml",
+    "css"
+  ],
+  "cSpell.words": [
+    "lingui",
+    "nextui",
+    "precache",
+    "serwist",
+    "shadcn",
+    "turbopack"
+  ]
+}

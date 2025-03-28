@@ -1,0 +1,69 @@
+{
+  "name": "shadcn-hooks",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.7.0",
+  "description": "shadcn hooks",
+  "author": "Brendan Dash <me@aiwna.run> (https://github.com/Debbl/)",
+  "license": "MIT",
+  "homepage": "https://github.com/Debbl/shadcn-hooks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Debbl/shadcn-hooks.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@debbl/ahooks": "^0.4.1",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@serwist/next": "^9.0.12",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.484.0",
+    "motion": "12.5.0",
+    "next": "^15.2.4",
+    "next-themes": "^0.4.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "tailwindcss-animate": "^1.0.7",
+    "twl": "0.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "@debbl/eslint-config": "^3.10.1",
+    "@next/bundle-analyzer": "^15.2.4",
+    "@tailwindcss/postcss": "^4.0.17",
+    "@types/node": "^22.13.13",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "babel-plugin-react-compiler": "latest",
+    "eslint": "^9.23.0",
+    "lint-staged": "^15.5.0",
+    "postcss": "^8.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "serwist": "^9.0.12",
+    "simple-git-hooks": "^2.12.1",
+    "tailwindcss": "^4.0.17",
+    "typescript": "^5.8.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "simple-git-hooks"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
