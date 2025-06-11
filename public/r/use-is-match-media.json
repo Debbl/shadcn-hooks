@@ -4,7 +4,7 @@
   "type": "registry:hook",
   "description": "A hook that checks if the media query matches.",
   "registryDependencies": [
-    "use-isomorphic-layout-effect"
+    "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect"
   ],
   "files": [
     {
