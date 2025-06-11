@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-isomorphic-layout-effect",
+  "type": "registry:hook",
+  "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
+  "registryDependencies": [
+    "is-browser"
+  ],
+  "files": [
+    {
+      "path": "registry/hooks/use-isomorphic-layout-effect.ts",
+      "content": "import { useEffect, useLayoutEffect } from 'react'\nimport { isBrowser } from '@/registry/lib/is-browser'\n\n/**\n * Custom hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).\n * @param {Function} effect - The effect function to be executed.\n * @param {Array<any>} [dependencies] - An array of dependencies for the effect (optional).\n * @public\n * @see [Documentation](https://usehooks-ts.com/react-hook/use-isomorphic-layout-effect)\n * @example\n * ```tsx\n * useIsomorphicLayoutEffect(() => {\n *   // Code to be executed during the layout phase on the client side\n * }, [dependency1, dependency2]);\n * ```\n */\nexport const useIsomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect\n",
+      "type": "registry:hook"
+    }
+  ]
+}

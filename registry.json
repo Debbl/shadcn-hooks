@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcn-hooks",
+  "homepage": "https://shadcn-hooks.vercel.app",
+  "items": [
+    {
+      "name": "is-browser",
+      "type": "registry:lib",
+      "description": "A library that checks if the code is running in a browser.",
+      "files": [
+        {
+          "path": "registry/lib/is-browser.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-isomorphic-layout-effect",
+      "type": "registry:hook",
+      "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
+      "registryDependencies": ["is-browser"],
+      "files": [
+        {
+          "path": "registry/hooks/use-isomorphic-layout-effect.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-is-match-media",
+      "type": "registry:hook",
+      "description": "A hook that checks if the media query matches.",
+      "registryDependencies": ["use-isomorphic-layout-effect"],
+      "files": [
+        {
+          "path": "registry/hooks/use-is-match-media.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "is-browser",
+  "type": "registry:lib",
+  "description": "A library that checks if the code is running in a browser.",
+  "files": [
+    {
+      "path": "registry/lib/is-browser.ts",
+      "content": "/**\n * A library that checks if the code is running in a browser.\n */\nexport const isBrowser = typeof window !== 'undefined'\n",
+      "type": "registry:lib"
+    }
+  ]
+}

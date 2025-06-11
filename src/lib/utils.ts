@@ -1,1 +1,1 @@
-export { cn } from "twl";
+export { cn } from 'twl'
