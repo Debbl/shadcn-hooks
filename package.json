@@ -13,6 +13,7 @@
     "url": "https://github.com/Debbl/shadcn-hooks.git"
   },
   "scripts": {
+    "postinstall": "fumadocs-mdx",
     "dev": "next dev",
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
@@ -29,6 +30,9 @@
     "@radix-ui/react-switch": "^1.2.5",
     "@serwist/next": "^9.0.14",
     "class-variance-authority": "^0.7.1",
+    "fumadocs-core": "^15.5.1",
+    "fumadocs-mdx": "^11.6.7",
+    "fumadocs-ui": "^15.5.1",
     "lucide-react": "^0.514.0",
     "motion": "12.5.0",
     "next": "^15.3.3",
@@ -40,8 +44,11 @@
   },
   "devDependencies": {
     "@debbl/eslint-config": "^3.12.0",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
     "@next/bundle-analyzer": "^15.3.3",
     "@tailwindcss/postcss": "^4.1.8",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^24.0.0",
     "@types/react": "^19.1.7",
     "@types/react-dom": "^19.1.6",
@@ -60,6 +67,7 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
+      "esbuild",
       "msw",
       "sharp",
       "simple-git-hooks",

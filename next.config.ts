@@ -1,6 +1,9 @@
 import bundleAnalyzer from '@next/bundle-analyzer'
 import withSerwistInit from '@serwist/next'
+import { createMDX } from 'fumadocs-mdx/next'
 import type { NextConfig } from 'next'
+
+const withMDX = createMDX()
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process
@@ -19,7 +22,7 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default [withBundleAnalyzer, withSerwist].reduce(
+export default [withBundleAnalyzer, withSerwist, withMDX].reduce(
   (config, withFn) => withFn(config),
   nextConfig,
 )

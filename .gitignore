@@ -41,3 +41,6 @@ src/locales/**/*.js
 # Serwist
 public/sw*
 public/swe-worker*
+
+# fumadocs
+.source
