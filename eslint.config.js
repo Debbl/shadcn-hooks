@@ -3,6 +3,9 @@ import { defineConfig } from '@debbl/eslint-config'
 
 export default defineConfig(
   {
+    ignores: {
+      files: ['content/**/*'],
+    },
     typescript: {
       overrides: {
         'no-restricted-imports': [

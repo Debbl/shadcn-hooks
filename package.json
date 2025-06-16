@@ -32,12 +32,14 @@
     "@serwist/next": "^9.0.15",
     "class-variance-authority": "^0.7.1",
     "fumadocs-core": "^15.5.1",
+    "fumadocs-docgen": "^2.0.1",
     "fumadocs-mdx": "^11.6.7",
     "fumadocs-ui": "^15.5.1",
     "lucide-react": "^0.514.0",
     "motion": "12.5.0",
     "next": "^15.3.3",
     "next-themes": "^0.4.6",
+    "npm-to-yarn": "^3.0.1",
     "radix-ui": "^1.4.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -51,6 +53,9 @@
     "@mdx-js/react": "^3.1.0",
     "@next/bundle-analyzer": "^15.3.3",
     "@tailwindcss/postcss": "^4.1.10",
+    "@types/estree": "^1.0.8",
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.3",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
@@ -65,7 +70,9 @@
     "simple-git-hooks": "^2.13.0",
     "tailwindcss": "^4.1.10",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
