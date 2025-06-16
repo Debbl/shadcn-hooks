@@ -35,6 +35,7 @@
     "fumadocs-docgen": "^2.0.1",
     "fumadocs-mdx": "^11.6.7",
     "fumadocs-ui": "^15.5.1",
+    "glob": "^11.0.3",
     "lucide-react": "^0.514.0",
     "motion": "12.5.0",
     "next": "^15.3.3",
