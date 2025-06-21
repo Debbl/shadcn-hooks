@@ -1,9 +1,11 @@
+import { readFileSync } from 'node:fs'
+import { globSync } from 'glob'
 import { visit } from 'unist-util-visit'
 import type { Root } from 'mdast'
 import type { MdxJsxFlowElement } from 'mdast-util-mdx-jsx'
 import type { Transformer } from 'unified'
 
-export function remarkInstallCli(): Transformer<Root, Root> {
+export function remarkRegistrySourceCode(): Transformer<Root, Root> {
   const fn = (node: MdxJsxFlowElement) => {
     node.children.forEach((n) => {
       if (n.type !== 'mdxJsxFlowElement') return
@@ -11,14 +13,20 @@ export function remarkInstallCli(): Transformer<Root, Root> {
       fn(n)
     })
 
-    if (node.name !== 'InstallCLI') return
+    if (node.name !== 'RegistrySourceCode') return
 
     const attrValue = node.attributes[0]?.value
-    const value = `npx shadcn@latest add "https://shadcn-hooks.vercel.app/r/${attrValue}.json"`
+    const files = globSync(`./registry/**/${attrValue}.{ts,tsx}`)
+    const file = files[0]
+    if (!file) return
+
+    const ext = file.split('.').pop()
+    const value = readFileSync(file, 'utf-8')
 
     Object.assign(node, {
       type: 'code',
-      lang: 'package-install',
+      lang: ext,
+      meta: `title=\"${attrValue}.${ext}\"`,
       value,
     })
   }

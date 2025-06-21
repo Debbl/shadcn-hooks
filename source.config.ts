@@ -5,8 +5,8 @@ import {
   frontmatterSchema,
   metaSchema,
 } from 'fumadocs-mdx/config'
-import { remarkCodeSource } from './remark/remark-code-source'
 import { remarkInstallCli } from './remark/remark-install-cli'
+import { remarkRegistrySourceCode } from './remark/remark-registry-source-code'
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
 // see https://fumadocs.vercel.app/docs/mdx/collections#define-docs
@@ -24,7 +24,7 @@ export default defineConfig({
   mdxOptions: {
     remarkPlugins: [
       remarkInstallCli,
-      remarkCodeSource,
+      remarkRegistrySourceCode,
       [remarkInstall, { persist: { id: 'package-manager' } }],
     ],
   },
