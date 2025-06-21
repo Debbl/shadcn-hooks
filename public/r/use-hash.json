@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-hash",
+  "type": "registry:hook",
+  "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+  "description": "A hook to get current hash",
+  "files": [
+    {
+      "path": "registry/hooks/use-hash.ts",
+      "content": "import { useSyncExternalStore } from 'react'\n\nfunction subscribe(onStoreChange: () => void) {\n  window.addEventListener('hashchange', onStoreChange)\n  return () => window.removeEventListener('hashchange', onStoreChange)\n}\n\nfunction getSnapshot() {\n  return window.location.hash\n}\n\nfunction getServerSnapshot() {\n  return ''\n}\n\nexport function useHash() {\n  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

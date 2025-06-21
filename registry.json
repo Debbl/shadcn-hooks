@@ -107,6 +107,42 @@
       "description": "A hook to fetch data with MCP",
       "dependencies": ["use-mcp"],
       "files": []
+    },
+    {
+      "name": "use-is-hydrated",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to check if the component is hydrated",
+      "files": [
+        {
+          "path": "registry/hooks/use-is-hydrated.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-is-online",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to check if the user is online",
+      "files": [
+        {
+          "path": "registry/hooks/use-is-online.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-hash",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to get current hash",
+      "files": [
+        {
+          "path": "registry/hooks/use-hash.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
