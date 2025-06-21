@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-latest",
   "type": "registry:hook",
+  "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
   "description": "A hook to get the latest value of a variable",
   "registryDependencies": [
     "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"

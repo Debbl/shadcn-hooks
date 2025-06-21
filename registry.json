@@ -6,6 +6,7 @@
     {
       "name": "is-browser",
       "type": "registry:lib",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A library that checks if the code is running in a browser.",
       "files": [
         {
@@ -17,6 +18,7 @@
     {
       "name": "create-context",
       "type": "registry:lib",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A library that creates a context.",
       "files": [
         {
@@ -28,6 +30,7 @@
     {
       "name": "use-isomorphic-layout-effect",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
       "registryDependencies": [
         "https://shadcn-hooks.vercel.app/r/is-browser.json"
@@ -42,6 +45,7 @@
     {
       "name": "use-is-match-media",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook that checks if the media query matches.",
       "registryDependencies": [
         "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
@@ -56,6 +60,7 @@
     {
       "name": "use-latest",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",
       "registryDependencies": [
         "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
@@ -70,6 +75,7 @@
     {
       "name": "use-effect-event",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to declare an effect event",
       "files": [
         {
@@ -81,6 +87,7 @@
     {
       "name": "use-swr",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to fetch data with SWR",
       "dependencies": ["swr"],
       "files": []
@@ -88,6 +95,7 @@
     {
       "name": "use-query",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to fetch data with TanStack Query",
       "dependencies": ["@tanstack/react-query"],
       "files": []
@@ -95,6 +103,7 @@
     {
       "name": "use-mcp",
       "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to fetch data with MCP",
       "dependencies": ["use-mcp"],
       "files": []

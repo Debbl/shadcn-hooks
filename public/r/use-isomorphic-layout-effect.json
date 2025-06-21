@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-isomorphic-layout-effect",
   "type": "registry:hook",
+  "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
   "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
   "registryDependencies": [
     "https://shadcn-hooks.vercel.app/r/is-browser.json"
