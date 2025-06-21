@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-latest",
+  "type": "registry:hook",
+  "description": "A hook to get the latest value of a variable",
+  "registryDependencies": [
+    "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
+  ],
+  "files": [
+    {
+      "path": "registry/hooks/use-latest.ts",
+      "content": "import { useRef } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/registry/hooks/use-isomorphic-layout-effect'\n\nexport function useLatest<T>(value: T) {\n  const ref = useRef(value)\n\n  useIsomorphicLayoutEffect(() => {\n    ref.current = value\n  })\n\n  return ref\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

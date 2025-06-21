@@ -15,12 +15,12 @@
   "scripts": {
     "postinstall": "fumadocs-mdx",
     "dev": "next dev",
-    "build": "next build",
+    "registry:build": "shadcn build",
+    "build": "pnpm run registry:build && next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint",
-    "registry:build": "shadcn build",
     "lint:fix": "eslint --fix",
     "prepare": "simple-git-hooks"
   },
