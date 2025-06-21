@@ -6,6 +6,7 @@ import {
   metaSchema,
 } from 'fumadocs-mdx/config'
 import { remarkInstallCli } from './remark/remark-install-cli'
+import { remarkPackageInstall } from './remark/remark-package-install'
 import { remarkRegistrySourceCode } from './remark/remark-registry-source-code'
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
@@ -23,6 +24,7 @@ export default defineConfig({
   lastModifiedTime: 'git',
   mdxOptions: {
     remarkPlugins: [
+      remarkPackageInstall,
       remarkInstallCli,
       remarkRegistrySourceCode,
       [remarkInstall, { persist: { id: 'package-manager' } }],

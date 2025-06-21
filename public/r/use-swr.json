@@ -1,0 +1,10 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-swr",
+  "type": "registry:hook",
+  "description": "A hook to fetch data with SWR",
+  "dependencies": [
+    "swr"
+  ],
+  "files": []
+}

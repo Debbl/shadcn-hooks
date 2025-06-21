@@ -82,19 +82,22 @@
       "name": "use-swr",
       "type": "registry:hook",
       "description": "A hook to fetch data with SWR",
-      "dependencies": ["swr"]
+      "dependencies": ["swr"],
+      "files": []
     },
     {
       "name": "use-query",
       "type": "registry:hook",
       "description": "A hook to fetch data with TanStack Query",
-      "dependencies": ["@tanstack/react-query"]
+      "dependencies": ["@tanstack/react-query"],
+      "files": []
     },
     {
       "name": "use-mcp",
       "type": "registry:hook",
       "description": "A hook to fetch data with MCP",
-      "dependencies": ["use-mcp"]
+      "dependencies": ["use-mcp"],
+      "files": []
     }
   ]
 }
