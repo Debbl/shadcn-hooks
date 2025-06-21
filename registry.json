@@ -66,6 +66,17 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "name": "use-effect-event",
+      "type": "registry:hook",
+      "description": "A hook to declare an effect event",
+      "files": [
+        {
+          "path": "registry/hooks/use-effect-event.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
