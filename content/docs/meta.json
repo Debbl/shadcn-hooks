@@ -3,8 +3,11 @@
     "---Get Started---",
     "...",
     "!hooks",
+    "!utils",
     "---Hooks---",
-    "...hooks"
+    "...hooks",
+    "---Utils---",
+    "...utils"
   ],
   "root": true
 }

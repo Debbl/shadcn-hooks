@@ -15,6 +15,17 @@
       ]
     },
     {
+      "name": "create-context",
+      "type": "registry:lib",
+      "description": "A library that creates a context.",
+      "files": [
+        {
+          "path": "registry/lib/create-context.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "use-isomorphic-layout-effect",
       "type": "registry:hook",
       "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
