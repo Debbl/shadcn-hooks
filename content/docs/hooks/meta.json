@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "...",
+    "---External---",
+    "use-swr",
+    "use-query",
+    "use-mcp"
+  ],
+  "root": true
+}
