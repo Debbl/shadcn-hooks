@@ -4,8 +4,7 @@
     "...",
     "!hooks",
     "---Hooks---",
-    "...hooks",
-    "[Vercel](https://vercel.com)"
+    "...hooks"
   ],
   "root": true
 }
