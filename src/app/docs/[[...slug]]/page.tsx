@@ -7,6 +7,7 @@ import {
 import { notFound } from 'next/navigation'
 import { source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
+import { GitHubLink, LLMCopyButton } from './page.client'
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
@@ -18,9 +19,19 @@ export default async function Page(props: {
   const MDX = page.data.body
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage
+      toc={page.data.toc}
+      full={page.data.full}
+      lastUpdate={page.data.lastModified}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
+      <div className='mb-8 flex flex-row items-center gap-2 border-b pb-6'>
+        <LLMCopyButton slug={params.slug ?? []} />
+        <GitHubLink
+          url={`https://github.com/Debbl/shadcn-hooks/blob/main/content/docs/${page.file.path}`}
+        />
+      </div>
       <DocsBody>
         <MDX components={getMDXComponents()} />
       </DocsBody>

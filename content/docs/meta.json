@@ -1,9 +1,8 @@
 {
   "pages": [
     "---Get Started---",
-    "...",
-    "!hooks",
-    "!utils",
+    "introduction",
+    "installation",
     "---Hooks---",
     "...hooks",
     "---Utils---",
