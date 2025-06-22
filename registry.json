@@ -52,7 +52,7 @@
       ],
       "files": [
         {
-          "path": "registry/hooks/use-is-match-media.tsx",
+          "path": "registry/hooks/use-is-match-media.ts",
           "type": "registry:hook"
         }
       ]
