@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           type: 'main',
           on: 'nav',
           text: 'Docs',
-          url: '/docs',
+          url: '/docs/introduction',
         },
       ]}
     >
