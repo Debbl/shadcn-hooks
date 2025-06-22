@@ -143,6 +143,18 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "name": "use-counter",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "counter",
+      "files": [
+        {
+          "path": "registry/hooks/use-counter.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
