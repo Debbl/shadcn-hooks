@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="shadcn-hooks-logo" src="https://github.com/user-attachments/assets/b511ddbd-a186-4401-b1db-87dd7def236d">
+  <img alt="shadcn-hooks-logo" src="https://github.com/user-attachments/assets/2029994c-260d-4c4f-ac53-35ce089b4d39">
 </p>
 
 ## 📚 Documentation
