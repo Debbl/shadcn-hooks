@@ -10,23 +10,25 @@ import type { Transformer } from 'unified'
 const registryPath = path.join(process.cwd(), 'registry')
 
 const fn = (node: MdxJsxFlowElement) => {
-  node.children.forEach((child) => {
-    if (child.type !== 'mdxJsxFlowElement') return
-    fn(child)
+  node.children.forEach((n) => {
+    if (n.type !== 'mdxJsxFlowElement') return
+
+    fn(n)
   })
 
   if (node.name !== 'RegistrySourceCode') return
-  const attributesValue = node.attributes[0].value
-  const files = globSync(`${registryPath}/${attributesValue}.{ts,tsx}`)
-
+  const attrValue = node.attributes[0].value
+  const files = globSync(`${registryPath}/**/${attrValue}.{ts,tsx}`)
   const file = files[0]
+  if (!file) return
+
   const ext = file.split('.').pop()
   const content = readFileSync(file, 'utf-8')
 
   Object.assign(node, {
     type: 'code',
     lang: ext ?? 'ts',
-    meta: `title=\"${attributesValue}.${ext}\"`,
+    meta: `title=\"${attrValue}.${ext}\"`,
     value: content,
   })
 }
