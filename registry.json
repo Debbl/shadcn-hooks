@@ -155,6 +155,18 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "name": "use-lock-fn",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to lock a function",
+      "files": [
+        {
+          "path": "registry/hooks/use-lock-fn.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
