@@ -167,6 +167,35 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "name": "use-deep-compare-effect",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to use a deep compare effect",
+      "registryDependencies": [
+        "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
+      ],
+      "dependencies": ["dequal"],
+      "files": [
+        {
+          "path": "registry/hooks/use-deep-compare-effect.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-deep-compare-layout-effect",
+      "type": "registry:hook",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to use a deep compare layout effect",
+      "dependencies": ["dequal"],
+      "files": [
+        {
+          "path": "registry/hooks/use-deep-compare-layout-effect.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }

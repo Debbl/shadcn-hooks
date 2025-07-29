@@ -31,6 +31,7 @@
     "@radix-ui/react-switch": "^1.2.5",
     "@serwist/next": "^9.1.1",
     "class-variance-authority": "^0.7.1",
+    "dequal": "^2.0.3",
     "fumadocs-core": "^15.6.6",
     "fumadocs-docgen": "^2.1.0",
     "fumadocs-mdx": "^11.7.1",
