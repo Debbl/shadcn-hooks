@@ -6,7 +6,7 @@
   "description": "A hook to check if the user is online",
   "files": [
     {
-      "path": "registry/hooks/use-is-online.ts",
+      "path": "registry/hooks/use-is-online/index.ts",
       "content": "import { useSyncExternalStore } from 'react'\n\nfunction subscribe(onStoreChange: () => void) {\n  window.addEventListener('online', onStoreChange)\n  window.addEventListener('offline', onStoreChange)\n\n  return () => {\n    window.removeEventListener('online', onStoreChange)\n    window.removeEventListener('offline', onStoreChange)\n  }\n}\n\nfunction getSnapshot() {\n  return window.navigator.onLine\n}\n\nfunction getServerSnapshot() {\n  return true\n}\n\nexport function useIsOnline() {\n  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)\n}\n",
       "type": "registry:hook"
     }

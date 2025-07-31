@@ -44,3 +44,6 @@ public/swe-worker*
 
 # fumadocs
 .source
+
+content/docs/hooks
+content/docs/lib

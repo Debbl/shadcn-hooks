@@ -1,0 +1,7 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A hook that checks if the media query matches.",
+  "registryDependencies": [
+    "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
+  ]
+}

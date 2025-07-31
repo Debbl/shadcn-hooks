@@ -9,7 +9,7 @@
   ],
   "files": [
     {
-      "path": "registry/hooks/use-latest.ts",
+      "path": "registry/hooks/use-latest/index.ts",
       "content": "import { useRef } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/registry/hooks/use-isomorphic-layout-effect'\n\nexport function useLatest<T>(value: T) {\n  const ref = useRef(value)\n\n  useIsomorphicLayoutEffect(() => {\n    ref.current = value\n  })\n\n  return ref\n}\n",
       "type": "registry:hook"
     }

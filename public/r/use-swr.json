@@ -3,7 +3,7 @@
   "name": "use-swr",
   "type": "registry:hook",
   "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-  "description": "A hook to fetch data with SWR",
+  "description": "A hook to lock a function",
   "dependencies": [
     "swr"
   ],

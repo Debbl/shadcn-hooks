@@ -4,62 +4,68 @@
   "homepage": "https://shadcn-hooks.vercel.app",
   "items": [
     {
+      "type": "registry:lib",
       "name": "is-browser",
-      "type": "registry:lib",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A library that checks if the code is running in a browser.",
+      "description": "A hook that creates a counter.",
       "files": [
         {
-          "path": "registry/lib/is-browser.ts",
+          "path": "registry/lib/is-browser/index.ts",
           "type": "registry:lib"
         }
       ]
     },
     {
+      "type": "registry:lib",
       "name": "create-context",
-      "type": "registry:lib",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A library that creates a context.",
+      "description": "A hook that creates a counter.",
       "files": [
         {
-          "path": "registry/lib/create-context.tsx",
+          "path": "registry/lib/create-context/index.tsx",
           "type": "registry:lib"
         }
       ]
     },
     {
-      "name": "use-isomorphic-layout-effect",
       "type": "registry:hook",
+      "name": "use-swr",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
-      "registryDependencies": [
-        "https://shadcn-hooks.vercel.app/r/is-browser.json"
-      ],
+      "description": "A hook to lock a function",
+      "dependencies": ["swr"],
+      "files": []
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-query",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to fetch data with TanStack Query",
+      "dependencies": ["@tanstack/react-query"],
+      "files": []
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-mcp",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to fetch data with MCP",
+      "dependencies": ["use-mcp"],
+      "files": []
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-lock-fn",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to lock a function",
       "files": [
         {
-          "path": "registry/hooks/use-isomorphic-layout-effect.ts",
+          "path": "registry/hooks/use-lock-fn/index.ts",
           "type": "registry:hook"
         }
       ]
     },
     {
-      "name": "use-is-match-media",
       "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that checks if the media query matches.",
-      "registryDependencies": [
-        "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
-      ],
-      "files": [
-        {
-          "path": "registry/hooks/use-is-match-media.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
       "name": "use-latest",
-      "type": "registry:hook",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",
       "registryDependencies": [
@@ -67,132 +73,121 @@
       ],
       "files": [
         {
-          "path": "registry/hooks/use-latest.ts",
+          "path": "registry/hooks/use-latest/index.ts",
           "type": "registry:hook"
         }
       ]
     },
     {
-      "name": "use-effect-event",
       "type": "registry:hook",
+      "name": "use-isomorphic-layout-effect",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to declare an effect event",
+      "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
+      "registryDependencies": [
+        "https://shadcn-hooks.vercel.app/r/is-browser.json"
+      ],
       "files": [
         {
-          "path": "registry/hooks/use-effect-event.ts",
+          "path": "registry/hooks/use-isomorphic-layout-effect/index.ts",
           "type": "registry:hook"
         }
       ]
     },
     {
-      "name": "use-swr",
       "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to fetch data with SWR",
-      "dependencies": ["swr"],
-      "files": []
-    },
-    {
-      "name": "use-query",
-      "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to fetch data with TanStack Query",
-      "dependencies": ["@tanstack/react-query"],
-      "files": []
-    },
-    {
-      "name": "use-mcp",
-      "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to fetch data with MCP",
-      "dependencies": ["use-mcp"],
-      "files": []
-    },
-    {
-      "name": "use-is-hydrated",
-      "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to check if the component is hydrated",
-      "files": [
-        {
-          "path": "registry/hooks/use-is-hydrated.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
       "name": "use-is-online",
-      "type": "registry:hook",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to check if the user is online",
       "files": [
         {
-          "path": "registry/hooks/use-is-online.ts",
+          "path": "registry/hooks/use-is-online/index.ts",
           "type": "registry:hook"
         }
       ]
     },
     {
-      "name": "use-hash",
       "type": "registry:hook",
+      "name": "use-is-match-media",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to get current hash",
-      "files": [
-        {
-          "path": "registry/hooks/use-hash.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "use-counter",
-      "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "counter",
-      "files": [
-        {
-          "path": "registry/hooks/use-counter.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "use-lock-fn",
-      "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to lock a function",
-      "files": [
-        {
-          "path": "registry/hooks/use-lock-fn.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "use-deep-compare-effect",
-      "type": "registry:hook",
-      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to use a deep compare effect",
+      "description": "A hook that checks if the media query matches.",
       "registryDependencies": [
         "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
       ],
-      "dependencies": ["dequal"],
       "files": [
         {
-          "path": "registry/hooks/use-deep-compare-effect.ts",
+          "path": "registry/hooks/use-is-match-media/index.ts",
           "type": "registry:hook"
         }
       ]
     },
     {
-      "name": "use-deep-compare-layout-effect",
       "type": "registry:hook",
+      "name": "use-is-hydrated",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to use a deep compare layout effect",
-      "dependencies": ["dequal"],
+      "description": "A hook to check if the component is hydrated",
       "files": [
         {
-          "path": "registry/hooks/use-deep-compare-layout-effect.ts",
+          "path": "registry/hooks/use-is-hydrated/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-hash",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook that returns the current hash of the URL.",
+      "files": [
+        {
+          "path": "registry/hooks/use-hash/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-effect-event",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to declare an effect event",
+      "files": [
+        {
+          "path": "registry/hooks/use-effect-event/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-deep-compare-layout-effect",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to use a deep compare layout effect",
+      "files": [
+        {
+          "path": "registry/hooks/use-deep-compare-layout-effect/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-deep-compare-effect",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to use a deep compare effect",
+      "files": [
+        {
+          "path": "registry/hooks/use-deep-compare-effect/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-counter",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook that creates a counter.",
+      "files": [
+        {
+          "path": "registry/hooks/use-counter/index.ts",
           "type": "registry:hook"
         }
       ]

@@ -15,6 +15,7 @@
   "scripts": {
     "postinstall": "fumadocs-mdx",
     "dev": "next dev",
+    "preflight": "tsx scripts/index.ts",
     "registry:build": "shadcn build",
     "build": "pnpm run registry:build && next build",
     "build:analyze": "ANALYZE=true next build",
@@ -63,6 +64,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "babel-plugin-react-compiler": "latest",
+    "consola": "^3.4.2",
     "eslint": "^9.32.0",
     "fumadocs-typescript": "^4.0.6",
     "glob": "^11.0.3",
@@ -78,9 +80,11 @@
     "simple-git-hooks": "^2.13.0",
     "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "unified": "^11.0.5",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "zod": "^4.0.14"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

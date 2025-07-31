@@ -3,10 +3,10 @@
   "name": "is-browser",
   "type": "registry:lib",
   "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-  "description": "A library that checks if the code is running in a browser.",
+  "description": "A hook that creates a counter.",
   "files": [
     {
-      "path": "registry/lib/is-browser.ts",
+      "path": "registry/lib/is-browser/index.ts",
       "content": "/**\n * A library that checks if the code is running in a browser.\n */\nexport const isBrowser = typeof window !== 'undefined'\n",
       "type": "registry:lib"
     }

@@ -9,7 +9,7 @@
   ],
   "files": [
     {
-      "path": "registry/hooks/use-is-match-media.ts",
+      "path": "registry/hooks/use-is-match-media/index.ts",
       "content": "import { useState } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/registry/hooks/use-isomorphic-layout-effect'\n\nexport function useIsMatchMedia(mediaQueryString: string) {\n  const [isMatch, setIsMatch] = useState(false)\n\n  useIsomorphicLayoutEffect(() => {\n    const mediaQueryList = window.matchMedia(mediaQueryString)\n\n    setIsMatch(mediaQueryList.matches)\n\n    const listener = (event: MediaQueryListEvent) => {\n      setIsMatch(event.matches)\n    }\n\n    mediaQueryList.addEventListener('change', listener)\n\n    return () => {\n      mediaQueryList.removeEventListener('change', listener)\n    }\n  }, [mediaQueryString])\n\n  return isMatch\n}\n",
       "type": "registry:hook"
     }

@@ -1,0 +1,4 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A hook that creates a counter."
+}

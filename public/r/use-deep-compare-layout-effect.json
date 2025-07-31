@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-deep-compare-layout-effect",
+  "type": "registry:hook",
+  "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+  "description": "A hook to use a deep compare layout effect",
+  "files": [
+    {
+      "path": "registry/hooks/use-deep-compare-layout-effect/index.ts",
+      "content": "import { dequal } from 'dequal'\nimport { useLayoutEffect, useRef } from 'react'\nimport type { DependencyList, EffectCallback } from 'react'\n\nexport function useDeepCompareLayoutEffect(\n  effect: EffectCallback,\n  deps: DependencyList,\n) {\n  const ref = useRef<DependencyList>(deps)\n\n  if (!ref.current || !dequal(ref.current, deps)) {\n    ref.current = deps\n  }\n\n  useLayoutEffect(effect, ref.current)\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -17,8 +17,9 @@ const fn = (node: MdxJsxFlowElement) => {
   })
 
   if (node.name !== 'RegistrySourceCode') return
+
   const attrValue = node.attributes[0].value
-  const files = globSync(`${registryPath}/**/${attrValue}.{ts,tsx}`)
+  const files = globSync(`${registryPath}/**/${attrValue}/index.{ts,tsx}`)
   const file = files[0]
   if (!file) return
 

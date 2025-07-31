@@ -1,0 +1,5 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A hook to lock a function",
+  "dependencies": ["swr"]
+}

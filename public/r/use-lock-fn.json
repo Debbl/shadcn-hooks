@@ -6,7 +6,7 @@
   "description": "A hook to lock a function",
   "files": [
     {
-      "path": "registry/hooks/use-lock-fn.ts",
+      "path": "registry/hooks/use-lock-fn/index.ts",
       "content": "import { useCallback, useRef } from 'react'\n\nexport function useLockFn<P extends any[] = any[], V = any>(\n  fn: (...args: P) => Promise<V>,\n) {\n  const lockRef = useRef(false)\n\n  return useCallback(\n    async (...args: P) => {\n      if (lockRef.current) {\n        return\n      }\n\n      lockRef.current = true\n\n      try {\n        return await fn(...args)\n      } finally {\n        lockRef.current = false\n      }\n    },\n    [fn],\n  )\n}\n",
       "type": "registry:hook"
     }
