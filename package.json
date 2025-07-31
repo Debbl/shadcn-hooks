@@ -17,7 +17,7 @@
     "dev": "next dev",
     "preflight": "tsx scripts/index.ts",
     "registry:build": "shadcn build",
-    "build": "pnpm run registry:build && next build",
+    "build": "pnpm run preflight && pnpm run registry:build && next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
