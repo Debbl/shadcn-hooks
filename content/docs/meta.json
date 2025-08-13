@@ -5,8 +5,8 @@
     "installation",
     "---Hooks---",
     "...hooks",
-    "---Utils---",
-    "...utils"
+    "---Lib---",
+    "...lib"
   ],
   "root": true
 }
