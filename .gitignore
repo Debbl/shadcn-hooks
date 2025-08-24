@@ -47,3 +47,6 @@ public/swe-worker*
 
 content/docs/hooks
 content/docs/lib
+
+# registry
+public/r
