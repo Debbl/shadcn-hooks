@@ -8,7 +8,8 @@
     {
       "path": "registry/hooks/use-hash/index.ts",
       "content": "import { useSyncExternalStore } from 'react'\n\nfunction subscribe(onStoreChange: () => void) {\n  window.addEventListener('hashchange', onStoreChange)\n  return () => window.removeEventListener('hashchange', onStoreChange)\n}\n\nfunction getSnapshot() {\n  return window.location.hash\n}\n\nfunction getServerSnapshot() {\n  return ''\n}\n\nexport function useHash() {\n  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)\n}\n",
-      "type": "registry:hook"
+      "type": "registry:hook",
+      "target": "hooks/use-hash.ts"
     }
   ]
 }

@@ -8,7 +8,8 @@
     {
       "path": "registry/hooks/use-deep-compare-effect/index.ts",
       "content": "import { dequal } from 'dequal'\nimport { useRef } from 'react'\nimport { useIsomorphicLayoutEffect } from '@/registry/hooks/use-isomorphic-layout-effect'\nimport type { DependencyList, EffectCallback } from 'react'\n\nexport function useDeepCompareEffect(\n  effect: EffectCallback,\n  deps: DependencyList,\n) {\n  const ref = useRef<DependencyList>(deps)\n\n  if (!ref.current || !dequal(ref.current, deps)) {\n    ref.current = deps\n  }\n\n  useIsomorphicLayoutEffect(effect, ref.current)\n}\n",
-      "type": "registry:hook"
+      "type": "registry:hook",
+      "target": "hooks/use-deep-compare-effect.ts"
     }
   ]
 }

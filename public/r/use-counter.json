@@ -8,7 +8,8 @@
     {
       "path": "registry/hooks/use-counter/index.ts",
       "content": "import { useMemo, useReducer } from 'react'\n\nfunction reducer(\n  state: number,\n  action:\n    | { type: 'set'; payload: number | ((value: number) => number) }\n    | { type: 'inc' }\n    | { type: 'dec' },\n) {\n  switch (action.type) {\n    case 'set':\n      if (typeof action.payload === 'function') {\n        return action.payload(state)\n      }\n      return action.payload\n    case 'inc':\n      return state + 1\n    case 'dec':\n      return state - 1\n  }\n}\n\nexport function useCounter(initialValue: number = 0) {\n  const [count, dispatch] = useReducer(reducer, initialValue)\n\n  return [\n    count,\n    useMemo(\n      () => ({\n        set: (value: number | ((value: number) => number)) =>\n          dispatch({ type: 'set', payload: value }),\n        inc: () => dispatch({ type: 'inc' }),\n        dec: () => dispatch({ type: 'dec' }),\n        reset: () => dispatch({ type: 'set', payload: initialValue }),\n      }),\n      [dispatch],\n    ),\n  ] as const\n}\n",
-      "type": "registry:hook"
+      "type": "registry:hook",
+      "target": "hooks/use-counter.ts"
     }
   ]
 }

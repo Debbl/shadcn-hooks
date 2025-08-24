@@ -40,6 +40,7 @@ async function getRegistryItems() {
         ...(isExist
           ? [
               {
+                target: hookPath.replace('registry/', '').replace('/index', ''),
                 path: hookPath,
                 type,
               },

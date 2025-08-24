@@ -8,7 +8,8 @@
     {
       "path": "registry/lib/is-browser/index.ts",
       "content": "/**\n * A library that checks if the code is running in a browser.\n */\nexport const isBrowser = typeof window !== 'undefined'\n",
-      "type": "registry:lib"
+      "type": "registry:lib",
+      "target": "lib/is-browser.ts"
     }
   ]
 }

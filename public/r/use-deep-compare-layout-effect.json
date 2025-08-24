@@ -8,7 +8,8 @@
     {
       "path": "registry/hooks/use-deep-compare-layout-effect/index.ts",
       "content": "import { dequal } from 'dequal'\nimport { useLayoutEffect, useRef } from 'react'\nimport type { DependencyList, EffectCallback } from 'react'\n\nexport function useDeepCompareLayoutEffect(\n  effect: EffectCallback,\n  deps: DependencyList,\n) {\n  const ref = useRef<DependencyList>(deps)\n\n  if (!ref.current || !dequal(ref.current, deps)) {\n    ref.current = deps\n  }\n\n  useLayoutEffect(effect, ref.current)\n}\n",
-      "type": "registry:hook"
+      "type": "registry:hook",
+      "target": "hooks/use-deep-compare-layout-effect.ts"
     }
   ]
 }
