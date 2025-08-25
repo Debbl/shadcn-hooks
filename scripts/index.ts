@@ -9,7 +9,7 @@ const CWD = process.cwd()
 
 async function getRegistryItems() {
   const registryItemsPaths = globSync(
-    ['registry/**/index.json', '!meta.json'],
+    ['src/registry/**/index.json', '!meta.json'],
     {
       cwd: CWD,
     },
@@ -40,7 +40,9 @@ async function getRegistryItems() {
         ...(isExist
           ? [
               {
-                target: hookPath.replace('registry/', '').replace('/index', ''),
+                target: hookPath
+                  .replace('src/registry/', '')
+                  .replace('/index', ''),
                 path: hookPath,
                 type,
               },

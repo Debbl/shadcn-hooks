@@ -11,7 +11,7 @@
       "files": [
         {
           "target": "lib/is-browser.ts",
-          "path": "registry/lib/is-browser/index.ts",
+          "path": "src/registry/lib/is-browser/index.ts",
           "type": "registry:lib"
         }
       ]
@@ -24,7 +24,7 @@
       "files": [
         {
           "target": "lib/create-context.tsx",
-          "path": "registry/lib/create-context/index.tsx",
+          "path": "src/registry/lib/create-context/index.tsx",
           "type": "registry:lib"
         }
       ]
@@ -61,7 +61,7 @@
       "files": [
         {
           "target": "hooks/use-lock-fn.ts",
-          "path": "registry/hooks/use-lock-fn/index.ts",
+          "path": "src/registry/hooks/use-lock-fn/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -77,7 +77,7 @@
       "files": [
         {
           "target": "hooks/use-latest.ts",
-          "path": "registry/hooks/use-latest/index.ts",
+          "path": "src/registry/hooks/use-latest/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -93,7 +93,7 @@
       "files": [
         {
           "target": "hooks/use-isomorphic-layout-effect.ts",
-          "path": "registry/hooks/use-isomorphic-layout-effect/index.ts",
+          "path": "src/registry/hooks/use-isomorphic-layout-effect/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -106,7 +106,7 @@
       "files": [
         {
           "target": "hooks/use-is-online.ts",
-          "path": "registry/hooks/use-is-online/index.ts",
+          "path": "src/registry/hooks/use-is-online/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -122,7 +122,7 @@
       "files": [
         {
           "target": "hooks/use-is-match-media.ts",
-          "path": "registry/hooks/use-is-match-media/index.ts",
+          "path": "src/registry/hooks/use-is-match-media/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -135,7 +135,7 @@
       "files": [
         {
           "target": "hooks/use-is-hydrated.ts",
-          "path": "registry/hooks/use-is-hydrated/index.ts",
+          "path": "src/registry/hooks/use-is-hydrated/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -148,7 +148,7 @@
       "files": [
         {
           "target": "hooks/use-hash.ts",
-          "path": "registry/hooks/use-hash/index.ts",
+          "path": "src/registry/hooks/use-hash/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -161,7 +161,7 @@
       "files": [
         {
           "target": "hooks/use-effect-event.ts",
-          "path": "registry/hooks/use-effect-event/index.ts",
+          "path": "src/registry/hooks/use-effect-event/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -174,7 +174,7 @@
       "files": [
         {
           "target": "hooks/use-deep-compare-layout-effect.ts",
-          "path": "registry/hooks/use-deep-compare-layout-effect/index.ts",
+          "path": "src/registry/hooks/use-deep-compare-layout-effect/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -187,7 +187,7 @@
       "files": [
         {
           "target": "hooks/use-deep-compare-effect.ts",
-          "path": "registry/hooks/use-deep-compare-effect/index.ts",
+          "path": "src/registry/hooks/use-deep-compare-effect/index.ts",
           "type": "registry:hook"
         }
       ]
@@ -200,7 +200,7 @@
       "files": [
         {
           "target": "hooks/use-counter.ts",
-          "path": "registry/hooks/use-counter/index.ts",
+          "path": "src/registry/hooks/use-counter/index.ts",
           "type": "registry:hook"
         }
       ]
