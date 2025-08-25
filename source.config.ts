@@ -20,6 +20,16 @@ export const docs = defineDocs({
   },
 })
 
+export const registry = defineDocs({
+  dir: 'src/registry',
+  docs: {
+    schema: frontmatterSchema,
+  },
+  meta: {
+    schema: metaSchema,
+  },
+})
+
 export default defineConfig({
   lastModifiedTime: 'git',
   mdxOptions: {

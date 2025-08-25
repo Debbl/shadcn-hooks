@@ -7,7 +7,7 @@ import type { MdxJsxFlowElement } from 'mdast-util-mdx-jsx'
 import type { Transformer } from 'unified'
 
 // eslint-disable-next-line n/prefer-global/process
-const registryPath = path.join(process.cwd(), 'registry')
+const registryPath = path.join(process.cwd(), 'src/registry')
 
 const fn = (node: MdxJsxFlowElement) => {
   node.children.forEach((n) => {
