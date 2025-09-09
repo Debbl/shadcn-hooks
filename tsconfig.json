@@ -29,7 +29,12 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "content/**/*.mdx",
+    "src/registry/**/*.mdx",
     "tailwind.config.ts"
   ],
+  "mdx": {
+    "checkMdx": true
+  },
   "exclude": ["node_modules"]
 }

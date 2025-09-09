@@ -5,9 +5,12 @@ import {
   frontmatterSchema,
   metaSchema,
 } from 'fumadocs-mdx/config'
+import { createGenerator, remarkAutoTypeTable } from 'fumadocs-typescript'
 import { remarkInstallCli } from './remark/remark-install-cli'
 import { remarkPackageInstall } from './remark/remark-package-install'
 import { remarkRegistrySourceCode } from './remark/remark-registry-source-code'
+
+const generator = createGenerator()
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
 // see https://fumadocs.vercel.app/docs/mdx/collections#define-docs
@@ -37,6 +40,7 @@ export default defineConfig({
       remarkPackageInstall,
       remarkInstallCli,
       remarkRegistrySourceCode,
+      [remarkAutoTypeTable, { generator }],
       [remarkInstall, { persist: { id: 'package-manager' } }],
     ],
   },
