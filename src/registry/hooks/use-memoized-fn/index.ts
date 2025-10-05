@@ -7,7 +7,7 @@ type PickFunction<T extends noop> = (
   ...args: Parameters<T>
 ) => ReturnType<T>
 
-const useMemoizedFn = <T extends noop>(fn: T) => {
+export const useMemoizedFn = <T extends noop>(fn: T) => {
   const fnRef = useRef<T>(fn)
 
   // why not write `fnRef.current = fn`?
@@ -24,5 +24,3 @@ const useMemoizedFn = <T extends noop>(fn: T) => {
 
   return memoizedFn.current
 }
-
-export default useMemoizedFn
