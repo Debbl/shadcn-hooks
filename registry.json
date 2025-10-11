@@ -31,6 +31,19 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-unmount",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to run a function when the component unmounts",
+      "files": [
+        {
+          "target": "hooks/use-unmount.ts",
+          "path": "src/registry/hooks/use-unmount/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-swr",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",
