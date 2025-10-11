@@ -44,6 +44,19 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-toggle",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to toggle a value",
+      "files": [
+        {
+          "target": "hooks/use-toggle.ts",
+          "path": "src/registry/hooks/use-toggle/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-swr",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",

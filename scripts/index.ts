@@ -71,7 +71,9 @@ async function getRegistryItems() {
       ],
     })
     count++
-    consola.info(`registry: ${count} - ${name} - ${type}`)
+    consola.info(
+      `registry: ${type} - ${count.toString().padStart(3, '0')} - ${name}`,
+    )
   }
   consola.success(`registry: done ${count} items`)
 
