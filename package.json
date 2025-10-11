@@ -68,6 +68,7 @@
     "eslint": "^9.33.0",
     "fumadocs-typescript": "^4.0.6",
     "glob": "^11.0.3",
+    "gray-matter": "^4.0.3",
     "lint-staged": "^16.1.5",
     "mdast-util-mdx-jsx": "^3.2.0",
     "postcss": "^8.5.6",

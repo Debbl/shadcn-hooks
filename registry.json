@@ -7,7 +7,7 @@
       "type": "registry:lib",
       "name": "is-browser",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that creates a counter.",
+      "description": "A library that checks if the code is running in a browser.",
       "files": [
         {
           "target": "lib/is-browser.ts",
@@ -20,7 +20,7 @@
       "type": "registry:lib",
       "name": "create-context",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that creates a counter.",
+      "description": "Create a context object.",
       "files": [
         {
           "target": "lib/create-context.tsx",
@@ -33,7 +33,7 @@
       "type": "registry:hook",
       "name": "use-swr",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to lock a function",
+      "description": "A hook to get the latest value of a variable",
       "dependencies": ["swr"],
       "files": []
     },
@@ -41,15 +41,28 @@
       "type": "registry:hook",
       "name": "use-query",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to fetch data with TanStack Query",
+      "description": "useQuery is a hook that allows you to fetch data from an API and cache the results.",
       "dependencies": ["@tanstack/react-query"],
       "files": []
     },
     {
       "type": "registry:hook",
+      "name": "use-memoized-fn",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to declare a memoized function",
+      "files": [
+        {
+          "target": "hooks/use-memoized-fn.ts",
+          "path": "src/registry/hooks/use-memoized-fn/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-mcp",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to fetch data with MCP",
+      "description": "A hook to get the latest value of a variable",
       "dependencies": ["use-mcp"],
       "files": []
     },
@@ -71,9 +84,6 @@
       "name": "use-latest",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",
-      "registryDependencies": [
-        "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
-      ],
       "files": [
         {
           "target": "hooks/use-latest.ts",
@@ -86,10 +96,7 @@
       "type": "registry:hook",
       "name": "use-isomorphic-layout-effect",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that uses either `useLayoutEffect` or `useEffect` based on the environment (client-side or server-side).",
-      "registryDependencies": [
-        "https://shadcn-hooks.vercel.app/r/is-browser.json"
-      ],
+      "description": "A hook to use layout effect on the client side",
       "files": [
         {
           "target": "hooks/use-isomorphic-layout-effect.ts",
@@ -115,10 +122,7 @@
       "type": "registry:hook",
       "name": "use-is-match-media",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that checks if the media query matches.",
-      "registryDependencies": [
-        "https://shadcn-hooks.vercel.app/r/use-isomorphic-layout-effect.json"
-      ],
+      "description": "A hook to check if the media query matches",
       "files": [
         {
           "target": "hooks/use-is-match-media.ts",
@@ -144,7 +148,7 @@
       "type": "registry:hook",
       "name": "use-hash",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook that returns the current hash of the URL.",
+      "description": "A hook to get current hash",
       "files": [
         {
           "target": "hooks/use-hash.ts",

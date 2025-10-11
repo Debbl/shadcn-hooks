@@ -2,14 +2,29 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import consola from 'consola'
 import { globSync } from 'glob'
+import matter from 'gray-matter'
 import type { RegistryItem } from 'shadcn/registry'
 
 // eslint-disable-next-line n/prefer-global/process
 const CWD = process.cwd()
 
+async function generateRegistryItemSchema() {
+  const res = await fetch('https://ui.shadcn.com/schema/registry-item.json')
+  const data = await res.json()
+
+  if (data.properties) {
+    delete data.required
+  }
+
+  writeFileSync(
+    path.join(CWD, 'schema/registry-item.json'),
+    `${JSON.stringify(data, null, 2)}\n`,
+  )
+}
+
 async function getRegistryItems() {
   const registryItemsPaths = globSync(
-    ['src/registry/**/index.json', '!meta.json'],
+    ['src/registry/**/registry-item.json', '!meta.json'],
     {
       cwd: CWD,
     },
@@ -31,10 +46,14 @@ async function getRegistryItems() {
     const type = registryType === 'hooks' ? 'registry:hook' : 'registry:lib'
     const name = path.dirname(itemPath).split('/').pop() ?? ''
 
+    const docsPath = globSync(`${path.dirname(itemPath)}/index.mdx`)[0]
+    const docsMatter = docsPath ? matter.read(docsPath).data : {}
+
     registryItems.push({
       type: _type ?? type,
       name,
       author: 'Brendan Dash (https://shadcn-hooks.vercel.app)',
+      description: docsMatter.description ?? rest.description,
       ...rest,
       files: [
         ...(isExist
@@ -113,7 +132,11 @@ async function getDocsContent() {
 }
 
 async function main() {
-  await Promise.all([getRegistryItems(), getDocsContent()])
+  await Promise.all([
+    generateRegistryItemSchema(),
+    getRegistryItems(),
+    getDocsContent(),
+  ])
 }
 
 main()

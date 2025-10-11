@@ -29,6 +29,12 @@
     "toml",
     "css"
   ],
+  "json.schemas": [
+    {
+      "fileMatch": ["registry-item.json"],
+      "url": "./schema/registry-item.json"
+    }
+  ],
   "cSpell.words": [
     "dequal",
     "fumadocs",
