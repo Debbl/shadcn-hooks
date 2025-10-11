@@ -47,6 +47,19 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-mount",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to run a function when the component mounts",
+      "files": [
+        {
+          "target": "hooks/use-mount.ts",
+          "path": "src/registry/hooks/use-mount/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-memoized-fn",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to declare a memoized function",
