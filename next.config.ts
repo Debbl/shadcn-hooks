@@ -11,6 +11,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 })
 
 const withSerwist = withSerwistInit({
+  disable: true,
   swSrc: 'src/app/sw.ts',
   swDest: 'public/sw.js',
 })

@@ -1,8 +1,69 @@
 ---
 title: Introduction
-description: A React Hooks Collection built with Shadcn
+description: A comprehensive React Hooks Collection built with Shadcn
 ---
 
 ## What is Shadcn Hooks?
 
-A Hooks is a collection for your React applications. It is built with Shadcn.
+Shadcn Hooks is a carefully curated collection of modern React hooks designed to enhance your development experience. Built with the same philosophy as Shadcn UI, this collection provides high-quality, TypeScript-first hooks that are production-ready and follow React best practices.
+
+## Key Features
+
+- **TypeScript First**: All hooks are written in TypeScript with full type safety
+- **SSR Compatible**: Hooks work seamlessly with server-side rendering
+- **Modern React**: Built for React 19+ with latest patterns and optimizations
+- **Zero Dependencies**: Most hooks have minimal or no external dependencies
+- **Tree Shakeable**: Import only what you need
+- **Well Tested**: Each hook is thoroughly tested and documented
+
+## Hook Categories
+
+### State Management
+- [`useCounter`](/docs/hooks/use-counter) - Create and manage counter state with increment, decrement, and reset
+- [`useBoolean`](/docs/hooks/use-boolean) - Toggle boolean values with semantic methods
+- [`useToggle`](/docs/hooks/use-toggle) - Simple boolean toggle functionality
+
+### Lifecycle & Effects
+- [`useMount`](/docs/hooks/use-mount) - Execute code on component mount
+- [`useUnmount`](/docs/hooks/use-unmount) - Execute cleanup on component unmount
+- [`useIsomorphicLayoutEffect`](/docs/hooks/use-isomorphic-layout-effect) - SSR-safe layout effects
+- [`useDeepCompareEffect`](/docs/hooks/use-deep-compare-effect) - Effect with deep comparison of dependencies
+- [`useDeepCompareLayoutEffect`](/docs/hooks/use-deep-compare-layout-effect) - Layout effect with deep comparison
+
+### Browser APIs
+- [`useHash`](/docs/hooks/use-hash) - Track URL hash changes
+- [`useIsOnline`](/docs/hooks/use-is-online) - Monitor online/offline status
+- [`useIsMatchMedia`](/docs/hooks/use-is-match-media) - React to media query changes
+- [`useIsHydrated`](/docs/hooks/use-is-hydrated) - Detect client-side hydration
+
+### Performance & Optimization
+- [`useLatest`](/docs/hooks/use-latest) - Always get the latest value in closures
+- [`useLockFn`](/docs/hooks/use-lock-fn) - Prevent concurrent function calls
+- [`useMemoizedFn`](/docs/hooks/use-memoized-fn) - Memoize function references
+
+### External Libraries
+- [`useQuery`](/docs/hooks/use-query) - TanStack Query integration
+- [`useSWR`](/docs/hooks/use-swr) - SWR data fetching
+- [`useMcp`](/docs/hooks/use-mcp) - Model Context Protocol integration
+
+## Getting Started
+
+Each hook comes with:
+- **CLI Installation**: Use the shadcn CLI for easy setup
+- **Manual Installation**: Copy-paste the source code
+- **TypeScript Support**: Full type definitions included
+- **Documentation**: Comprehensive examples and usage patterns
+
+## Design Philosophy
+
+Shadcn Hooks follows the same principles as Shadcn UI:
+- **Copy, don't fork**: Own your code
+- **Minimal dependencies**: Keep bundles small
+- **Modern patterns**: Use latest React features
+- **Developer experience**: Great TypeScript support and documentation
+
+## Credits
+
+This collection is inspired by and builds upon the excellent work of:
+- [ahooks](https://ahooks.js.org/) - Comprehensive React hooks library
+- [usehooks-ts](https://usehooks-ts.com/) - TypeScript-first hooks collection
