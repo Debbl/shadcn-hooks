@@ -247,6 +247,19 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-boolean",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to toggle a boolean value",
+      "files": [
+        {
+          "target": "hooks/use-boolean.ts",
+          "path": "src/registry/hooks/use-boolean/index.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
