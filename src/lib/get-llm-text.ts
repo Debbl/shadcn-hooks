@@ -23,8 +23,8 @@ export async function getLLMText(page: Page) {
     }[page.slugs[0]] ?? page.slugs[0]
 
   const processed = await processor.process({
-    path: page.data._file.absolutePath,
-    value: page.data.content,
+    path: page.data.info.fullPath,
+    value: await page.data.getText('raw'),
   })
 
   return `# ${category}: ${page.data.title}

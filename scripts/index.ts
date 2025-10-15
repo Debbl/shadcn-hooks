@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import consola from 'consola'
 import { globSync } from 'glob'
@@ -88,57 +88,8 @@ async function getRegistryItems() {
   )
 }
 
-async function getDocsContent() {
-  const hooksContentDir = path.join(CWD, 'content/docs/hooks')
-  const libsContentDir = path.join(CWD, 'content/docs/lib')
-
-  if (!existsSync(hooksContentDir)) {
-    mkdirSync(hooksContentDir, { recursive: true })
-  }
-
-  if (!existsSync(libsContentDir)) {
-    mkdirSync(libsContentDir, { recursive: true })
-  }
-
-  const contentPaths = globSync(
-    [
-      'registry/**/index.mdx',
-      'registry/hooks/meta.json',
-      'registry/lib/meta.json',
-    ],
-    {
-      cwd: CWD,
-    },
-  )
-
-  let count = 0
-  for (const itemPath of contentPaths) {
-    const content = readFileSync(itemPath, 'utf-8')
-    const fileName = path.basename(itemPath)
-    const registryType = path.dirname(itemPath).split('/').at(-2)
-
-    const dir = registryType === 'hooks' ? hooksContentDir : libsContentDir
-
-    if (fileName === 'meta.json') {
-      writeFileSync(path.join(dir, 'meta.json'), content)
-      continue
-    }
-
-    const name = path.dirname(itemPath).split('/').pop()
-    const contentPath = path.join(dir, `${name}.mdx`)
-    writeFileSync(contentPath, content)
-    count++
-    consola.info(`docs: ${count} - ${name} - ${registryType}`)
-  }
-  consola.success(`docs: done ${count} items`)
-}
-
 async function main() {
-  await Promise.all([
-    generateRegistryItemSchema(),
-    getRegistryItems(),
-    getDocsContent(),
-  ])
+  await Promise.all([generateRegistryItemSchema(), getRegistryItems()])
 }
 
 main()
