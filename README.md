@@ -22,6 +22,7 @@
 - **Zero Dependencies**: Most hooks have minimal or no external dependencies
 - **Tree Shakeable**: Import only what you need
 - **Well Tested**: Each hook is thoroughly tested and documented
+- **Tested**: Each hook is thoroughly tested
 
 ## 🚀 Quick Start
 
