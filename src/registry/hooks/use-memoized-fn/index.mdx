@@ -3,7 +3,7 @@ title: useMemoizedFn
 description: A hook to declare a memoized function
 ---
 
-## Installation [#installation]
+## Installation
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,7 +15,7 @@ description: A hook to declare a memoized function
   </Tab>
 </Tabs>
 
-## API [#api]
+## API
 
 ```ts
 type noop = (this: any, ...args: any[]) => any
@@ -33,6 +33,6 @@ type PickFunction<T extends noop> = (
 export function useMemoizedFn<T extends noop>(fn: T): PickFunction<T>
 ```
 
-## Credits [#credits]
+## Credits
 
 - [use-memoized-fn](https://ahooks.js.org/hooks/use-memoized-fn)
