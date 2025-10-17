@@ -3,8 +3,11 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shadcn-hooks.vercel.app'),
   title: 'Shadcn Hooks',
-  description: 'Shadcn Hooks',
+  description: 'A comprehensive React Hooks Collection built with Shadcn',
+  authors: [{ name: 'Brendan Dash', url: 'https://aiwan.run' }],
+  keywords: ['react', 'hooks', 'shadcn', 'ui', 'components'],
   appleWebApp: {
     title: 'Shadcn Hooks',
   },
@@ -30,6 +33,10 @@ export const metadata: Metadata = {
       url: '/apple-touch-icon.png',
     },
   ],
+  openGraph: {
+    title: 'Shadcn Hooks',
+    description: 'Shadcn Hooks',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
