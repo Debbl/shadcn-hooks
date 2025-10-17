@@ -1,4 +1,33 @@
 {
-  "pages": ["...", "---External---", "use-swr", "use-query", "use-mcp"],
+  "pages": [
+    "---State---",
+    "use-counter",
+    "use-toggle",
+    "use-boolean",
+
+    "---Advanced---",
+    "use-latest",
+    "use-lock-fn",
+    "use-memoized-fn",
+
+    "---Lifecycle---",
+    "use-mount",
+    "use-unmount",
+    "use-is-hydrated",
+    "use-effect-event",
+    "use-isomorphic-layout-effect",
+    "use-deep-compare-effect",
+    "use-deep-compare-layout-effect",
+
+    "---Browser APIs---",
+    "use-hash",
+    "use-is-online",
+    "use-is-match-media",
+
+    "---External---",
+    "use-swr",
+    "use-query",
+    "use-mcp"
+  ],
   "root": true
 }
