@@ -7,7 +7,7 @@ import { Demo01 } from './demo/demo-01'
 
 <Demo01 />
 
-## Installation
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -18,3 +18,35 @@ import { Demo01 } from './demo/demo-01'
     <RegistrySourceCode value='use-counter' />
   </Tab>
 </Tabs>
+
+## API [#api]
+
+```ts
+/**
+ * A hook that creates a counter.
+ * @param initialValue - The initial value of the counter
+ * @returns A tuple containing the counter value and an object with the actions to increment, decrement, and reset the counter
+ */
+export function useCounter(initialValue: number = 0): readonly [
+  number,
+  {
+    /**
+     * Set the value of the counter
+     * @param value - The value to set the counter to
+     */
+    set: (value: number | ((value: number) => number)) => void
+    /**
+     * Increment the value of the counter
+     */
+    inc: () => void
+    /**
+     * Decrement the value of the counter
+     */
+    dec: () => void
+    /**
+     * Reset the value of the counter to the initial value
+     */
+    reset: () => void
+  },
+]
+```

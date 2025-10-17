@@ -3,7 +3,7 @@ title: useToggle
 description: A hook to toggle a value
 ---
 
-## useToggle
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,6 +15,23 @@ description: A hook to toggle a value
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to toggle a value
+ * @param defaultValue - The default value of the value
+ * @param reverseValue - The reverse value of the value
+ * @returns The value and the actions to toggle the value
+ */
+function useToggle<T = boolean>(): [boolean, Actions<T>]
+function useToggle<T>(defaultValue: T): [T, Actions<T>]
+function useToggle<T, U>(
+  defaultValue: T,
+  reverseValue: U,
+): [T | U, Actions<T | U>]
+```
+
+## Credits [#credits]
 
 - [use-toggle](https://github.com/Andarist/use-toggle)

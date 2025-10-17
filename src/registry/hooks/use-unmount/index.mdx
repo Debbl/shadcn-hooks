@@ -3,7 +3,7 @@ title: useUnmount
 description: A hook to run a function when the component unmounts
 ---
 
-## useUnmount
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -11,10 +11,23 @@ description: A hook to run a function when the component unmounts
   </Tab>
   <Tab>
     Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-latest' />
+    <br />
     <RegistrySourceCode value='use-unmount' />
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to run a function when the component unmounts
+ * @param fn - The function to run when the component unmounts
+ * @returns The function to run when the component unmounts
+ */
+export function useUnmount(fn: () => void): void
+```
+
+## Credits [#credits]
 
 - [use-unmount](https://ahooks.js.org/hooks/use-unmount)

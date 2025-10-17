@@ -1,6 +1,7 @@
 import * as React from 'react'
+import { createContext, useCallback, useInsertionEffect, useRef } from 'react'
 
-const context = React.createContext(true)
+const context = createContext(true)
 
 function forbiddenInRender() {
   throw new Error(
@@ -35,13 +36,13 @@ export function useEffectEvent<const T extends (...args: any[]) => void>(
    * For both React 18 and 19 we set the ref to the forbiddenInRender function, to catch illegal calls to the function during render.
    * Once the insertion effect runs, we set the ref to the actual function.
    */
-  const ref = React.useRef(forbiddenInRender as T)
+  const ref = useRef(forbiddenInRender as T)
 
-  React.useInsertionEffect(() => {
+  useInsertionEffect(() => {
     ref.current = fn
   }, [fn])
 
-  return ((...args: any) => {
+  return useCallback((...args: any) => {
     // Performs a similar check to what React does for `useEffectEvent`:
     // 1. https://github.com/facebook/react/blob/b7e2de632b2a160bc09edda1fbb9b8f85a6914e8/packages/react-reconciler/src/ReactFiberHooks.js#L2729-L2733
     // 2. https://github.com/facebook/react/blob/b7e2de632b2a160bc09edda1fbb9b8f85a6914e8/packages/react-reconciler/src/ReactFiberHooks.js#L2746C9-L2750
@@ -51,5 +52,5 @@ export function useEffectEvent<const T extends (...args: any[]) => void>(
 
     const latestFn = ref.current!
     return latestFn(...args)
-  }) as T
+  }, []) as T
 }

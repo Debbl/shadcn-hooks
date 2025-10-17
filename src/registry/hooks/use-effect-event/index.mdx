@@ -3,7 +3,9 @@ title: useEffectEvent
 description: A hook to declare an effect event
 ---
 
-## useEffectEvent
+## Installation [#installation]
+
+> If you are using React 19.2, please use the built-in [useEffectEvent](https://react.dev/reference/react/useEffectEvent) instead.
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,6 +17,19 @@ description: A hook to declare an effect event
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to declare an effect event
+ * @param fn - The function to declare as an effect event
+ * @returns The function declared as an effect event
+ */
+export function useEffectEvent<const T extends (...args: any[]) => void>(
+  fn: T,
+): T
+```
+
+## Credits [#credits]
 
 - [use-effect-event](https://github.com/sanity-io/use-effect-event)

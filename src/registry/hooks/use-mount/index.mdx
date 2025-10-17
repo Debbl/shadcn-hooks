@@ -3,7 +3,7 @@ title: useMount
 description: A hook to run a function when the component mounts
 ---
 
-## useMount
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,6 +15,19 @@ description: A hook to run a function when the component mounts
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+type MountCallback = EffectCallback | (() => Promise<void | (() => void)>)
+
+/**
+ * A hook to run a function when the component mounts
+ * @param fn - The function to run when the component mounts
+ * @returns The function to run when the component mounts
+ */
+export function useMount(fn: MountCallback): void
+```
+
+## Credits [#credits]
 
 - [use-mount](https://ahooks.js.org/hooks/use-mount)

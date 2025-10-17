@@ -3,7 +3,7 @@ title: useIsOnline
 description: A hook to check if the user is online
 ---
 
-## useIsOnline
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -14,3 +14,14 @@ description: A hook to check if the user is online
     <RegistrySourceCode value='use-is-online' />
   </Tab>
 </Tabs>
+
+## API [#api]
+
+```ts
+/**
+ * A hook to check if the network is online
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event
+ * @returns A boolean indicating if the network is online
+ */
+export function useIsOnline(): boolean
+```

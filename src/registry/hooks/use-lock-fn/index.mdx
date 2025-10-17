@@ -1,9 +1,9 @@
 ---
 title: useLockFn
-description: A hook to lock a function
+description: A hook to lock a function until the previous promise is resolved
 ---
 
-## useLockFn
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -14,3 +14,16 @@ description: A hook to lock a function
     <RegistrySourceCode value='use-lock-fn' />
   </Tab>
 </Tabs>
+
+## API [#api]
+
+```ts
+/**
+ * A hook to lock a function until the previous promise is resolved
+ * @param fn - The function to lock
+ * @returns The locked function
+ */
+export function useLockFn<P extends any[] = any[], V = any>(
+  fn: (...args: P) => Promise<V>,
+): (...args: P) => Promise<V | undefined>
+```

@@ -7,7 +7,7 @@ import { Demo01 } from './demo/demo-01'
 
 <Demo01 />
 
-## Installation
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,10 +15,43 @@ import { Demo01 } from './demo/demo-01'
   </Tab>
   <Tab>
     Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-toggle' />
+    <br />
     <RegistrySourceCode value='use-boolean' />
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to toggle a boolean value
+ * @param defaultValue - The default value of the boolean
+ */
+export function useBoolean(defaultValue?: boolean): readonly [
+  boolean,
+  {
+    /**
+     * Set the value of the boolean
+     * @param value - The value to set the boolean to
+     */
+    set: (value: boolean) => void
+    /**
+     * Set the value of the boolean to true
+     */
+    setTrue: () => void
+    /**
+     * Set the value of the boolean to false
+     */
+    setFalse: () => void
+    /**
+     * Toggle the value of the boolean
+     */
+    toggle: () => void
+  },
+]
+```
+
+## Credits [#credits]
 
 - [use-boolean](https://ahooks.js.org/hooks/use-boolean)

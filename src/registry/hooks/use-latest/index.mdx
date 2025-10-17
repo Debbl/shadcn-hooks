@@ -3,7 +3,7 @@ title: useLatest
 description: A hook to get the latest value of a variable
 ---
 
-## useLatest
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -11,10 +11,23 @@ description: A hook to get the latest value of a variable
   </Tab>
   <Tab>
     Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-isomorphic-layout-effect' />
+    <br />
     <RegistrySourceCode value='use-latest' />
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to get the latest value of a variable
+ * @param value - The value to get the latest value of
+ * @returns The latest value of the variable
+ */
+export function useLatest<T>(value: T): RefObject<T>
+```
+
+## Credits [#credits]
 
 - [use-latest](https://github.com/Andarist/use-latest)

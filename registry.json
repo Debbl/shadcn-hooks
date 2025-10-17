@@ -109,7 +109,7 @@
       "type": "registry:hook",
       "name": "use-lock-fn",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
-      "description": "A hook to lock a function",
+      "description": "A hook to lock a function until the previous promise is resolved",
       "files": [
         {
           "target": "hooks/use-lock-fn.ts",

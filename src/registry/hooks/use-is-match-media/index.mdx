@@ -3,7 +3,7 @@ title: useIsMatchMedia
 description: A hook to check if the media query matches
 ---
 
-## useIsMatchMedia
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,6 +15,18 @@ description: A hook to check if the media query matches
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to check if the media query matches
+ * @param mediaQueryString - The media query string to check
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia#mediaquerystring
+ * @returns A boolean indicating if the media query matches
+ */
+export function useIsMatchMedia(mediaQueryString: string): boolean
+```
+
+## Credits [#credits]
 
 - [use-is-match-media](https://github.com/Debbl/use-is-match-media)

@@ -3,7 +3,7 @@ title: useDeepCompareLayoutEffect
 description: A hook to use a deep compare layout effect
 ---
 
-## useDeepCompareLayoutEffect
+## Installation [#installation]
 
 <Tabs items={['CLI', 'Manual']}>
   <Tab>
@@ -15,7 +15,21 @@ description: A hook to use a deep compare layout effect
   </Tab>
 </Tabs>
 
-## credits
+## API [#api]
+
+```ts
+/**
+ * A hook to use a deep compare layout effect
+ * @param effect - The effect to use
+ * @param deps - The dependencies to use
+ */
+export function useDeepCompareLayoutEffect(
+  effect: EffectCallback,
+  deps: DependencyList,
+): void
+```
+
+## Credits [#credits]
 
 - [createDeepCompareEffect](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/createDeepCompareEffect/index.ts)
 - [useCustomCompareEffect](https://github.com/streamich/react-use/blob/master/src/useCustomCompareEffect.ts)
