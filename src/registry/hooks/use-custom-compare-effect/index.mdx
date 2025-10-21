@@ -1,0 +1,43 @@
+---
+title: useCustomCompareEffect
+description: A hook like useEffect but with a custom compare function
+---
+
+import { Demo01 } from './demo/demo-01'
+
+> Only when the user's ID changes will the effect be triggered
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-custom-compare-effect' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-custom-compare-effect' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook like useEffect but with a custom compare function
+ * @param effect - The effect to use
+ * @param deps - The dependencies to use
+ * @param customCompare - The custom compare function to use
+ */
+function useCustomCompareEffect<T extends DependencyList>(
+  effect: EffectCallback,
+  deps: T,
+  customCompare: (a: T, b: T) => boolean,
+): void
+```
+
+## Credits
+
+- [createDeepCompareEffect](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/createDeepCompareEffect/index.ts)
+- [useCustomCompareEffect](https://github.com/streamich/react-use/blob/master/src/useCustomCompareEffect.ts)
