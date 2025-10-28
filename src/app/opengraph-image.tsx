@@ -4,11 +4,7 @@ import { ImageResponse } from 'next/og'
 export const dynamic = 'force-static'
 
 // Image metadata
-export const alt = 'Shadcn Hooks'
-export const size = {
-  width: 800,
-  height: 400,
-}
+export const alt = 'A comprehensive React Hooks Collection built with Shadcn'
 
 export const contentType = 'image/png'
 
@@ -55,5 +51,9 @@ export default async function Image() {
         <div style={{ marginTop: 40 }}>Shadcn Hooks</div>
       </div>
     ),
+    {
+      width: 800,
+      height: 400,
+    },
   )
 }

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Shadcn Hooks',
-    description: 'Shadcn Hooks',
+    description: 'A comprehensive React Hooks Collection built with Shadcn',
   },
 }
 
