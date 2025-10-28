@@ -1,0 +1,34 @@
+---
+title: useUpdate
+description: A hook to force a component to re-render
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-update' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-update' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to force a component to re-render
+ * @returns A function to force a component to re-render
+ */
+export function useUpdate(): () => void
+```
+
+## Credits
+
+- [use-update](https://ahooks.js.org/hooks/use-update)

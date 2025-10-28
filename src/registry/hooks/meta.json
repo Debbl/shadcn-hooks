@@ -14,6 +14,7 @@
     "---Lifecycle---",
     "use-mount",
     "use-unmount",
+    "use-update",
     "use-is-hydrated",
     "use-effect-event",
     "use-isomorphic-layout-effect",
