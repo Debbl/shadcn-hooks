@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import consola from 'consola'
 import { globSync } from 'glob'
@@ -84,6 +84,16 @@ async function getRegistryItems() {
 
   writeFileSync(
     path.join(CWD, 'registry.json'),
+    `${JSON.stringify(registry, null, 2)}\n`,
+  )
+
+  // write public/r/registry.json
+  const publicRegistryPath = path.join(CWD, 'public/r')
+  if (!existsSync(publicRegistryPath)) {
+    mkdirSync(publicRegistryPath, { recursive: true })
+  }
+  writeFileSync(
+    path.join(publicRegistryPath, 'registry.json'),
     `${JSON.stringify(registry, null, 2)}\n`,
   )
 }
