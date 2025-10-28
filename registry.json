@@ -31,6 +31,19 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-update",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to force a component to re-render",
+      "files": [
+        {
+          "target": "hooks/use-update.ts",
+          "path": "src/registry/hooks/use-update/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-unmount",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to run a function when the component unmounts",

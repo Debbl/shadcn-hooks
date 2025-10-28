@@ -37,6 +37,25 @@ function useCustomCompareEffect<T extends DependencyList>(
 ): void
 ```
 
+## Notes
+
+> **Important:** Do not call `setState` methods inside the `customCompare` function. The compare function should be a pure function that only performs comparison logic.
+
+```ts
+// ❌ Don't do this
+const compareById = (a: User[], b: User[]) => {
+  const result = a[0]?.id === b[0]?.id
+  setCount((prev) => prev + 1) // ❌ This will cause infinite re-renders
+  return result
+}
+
+// ✅ Do this instead
+const compareById = (a: User[], b: User[]) => {
+  const result = a[0]?.id === b[0]?.id
+  return result
+}
+```
+
 ## Credits
 
 - [createDeepCompareEffect](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/createDeepCompareEffect/index.ts)
