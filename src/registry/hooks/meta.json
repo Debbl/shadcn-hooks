@@ -9,6 +9,7 @@
     "use-latest",
     "use-lock-fn",
     "use-memoized-fn",
+    "use-custom-compare-effect",
 
     "---Lifecycle---",
     "use-mount",
