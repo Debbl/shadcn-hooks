@@ -30,7 +30,7 @@ export async function getLLMText(page: Page) {
   return `# ${category}: ${page.data.title}
 URL: ${page.url}
 
-Source: https://raw.githubusercontent.com/Debbl/shadcn-hooks/refs/heads/main/content/docs/${page.file.path}
+Source: https://raw.githubusercontent.com/Debbl/shadcn-hooks/refs/heads/main/${page.absolutePath}
 
 ${page.data.description}
         
