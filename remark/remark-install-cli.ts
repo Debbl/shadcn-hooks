@@ -14,7 +14,7 @@ export function remarkInstallCli(): Transformer<Root, Root> {
     if (node.name !== 'InstallCLI') return
 
     const attrValue = node.attributes[0]?.value
-    const value = `npx shadcn@latest add "https://shadcn-hooks.vercel.app/r/${attrValue}.json"`
+    const value = `npx shadcn@latest add @hooks/${attrValue}"`
 
     Object.assign(node, {
       type: 'code',

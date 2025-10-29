@@ -5,6 +5,7 @@ import {
   DocsTitle,
 } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
+import { websiteConfig } from '~/constants'
 import { source } from '~/lib/source'
 import { getMDXComponents } from '~/mdx-components'
 import { GitHubLink, LLMCopyButton } from './page.client'
@@ -52,13 +53,21 @@ export async function generateMetadata(props: {
   if (!page) notFound()
 
   return {
-    metadataBase: new URL('https://shadcn-hooks.vercel.app'),
+    metadataBase: new URL(websiteConfig.baseUrl),
     title: `${page.data.title} - Shadcn Hooks`,
     description: page.data.description,
     openGraph: {
       type: 'article',
       title: page.data.title,
       description: page.data.description,
+      images: [
+        {
+          url: `/docs/og/${page.slugs.join('/')}/opengraph-image`,
+        },
+      ],
+    },
+    twitter: {
+      creator: '@Debbl66',
     },
   }
 }
