@@ -18,9 +18,7 @@ const withSerwist = withSerwistInit({
 
 const nextConfig: NextConfig = {
   output: 'export',
-  experimental: {
-    reactCompiler: true,
-  },
+  reactCompiler: true,
 }
 
 export default [withBundleAnalyzer, withSerwist, withMDX].reduce(

@@ -1,5 +1,5 @@
 import { loader } from 'fumadocs-core/source'
-import { createMDXSource } from 'fumadocs-mdx'
+import { createMDXSource } from 'fumadocs-mdx/runtime/next'
 import { docs, registry } from '../../.source'
 import type { InferMetaType, InferPageType } from 'fumadocs-core/source'
 
