@@ -52,6 +52,7 @@ export async function generateMetadata(props: {
   if (!page) notFound()
 
   return {
+    metadataBase: new URL('https://shadcn-hooks.vercel.app'),
     title: page.data.title,
     description: page.data.description,
     openGraph: {

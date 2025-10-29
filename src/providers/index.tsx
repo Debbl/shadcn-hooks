@@ -1,4 +1,4 @@
-import { RootProvider } from 'fumadocs-ui/provider'
+import { RootProvider } from 'fumadocs-ui/provider/next'
 import { ThemeProvider } from 'next-themes'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import SearchDialog from '~/components/search'
