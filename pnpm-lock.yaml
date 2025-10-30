@@ -83,6 +83,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.1.16)
+      tinyexec:
+        specifier: ^1.0.1
+        version: 1.0.1
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0

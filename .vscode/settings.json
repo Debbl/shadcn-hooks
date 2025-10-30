@@ -42,10 +42,12 @@
     "mdast",
     "nextui",
     "nuqs",
+    "opengraph",
     "orama",
     "precache",
     "serwist",
     "shadcn",
+    "tinyexec",
     "turbopack"
   ]
 }

@@ -1,9 +1,10 @@
+import { websiteConfig } from '~/constants'
 import { Providers } from '~/providers'
 import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shadcn-hooks.vercel.app'),
+  metadataBase: new URL(websiteConfig.baseUrl),
   title: 'Shadcn Hooks',
   description: 'A comprehensive React Hooks Collection built with Shadcn',
   authors: [{ name: 'Brendan Dash', url: 'https://aiwan.run' }],

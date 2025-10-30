@@ -14,11 +14,11 @@
   },
   "scripts": {
     "postinstall": "fumadocs-mdx",
-    "dev": "next dev --webpack",
-    "preflight": "tsx scripts/index.ts",
+    "dev": "node scripts/dev.ts",
+    "preflight": "node scripts/preflight.ts",
     "registry:build": "shadcn build",
     "test": "vitest",
-    "build": "pnpm run preflight && pnpm run registry:build && next build --webpack",
+    "build": "node scripts/build.ts",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start --webpack",
     "typecheck": "tsc --noEmit",
@@ -52,6 +52,7 @@
     "react-dom": "19.0.0",
     "react-resizable-panels": "^3.0.6",
     "tailwindcss-animate": "^1.0.7",
+    "tinyexec": "^1.0.1",
     "tw-animate-css": "^1.4.0",
     "twl": "0.0.0-alpha.7"
   },

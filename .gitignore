@@ -50,3 +50,6 @@ content/docs/lib
 
 # registry
 public/r
+
+# opengraph image
+src/app/docs/\[\[...slug\]\]/opengraph-image.tsx
