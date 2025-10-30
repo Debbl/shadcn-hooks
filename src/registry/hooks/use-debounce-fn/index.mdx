@@ -1,0 +1,60 @@
+---
+title: useDebounceFn
+description: A hook to debounce a function
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-debounce-fn' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-debounce-fn' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+interface DebounceOptions {
+  /**
+   * An optional AbortSignal to cancel the debounced function.
+   */
+  signal?: AbortSignal
+  /**
+   * An optional array specifying whether the function should be invoked on the leading edge, trailing edge, or both.
+   * If `edges` includes "leading", the function will be invoked at the start of the delay period.
+   * If `edges` includes "trailing", the function will be invoked at the end of the delay period.
+   * If both "leading" and "trailing" are included, the function will be invoked at both the start and end of the delay period.
+   * @default ["trailing"]
+   */
+  edges?: Array<'leading' | 'trailing'>
+}
+
+/**
+ * A hook to debounce a function
+ * @param fn - The function to debounce
+ * @param debounceMs - The debounce time in milliseconds default to 1000
+ * @param options - The options for the debounce function
+ * @returns The debounced function
+ */
+export function useDebounceFn<Fn extends (...args: any[]) => any>(
+  fn: Fn,
+  debounceMs?: number,
+  options?: DebounceOptions,
+): {
+  run: DebouncedFunction<Fn>
+  cancel: () => void
+  flush: () => void
+}
+```
+
+## Credits
+
+- [use-debounce-fn](https://ahooks.js.org/hooks/use-debounce-fn)
