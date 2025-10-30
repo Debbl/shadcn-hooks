@@ -6,6 +6,7 @@ async function main() {
   rm(
     // eslint-disable-next-line n/prefer-global/process
     path.join(process.cwd(), 'src/app/docs/[[...slug]]/opengraph-image.tsx'),
+    { force: true },
     async () => {
       await x('next', ['dev', '--webpack'], {
         nodeOptions: {
