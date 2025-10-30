@@ -56,6 +56,9 @@ export async function generateMetadata(props: {
     metadataBase: new URL(websiteConfig.baseUrl),
     title: `${page.data.title} - Shadcn Hooks`,
     description: page.data.description,
+    alternates: {
+      canonical: `/docs/${page.slugs.join('/')}`,
+    },
     openGraph: {
       type: 'article',
       title: page.data.title,
