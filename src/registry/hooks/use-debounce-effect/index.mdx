@@ -1,0 +1,62 @@
+---
+title: useDebounceEffect
+description: A hook to debounce an effect
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-debounce-effect' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-debounce-fn' />
+    <br />
+    <RegistrySourceCode value='use-update-effect' />
+    <br />
+    <RegistrySourceCode value='use-debounce-effect' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+interface DebounceOptions {
+  /**
+   * An optional AbortSignal to cancel the debounced function.
+   */
+  signal?: AbortSignal
+  /**
+   * An optional array specifying whether the function should be invoked on the leading edge, trailing edge, or both.
+   * If `edges` includes "leading", the function will be invoked at the start of the delay period.
+   * If `edges` includes "trailing", the function will be invoked at the end of the delay period.
+   * If both "leading" and "trailing" are included, the function will be invoked at both the start and end of the delay period.
+   * @default ["trailing"]
+   */
+  edges?: Array<'leading' | 'trailing'>
+}
+
+/**
+ * A hook to debounce an effect
+ * @param effect - The effect to debounce
+ * @param deps - The dependencies to debounce the effect on
+ * @param debounceMs - The debounce time in milliseconds default to 1000
+ * @param options - The options for the debounce effect
+ * @returns The debounced effect
+ */
+export function useDebounceEffect(
+  effect: EffectCallback,
+  deps: DependencyList,
+  debounceMs?: number,
+  options?: DebounceOptions,
+): void
+```
+
+## Credits
+
+- [use-debounce-effect](https://ahooks.js.org/hooks/use-debounce-effect)

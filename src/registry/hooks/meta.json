@@ -18,6 +18,7 @@
     "use-update-effect",
     "use-is-hydrated",
     "use-debounce-fn",
+    "use-debounce-effect",
     "use-effect-event",
     "use-isomorphic-layout-effect",
     "use-deep-compare-effect",
