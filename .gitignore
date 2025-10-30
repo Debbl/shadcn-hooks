@@ -52,4 +52,4 @@ content/docs/lib
 public/r
 
 # opengraph image
-src/app/docs/[[...slug]]/opengraph-image.tsx
+src/app/docs/\[\[...slug\]\]/opengraph-image.tsx
