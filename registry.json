@@ -31,6 +31,20 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-update-effect",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to run an effect only when the component updates",
+      "registryDependencies": ["@hooks/use-unmount"],
+      "files": [
+        {
+          "target": "hooks/use-update-effect.ts",
+          "path": "src/registry/hooks/use-update-effect/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-update",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to force a component to re-render",
@@ -244,6 +258,37 @@
         {
           "target": "hooks/use-deep-compare-effect.ts",
           "path": "src/registry/hooks/use-deep-compare-effect/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-debounce-fn",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to debounce a function",
+      "registryDependencies": ["@hooks/use-unmount"],
+      "files": [
+        {
+          "target": "hooks/use-debounce-fn.ts",
+          "path": "src/registry/hooks/use-debounce-fn/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-debounce-effect",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to debounce an effect",
+      "registryDependencies": [
+        "@hooks/use-debounce-fn",
+        "@hooks/use-update-effect"
+      ],
+      "files": [
+        {
+          "target": "hooks/use-debounce-effect.ts",
+          "path": "src/registry/hooks/use-debounce-effect/index.ts",
           "type": "registry:hook"
         }
       ]

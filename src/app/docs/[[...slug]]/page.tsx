@@ -15,7 +15,8 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = source.getPage(params.slug)
+  const slug = params.slug ?? []
+  const page = source.getPage(slug)
   if (!page) notFound()
 
   const MDX = page.data.body
@@ -29,7 +30,7 @@ export default async function Page(props: {
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <div className='mb-8 flex flex-row items-center gap-2 border-b pb-6'>
-        <LLMCopyButton slug={params.slug ?? []} />
+        <LLMCopyButton slug={slug} url={page.url} />
         <GitHubLink
           url={`https://github.com/Debbl/shadcn-hooks/blob/main/${page.absolutePath}`}
         />
