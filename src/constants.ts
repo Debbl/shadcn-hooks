@@ -4,4 +4,5 @@ export const websiteConfig = {
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000'
       : 'https://shadcn-hooks.vercel.app',
+  githubUrl: 'https://github.com/Debbl/shadcn-hooks',
 }

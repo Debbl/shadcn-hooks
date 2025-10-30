@@ -1,3 +1,4 @@
+import { websiteConfig } from '~/constants'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 export const baseOptions: BaseLayoutProps = {
@@ -32,5 +33,5 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
   },
-  githubUrl: 'https://github.com/Debbl/shadcn-hooks',
+  githubUrl: websiteConfig.githubUrl,
 }

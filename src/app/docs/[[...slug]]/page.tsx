@@ -32,7 +32,7 @@ export default async function Page(props: {
       <div className='mb-8 flex flex-row items-center gap-2 border-b pb-6'>
         <LLMCopyButton slug={slug} url={page.url} />
         <GitHubLink
-          url={`https://github.com/Debbl/shadcn-hooks/blob/main/${page.absolutePath}`}
+          url={`${websiteConfig.githubUrl}/blob/main/${page.absolutePath}`}
         />
       </div>
       <DocsBody>
