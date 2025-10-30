@@ -15,6 +15,7 @@
     "use-mount",
     "use-unmount",
     "use-update",
+    "use-update-effect",
     "use-is-hydrated",
     "use-debounce-fn",
     "use-effect-event",

@@ -1,0 +1,36 @@
+---
+title: useUpdateEffect
+description: A hook to run an effect only when the component updates
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-update-effect' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-unmount' />
+    <br />
+    <RegistrySourceCode value='use-update-effect' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to run an effect only when the component updates
+ * @param effect - The effect to run
+ * @param deps - The dependencies to run the effect on
+ */
+export function useUpdateEffect(
+  effect: EffectCallback,
+  deps: DependencyList,
+): void
+```
+
+## Credits
+
+- [use-update-effect](https://ahooks.js.org/hooks/use-update-effect)
