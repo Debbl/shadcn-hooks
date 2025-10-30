@@ -47,6 +47,7 @@
     "precache",
     "serwist",
     "shadcn",
+    "tinyexec",
     "turbopack"
   ]
 }
