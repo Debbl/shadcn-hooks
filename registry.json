@@ -272,6 +272,7 @@
       "name": "use-debounce-fn",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to debounce a function",
+      "dependencies": ["es-toolkit"],
       "registryDependencies": ["@hooks/use-unmount"],
       "files": [
         {
@@ -294,6 +295,20 @@
         {
           "target": "hooks/use-debounce-effect.ts",
           "path": "src/registry/hooks/use-debounce-effect/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-debounce",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to debounce a value",
+      "registryDependencies": ["@hooks/use-debounce-fn"],
+      "files": [
+        {
+          "target": "hooks/use-debounce.ts",
+          "path": "src/registry/hooks/use-debounce/index.ts",
           "type": "registry:hook"
         }
       ]
