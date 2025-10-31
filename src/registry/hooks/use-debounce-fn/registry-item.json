@@ -1,3 +1,4 @@
 {
+  "dependencies": ["es-toolkit"],
   "registryDependencies": ["@hooks/use-unmount"]
 }
