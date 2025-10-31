@@ -4,6 +4,7 @@
     "use-counter",
     "use-toggle",
     "use-boolean",
+    "use-debounce",
 
     "---Advanced---",
     "use-latest",
