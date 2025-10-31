@@ -67,7 +67,7 @@ describe('useDebounceEffect', () => {
   it('supports leading and trailing edges: runs twice', () => {
     const effect = vi.fn()
 
-    renderHook(
+    const { rerender } = renderHook(
       ({ dep }) =>
         useDebounceEffect(effect, [dep], DEBOUNCE_MS, {
           edges: ['leading', 'trailing'],
@@ -79,6 +79,7 @@ describe('useDebounceEffect', () => {
     expect(effect).toHaveBeenCalledTimes(1)
 
     act(() => {
+      rerender({ dep: 1 })
       vi.advanceTimersByTime(DEBOUNCE_MS + 10)
     })
 
@@ -97,7 +98,8 @@ describe('useDebounceEffect', () => {
 
     // first cycle executes after debounce
     act(() => {
-      vi.advanceTimersByTime(DEBOUNCE_MS)
+      rerender({ dep: 1 })
+      vi.advanceTimersByTime(DEBOUNCE_MS + 10)
     })
     expect(effect).toHaveBeenCalledTimes(1)
     expect(cleanup).not.toHaveBeenCalled()

@@ -61,6 +61,7 @@
       "name": "use-unmount",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to run a function when the component unmounts",
+      "registryDependencies": ["@hooks/use-latest"],
       "files": [
         {
           "target": "hooks/use-unmount.ts",
@@ -150,6 +151,7 @@
       "name": "use-latest",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",
+      "registryDependencies": ["@hooks/use-isomorphic-layout-effect"],
       "files": [
         {
           "target": "hooks/use-latest.ts",
@@ -163,6 +165,7 @@
       "name": "use-isomorphic-layout-effect",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to use layout effect on the client side",
+      "registryDependencies": ["@hooks/is-browser"],
       "files": [
         {
           "target": "hooks/use-isomorphic-layout-effect.ts",
@@ -189,6 +192,7 @@
       "name": "use-is-match-media",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to check if the media query matches",
+      "registryDependencies": ["@hooks/use-isomorphic-layout-effect"],
       "files": [
         {
           "target": "hooks/use-is-match-media.ts",
@@ -254,6 +258,7 @@
       "name": "use-deep-compare-effect",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to use a deep compare effect",
+      "registryDependencies": ["@hooks/use-isomorphic-layout-effect"],
       "files": [
         {
           "target": "hooks/use-deep-compare-effect.ts",
@@ -324,6 +329,7 @@
       "name": "use-boolean",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to toggle a boolean value",
+      "registryDependencies": ["@hooks/use-toggle"],
       "files": [
         {
           "target": "hooks/use-boolean.ts",
