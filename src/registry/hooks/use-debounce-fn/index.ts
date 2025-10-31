@@ -1,5 +1,6 @@
 import { debounce } from 'es-toolkit'
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
+import { useLatest } from '@/registry/hooks/use-latest'
 import { useUnmount } from '@/registry/hooks/use-unmount'
 
 interface DebounceOptions {
@@ -22,7 +23,7 @@ export function useDebounceFn<Fn extends (...args: any[]) => any>(
   debounceMs?: number,
   options?: DebounceOptions,
 ) {
-  const fnRef = useRef(fn)
+  const fnRef = useLatest(fn)
 
   const debouncedFn = useMemo(
     () =>

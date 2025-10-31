@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDebounceFn } from '@/registry/hooks/use-debounce-fn'
 
 interface DebounceOptions {
@@ -22,15 +22,10 @@ export function useDebounce<T>(
   options?: DebounceOptions,
 ) {
   const [debouncedValue, setDebouncedValue] = useState<T>(value)
-  const valueRef = useRef(value)
-
-  useEffect(() => {
-    valueRef.current = value
-  }, [value])
 
   const { run } = useDebounceFn(
     () => {
-      setDebouncedValue(valueRef.current)
+      setDebouncedValue(value)
     },
     debounceMs,
     options,
