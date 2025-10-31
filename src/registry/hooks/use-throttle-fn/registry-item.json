@@ -1,0 +1,4 @@
+{
+  "dependencies": ["es-toolkit"],
+  "registryDependencies": ["@hooks/use-latest", "@hooks/use-unmount"]
+}
