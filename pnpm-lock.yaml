@@ -219,30 +219,15 @@ importers:
 
   packages/shadcn-hooks:
     devDependencies:
-      '@debbl/eslint-config':
-        specifier: ^3.13.0
-        version: 3.13.0(@types/eslint@9.6.1)(@typescript-eslint/utils@8.46.1(eslint@9.39.0(jiti@2.6.1))(typescript@5.9.3))(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.6.1)))(eslint-import-resolver-node@0.3.9)(eslint@9.39.0(jiti@2.6.1))(tailwindcss@4.1.16)(typescript@5.9.3)(vitest@4.0.6(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.10.2(@types/node@24.10.0)(typescript@5.9.3))(terser@5.43.1)(tsx@4.20.6)(yaml@2.8.1))
       '@types/node':
         specifier: ^24.9.1
         version: 24.10.0
       bumpp:
         specifier: ^10.3.1
         version: 10.3.1
-      eslint:
-        specifier: ^9.38.0
-        version: 9.39.0(jiti@2.6.1)
-      lint-staged:
-        specifier: ^16.2.5
-        version: 16.2.6
-      simple-git-hooks:
-        specifier: ^2.13.1
-        version: 2.13.1
       tsdown:
         specifier: ^0.15.9
         version: 0.15.12(typescript@5.9.3)
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
       vitest:
         specifier: ^4.0.0
         version: 4.0.6(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(lightningcss@1.30.2)(msw@2.10.2(@types/node@24.10.0)(typescript@5.9.3))(terser@5.43.1)(tsx@4.20.6)(yaml@2.8.1)
