@@ -1,8 +1,8 @@
 import { RootProvider } from 'fumadocs-ui/provider/next'
+import { domMax, LazyMotion } from 'motion/react'
 import { ThemeProvider } from 'next-themes'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import SearchDialog from '~/components/search'
-import { domMax, LazyMotion } from '~/lib/motion'
 
 export interface ProvidersProps {
   children: React.ReactNode
