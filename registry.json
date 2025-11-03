@@ -85,6 +85,21 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-throttle-fn",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to throttle a function",
+      "dependencies": ["es-toolkit"],
+      "registryDependencies": ["@hooks/use-latest", "@hooks/use-unmount"],
+      "files": [
+        {
+          "target": "hooks/use-throttle-fn.ts",
+          "path": "src/registry/hooks/use-throttle-fn/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-swr",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to get the latest value of a variable",
@@ -273,7 +288,7 @@
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to debounce a function",
       "dependencies": ["es-toolkit"],
-      "registryDependencies": ["@hooks/use-unmount"],
+      "registryDependencies": ["@hooks/use-latest", "@hooks/use-unmount"],
       "files": [
         {
           "target": "hooks/use-debounce-fn.ts",

@@ -1,0 +1,54 @@
+{
+  "name": "shadcn-hooks",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.20.0",
+  "description": "starter-ts",
+  "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
+  "license": "MIT",
+  "homepage": "https://github.com/Debbl/starter-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Debbl/starter-ts.git"
+  },
+  "bugs": "https://github.com/Debbl/starter-ts/issues",
+  "keywords": [],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "node ./src/index.ts",
+    "build": "tsdown",
+    "test": "vitest",
+    "release": "pnpm build && bumpp && pnpm publish",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@debbl/eslint-config": "^3.13.0",
+    "@types/node": "^24.9.1",
+    "bumpp": "^10.3.1",
+    "eslint": "^9.38.0",
+    "lint-staged": "^16.2.5",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.15.9",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
