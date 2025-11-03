@@ -3,7 +3,9 @@ import path from 'node:path'
 import consola from 'consola'
 import { globSync } from 'glob'
 import matter from 'gray-matter'
-import type { RegistryItem } from 'shadcn/registry'
+import type { getRegistryItems as getRegistryItemsShadcn } from 'shadcn/registry'
+
+type RegistryItem = Awaited<ReturnType<typeof getRegistryItemsShadcn>>[number]
 
 // eslint-disable-next-line n/prefer-global/process
 const CWD = process.cwd()

@@ -18,7 +18,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return {
         url: websiteConfig.baseUrl + page.url,
         changeFrequency: 'weekly',
-        lastModified: new Date(page.data.lastModified ?? new Date()),
+        lastModified: page.data.lastModified
+          ? new Date(page.data.lastModified)
+          : new Date(),
         priority: 0.5,
       } satisfies MetadataRoute.Sitemap[number]
     }),
