@@ -100,6 +100,23 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-throttle-effect",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to throttle an effect",
+      "registryDependencies": [
+        "@hooks/use-throttle-fn",
+        "@hooks/use-update-effect"
+      ],
+      "files": [
+        {
+          "target": "hooks/use-throttle-effect.ts",
+          "path": "src/registry/hooks/use-throttle-effect/index.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "type": "registry:hook",
       "name": "use-throttle",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "A hook to throttle a value",

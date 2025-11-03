@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
 'use client'
 import { useState } from 'react'
 import { useThrottleEffect } from '../index'
