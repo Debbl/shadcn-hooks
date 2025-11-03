@@ -22,6 +22,7 @@
     "use-debounce-effect",
     "use-throttle",
     "use-throttle-fn",
+    "use-throttle-effect",
     "use-effect-event",
     "use-isomorphic-layout-effect",
     "use-deep-compare-effect",
