@@ -1,6 +1,7 @@
 import bundleAnalyzer from '@next/bundle-analyzer'
 import withSerwistInit from '@serwist/next'
 import { createMDX } from 'fumadocs-mdx/next'
+import AutoImport from 'unplugin-auto-import/webpack'
 import type { NextConfig } from 'next'
 
 const withMDX = createMDX()
@@ -19,6 +20,28 @@ const withSerwist = withSerwistInit({
 const nextConfig: NextConfig = {
   output: 'export',
   reactCompiler: true,
+  webpack: (config) => {
+    config.plugins.push(
+      AutoImport({
+        include: [
+          /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        ],
+        imports: [
+          'react',
+          {
+            twl: ['cn'],
+          },
+          {
+            from: 'motion/react-m',
+            imports: [['*', 'motion']],
+          },
+        ],
+        dts: true,
+      }),
+    )
+
+    return config
+  },
 }
 
 export default [withBundleAnalyzer, withSerwist, withMDX].reduce(

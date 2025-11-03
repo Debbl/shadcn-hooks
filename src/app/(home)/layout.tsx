@@ -14,6 +14,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           text: 'Docs',
           url: '/docs/introduction',
         },
+        {
+          type: 'main',
+          on: 'nav',
+          text: 'Hooks',
+          url: '/docs/hooks/use-counter',
+        },
       ]}
     >
       {children}
