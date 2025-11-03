@@ -1,0 +1,58 @@
+---
+title: useThrottle
+description: A hook to throttle a value
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-throttle' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-throttle-fn' />
+    <br />
+    <RegistrySourceCode value='use-throttle' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+interface ThrottleOptions {
+  /**
+   * An optional AbortSignal to cancel the throttled function.
+   */
+  signal?: AbortSignal
+  /**
+   * An optional array specifying whether the function should be invoked on the leading edge, trailing edge, or both.
+   * If `edges` includes "leading", the function will be invoked at the start of the delay period.
+   * If `edges` includes "trailing", the function will be invoked at the end of the delay period.
+   * If both "leading" and "trailing" are included, the function will be invoked at both the start and end of the delay period.
+   * @default ["leading", "trailing"]
+   */
+  edges?: Array<'leading' | 'trailing'>
+}
+
+/**
+ * A hook to throttle a value
+ * @param value - The value to throttle
+ * @param throttleMs - The throttle time in milliseconds default to 1000
+ * @param options - The options for the throttle value
+ * @returns The throttled value
+ */
+function useThrottle<T>(
+  value: T,
+  throttleMs?: number,
+  options?: ThrottleOptions,
+): T
+```
+
+## Credits
+
+- [use-throttle](https://ahooks.js.org/hooks/use-throttle)
