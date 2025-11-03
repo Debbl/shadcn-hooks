@@ -20,6 +20,7 @@
     "use-is-hydrated",
     "use-debounce-fn",
     "use-debounce-effect",
+    "use-throttle",
     "use-throttle-fn",
     "use-effect-event",
     "use-isomorphic-layout-effect",
