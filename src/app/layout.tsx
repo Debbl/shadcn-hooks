@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: 'A comprehensive React Hooks Collection built with Shadcn',
   authors: [{ name: 'Brendan Dash', url: 'https://aiwan.run' }],
   keywords: ['react', 'hooks', 'shadcn', 'ui', 'components'],
+  alternates: {
+    canonical: websiteConfig.baseUrl,
+  },
   appleWebApp: {
     title: 'Shadcn Hooks',
   },
