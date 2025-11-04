@@ -25,7 +25,7 @@ export default function Page() {
           </Link>
         </Button>
         <Button asChild variant='outline'>
-          <Link href='/docs/hooks/use-counter'>Browse Hooks</Link>
+          <Link href='/docs/hooks/use-boolean'>Browse Hooks</Link>
         </Button>
       </div>
 

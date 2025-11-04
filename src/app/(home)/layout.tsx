@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           type: 'main',
           on: 'nav',
           text: 'Hooks',
-          url: '/docs/hooks/use-counter',
+          url: '/docs/hooks/use-boolean',
         },
       ]}
     >
