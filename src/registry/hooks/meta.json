@@ -28,9 +28,10 @@
     "use-deep-compare-effect",
     "use-deep-compare-layout-effect",
 
-    "---Browser APIs---",
+    "---Browser---",
     "use-hash",
     "use-is-online",
+    "use-event-listener",
     "use-is-match-media",
 
     "---External---",
