@@ -36,7 +36,8 @@
     "---External---",
     "use-swr",
     "use-query",
-    "use-mcp"
+    "use-mcp",
+    "use-stick-to-bottom"
   ],
   "root": true
 }
