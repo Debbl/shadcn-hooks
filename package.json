@@ -76,7 +76,7 @@
     "@vitejs/plugin-react": "^5.1.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "consola": "^3.4.2",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "fumadocs-typescript": "^4.0.12",
     "glob": "^11.0.3",
     "gray-matter": "^4.0.3",

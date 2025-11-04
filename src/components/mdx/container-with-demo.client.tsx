@@ -1,20 +1,16 @@
 'use client'
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock'
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
-import { SmartphoneIcon, SquareArrowOutUpRightIcon } from 'lucide-react'
+import { SquareArrowOutUpRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { parseAsString, useQueryState } from 'nuqs'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { cn } from '~/lib/utils'
 import { useIsHydrated } from '~/registry/hooks/use-is-hydrated'
-import { Button, buttonVariants } from '../ui/button'
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from '../ui/resizable'
+import { buttonVariants } from '../ui/button'
+import { ResizablePanel, ResizablePanelGroup } from '../ui/resizable'
 import type { ImperativePanelHandle } from 'react-resizable-panels'
 
 export interface ContainerWithDemoProps {
@@ -28,21 +24,8 @@ export function ContainerWithDemoClient({
   children,
   code = '',
 }: ContainerWithDemoProps) {
-  const [phoneView, setPhoneView] = useState(false)
   const viewPanelRef = useRef<ImperativePanelHandle>(null)
   const [view] = useQueryState('view', parseAsString)
-
-  const showPhoneView = () => {
-    const size = viewPanelRef.current?.getSize()
-    const newPhoneView = !phoneView
-    if (viewPanelRef.current && size) {
-      newPhoneView
-        ? viewPanelRef.current.resize(50)
-        : viewPanelRef.current.resize(100)
-    }
-
-    setPhoneView(newPhoneView)
-  }
 
   const pathname = usePathname()
   const isHydrated = useIsHydrated()
@@ -79,7 +62,7 @@ export function ContainerWithDemoClient({
             >
               {children}
             </ResizablePanel>
-            <ResizableHandle withHandle className='bg-transparent' />
+            {/* <ResizableHandle withHandle className='bg-transparent' /> */}
             <ResizablePanel />
           </ResizablePanelGroup>
         </Tab>
@@ -88,13 +71,6 @@ export function ContainerWithDemoClient({
         </Tab>
       </Tabs>
       <div className='absolute top-1 right-1 flex items-center gap-1'>
-        <Button
-          variant={phoneView ? 'secondary' : 'ghost'}
-          size='sm'
-          onClick={showPhoneView}
-        >
-          <SmartphoneIcon />
-        </Button>
         <Link
           className={cn(
             buttonVariants({
