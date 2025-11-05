@@ -11,10 +11,16 @@ function usePrevious<T>(
   const prevRef = useRef<T>(undefined)
   const curRef = useRef<T>(undefined)
 
-  if (shouldUpdate(curRef.current, state)) {
-    prevRef.current = curRef.current
-    curRef.current = state
+  // Capture the previous value before any updates
+  const previous = curRef.current
+
+  // Only update prevRef conditionally based on shouldUpdate
+  if (shouldUpdate(previous, state)) {
+    prevRef.current = previous
   }
+
+  // Always update curRef with the latest state to maintain correct baseline
+  curRef.current = state
 
   return prevRef.current
 }
