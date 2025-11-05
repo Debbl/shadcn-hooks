@@ -102,13 +102,13 @@ describe('usePrevious', () => {
     rerender({ value: 8 }) // Difference is 3, should not update
     expect(result.current).toBeUndefined()
 
-    rerender({ value: 20 }) // Difference is 12, should update
+    rerender({ value: 20 }) // Difference is 15, should update
     expect(result.current).toBe(5)
 
     rerender({ value: 25 }) // Difference is 5, should not update
     expect(result.current).toBe(5)
 
-    rerender({ value: 40 }) // Difference is 15, should update
+    rerender({ value: 40 }) // Difference is 20, should update
     expect(result.current).toBe(20)
   })
 
