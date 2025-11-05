@@ -1,0 +1,42 @@
+---
+title: usePrevious
+description: A hook to get the previous value of a variable
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-previous' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-previous' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export type ShouldUpdateFunc<T> = (prev?: T, next?: T) => boolean
+
+const defaultShouldUpdate = <T>(a?: T, b?: T) => !Object.is(a, b)
+/**
+ * A hook to get the previous value of a state
+ * @param state - The state to get the previous value of
+ * @param shouldUpdate - The function to determine if the state should be updated
+ * @returns The previous value of the state
+ */
+export function usePrevious<T>(
+  state: T,
+  shouldUpdate?: ShouldUpdateFunc<T>,
+): T | undefined
+```
+
+## Credits
+
+- [use-previous](https://ahooks.js.org/hooks/use-previous)
