@@ -139,11 +139,32 @@
     },
     {
       "type": "registry:hook",
+      "name": "use-stick-to-bottom",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A lightweight React Hook intended mainly for AI chat applications, for smoothly sticking to bottom of messages",
+      "dependencies": ["use-stick-to-bottom"],
+      "files": []
+    },
+    {
+      "type": "registry:hook",
       "name": "use-query",
       "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
       "description": "useQuery is a hook that allows you to fetch data from an API and cache the results.",
       "dependencies": ["@tanstack/react-query"],
       "files": []
+    },
+    {
+      "type": "registry:hook",
+      "name": "use-previous",
+      "author": "Brendan Dash (https://shadcn-hooks.vercel.app)",
+      "description": "A hook to get the previous value of a variable",
+      "files": [
+        {
+          "target": "hooks/use-previous.ts",
+          "path": "src/registry/hooks/use-previous/index.ts",
+          "type": "registry:hook"
+        }
+      ]
     },
     {
       "type": "registry:hook",

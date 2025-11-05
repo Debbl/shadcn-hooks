@@ -10,6 +10,7 @@
     "---Advanced---",
     "use-custom-compare-effect",
     "use-latest",
+    "use-previous",
     "use-lock-fn",
     "use-memoized-fn",
 
