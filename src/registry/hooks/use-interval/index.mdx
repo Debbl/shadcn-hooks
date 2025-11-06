@@ -1,0 +1,45 @@
+---
+title: useInterval
+description: A hook that creates an interval.
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-interval' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-memoized-fn' />
+    <br />
+    <RegistrySourceCode value='use-interval' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook that creates an interval.
+ * @param fn - The function to execute repeatedly
+ * @param delay - The delay in milliseconds between each execution. Set to null to pause the interval
+ * @param options - The options for the interval
+ * @param options.immediate - Whether to execute the function immediately
+ * @default { immediate: false } if not provided
+ * @returns A function to clear the interval
+ */
+export function useInterval(
+  fn: () => void,
+  delay: number | null = null,
+  options?: { immediate?: boolean },
+): () => void
+```
+
+## Credits
+
+- [use-interval](https://ahooks.js.org/hooks/use-interval)
