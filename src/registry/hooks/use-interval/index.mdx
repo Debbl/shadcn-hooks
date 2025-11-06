@@ -28,11 +28,15 @@ import { Demo01 } from './demo/demo-01'
  * A hook that creates an interval.
  * @param fn - The function to execute repeatedly
  * @param delay - The delay in milliseconds between each execution. Set to null to pause the interval
+ * @param options - The options for the interval
+ * @param options.immediate - Whether to execute the function immediately
+ * @default { immediate: false } if not provided
  * @returns A function to clear the interval
  */
 export function useInterval(
   fn: () => void,
   delay: number | null = null,
+  options?: { immediate?: boolean },
 ): () => void
 ```
 
