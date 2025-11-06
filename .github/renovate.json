@@ -1,5 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>Debbl/renovate-config"],
-  "automerge": true
+  "extends": ["github>Debbl/renovate-config"]
 }
