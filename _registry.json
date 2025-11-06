@@ -1,0 +1,5 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcn-hooks",
+  "homepage": "https://shadcn-hooks.vercel.app"
+}
