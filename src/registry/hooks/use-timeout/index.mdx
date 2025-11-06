@@ -1,0 +1,38 @@
+---
+title: useTimeout
+description: A hook that creates a timeout.
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-timeout' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-memoized-fn' />
+    <br />
+    <RegistrySourceCode value='use-timeout' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook that creates a timeout.
+ * @param fn - The function to execute after the timeout
+ * @param delay - The delay in milliseconds before the function is executed
+ * @returns A function to clear the timeout
+ */
+export function useTimeout(fn: () => void, delay: number = 0): () => void
+```
+
+## Credits
+
+- [use-timeout](https://ahooks.js.org/hooks/use-timeout)
