@@ -23,6 +23,7 @@
     "use-is-hydrated",
     "use-isomorphic-layout-effect",
     "use-mount",
+    "use-timeout",
     "use-throttle-effect",
     "use-throttle-fn",
     "use-unmount",
