@@ -25,7 +25,11 @@ describe('useEventListener', () => {
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'resize',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
       expect(handler).not.toHaveBeenCalled()
 
@@ -34,7 +38,9 @@ describe('useEventListener', () => {
       expect(removeEventListenerSpy).toHaveBeenCalledWith(
         'resize',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+        },
       )
     })
 
@@ -84,7 +90,7 @@ describe('useEventListener', () => {
       const options = { capture: true, once: true }
 
       renderHook(() => {
-        useEventListener('resize', handler, undefined, options)
+        useEventListener('resize', handler, options)
       })
 
       expect(addEventListenerSpy).toHaveBeenCalledWith(
@@ -106,13 +112,17 @@ describe('useEventListener', () => {
       const removeEventListenerSpy = vi.spyOn(element, 'removeEventListener')
 
       const { unmount } = renderHook(() => {
-        useEventListener('click', handler, elementRef as any)
+        useEventListener('click', handler, { target: elementRef })
       })
 
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'click',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
 
       unmount()
@@ -120,7 +130,11 @@ describe('useEventListener', () => {
       expect(removeEventListenerSpy).toHaveBeenCalledWith(
         'click',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
     })
 
@@ -131,7 +145,7 @@ describe('useEventListener', () => {
       elementRef.current = element
 
       renderHook(() => {
-        useEventListener('click', handler, elementRef as any)
+        useEventListener('click', handler, { target: elementRef })
       })
 
       const clickEvent = new MouseEvent('click', { bubbles: true })
@@ -145,7 +159,7 @@ describe('useEventListener', () => {
       const elementRef = createRef<HTMLDivElement>()
 
       renderHook(() => {
-        useEventListener('click', handler, elementRef as any)
+        useEventListener('click', handler, { target: elementRef })
       })
 
       // Should not throw and should not attach listener
@@ -167,7 +181,7 @@ describe('useEventListener', () => {
 
       const { rerender } = renderHook(
         ({ elementRef }) => {
-          useEventListener('click', handler, elementRef as any)
+          useEventListener('click', handler, { target: elementRef })
         },
         {
           initialProps: { elementRef: elementRef1 },
@@ -189,16 +203,16 @@ describe('useEventListener', () => {
       elementRef.current = element
 
       const addEventListenerSpy = vi.spyOn(element, 'addEventListener')
-      const options = { capture: true }
+      const options = { target: elementRef, capture: true }
 
       renderHook(() => {
-        useEventListener('click', handler, elementRef as any, options)
+        useEventListener('click', handler, options)
       })
 
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'click',
         expect.any(Function),
-        options,
+        { capture: true },
       )
     })
   })
@@ -213,13 +227,17 @@ describe('useEventListener', () => {
       const removeEventListenerSpy = vi.spyOn(document, 'removeEventListener')
 
       const { unmount } = renderHook(() => {
-        useEventListener('click', handler, documentRef as any)
+        useEventListener('click', handler, { target: documentRef })
       })
 
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'click',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
 
       unmount()
@@ -227,7 +245,11 @@ describe('useEventListener', () => {
       expect(removeEventListenerSpy).toHaveBeenCalledWith(
         'click',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
     })
 
@@ -237,7 +259,7 @@ describe('useEventListener', () => {
       documentRef.current = document
 
       renderHook(() => {
-        useEventListener('click', handler, documentRef as any)
+        useEventListener('click', handler, { target: documentRef })
       })
 
       const clickEvent = new MouseEvent('click', { bubbles: true })
@@ -261,11 +283,9 @@ describe('useEventListener', () => {
 
       unmount()
 
-      expect(removeEventListenerSpy).toHaveBeenCalledWith(
-        'resize',
-        listener,
-        undefined,
-      )
+      expect(removeEventListenerSpy).toHaveBeenCalledWith('resize', listener, {
+        capture: undefined,
+      })
     })
 
     it('should update listener when event name changes', () => {
@@ -285,7 +305,11 @@ describe('useEventListener', () => {
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'resize',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
 
       rerender({ eventName: 'scroll' })
@@ -293,12 +317,18 @@ describe('useEventListener', () => {
       expect(removeEventListenerSpy).toHaveBeenCalledWith(
         'resize',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+        },
       )
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'scroll',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
     })
 
@@ -309,7 +339,7 @@ describe('useEventListener', () => {
 
       const { rerender } = renderHook(
         ({ options }) => {
-          useEventListener('resize', handler, undefined, options)
+          useEventListener('resize', handler, options)
         },
         {
           initialProps: { options: { capture: false } },
@@ -346,7 +376,7 @@ describe('useEventListener', () => {
 
       expect(() => {
         renderHook(() => {
-          useEventListener('click', handler, elementRef as any)
+          useEventListener('click', handler, { target: elementRef })
         })
       }).not.toThrow()
     })
@@ -364,12 +394,20 @@ describe('useEventListener', () => {
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'resize',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'scroll',
         expect.any(Function),
-        undefined,
+        {
+          capture: undefined,
+          once: undefined,
+          passive: undefined,
+        },
       )
     })
 
@@ -378,13 +416,13 @@ describe('useEventListener', () => {
       const addEventListenerSpy = vi.spyOn(window, 'addEventListener')
 
       renderHook(() => {
-        useEventListener('resize', handler, undefined, true)
+        useEventListener('resize', handler, { capture: true })
       })
 
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'resize',
         expect.any(Function),
-        true,
+        { capture: true },
       )
     })
   })

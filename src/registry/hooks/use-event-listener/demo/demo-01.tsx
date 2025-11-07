@@ -32,7 +32,9 @@ export function Demo01() {
     () => {
       setClickCount((prev) => prev + 1)
     },
-    buttonRef as any,
+    {
+      target: buttonRef,
+    },
   )
 
   // Keyboard event
