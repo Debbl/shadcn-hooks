@@ -1,0 +1,77 @@
+---
+title: useEventListener
+description: A hook to attach event listeners to DOM elements, the window, or media query lists.
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-event-listener' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-latest' />
+    <br />
+    <RegistrySourceCode value='create-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-event-listener' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+type noop = (...p: any) => void
+
+export type Target = BasicTarget<HTMLElement | Element | Window | Document>
+
+interface Options<T extends Target = Target> {
+  target?: T
+  capture?: boolean
+  once?: boolean
+  passive?: boolean
+  enable?: boolean
+}
+
+function useEventListener<K extends keyof HTMLElementEventMap>(
+  eventName: K,
+  handler: (ev: HTMLElementEventMap[K]) => void,
+  options?: Options<HTMLElement>,
+): void
+function useEventListener<K extends keyof ElementEventMap>(
+  eventName: K,
+  handler: (ev: ElementEventMap[K]) => void,
+  options?: Options<Element>,
+): void
+function useEventListener<K extends keyof DocumentEventMap>(
+  eventName: K,
+  handler: (ev: DocumentEventMap[K]) => void,
+  options?: Options<Document>,
+): void
+function useEventListener<K extends keyof WindowEventMap>(
+  eventName: K,
+  handler: (ev: WindowEventMap[K]) => void,
+  options?: Options<Window>,
+): void
+function useEventListener(
+  eventName: string | string[],
+  handler: (event: Event) => void,
+  options?: Options<Window>,
+): void
+function useEventListener(
+  eventName: string | string[],
+  handler: noop,
+  options: Options,
+): void
+
+export { useEventListener }
+```
+
+## Credits
+
+- [use-event-listener](https://ahooks.js.org/hooks/use-event-listener)

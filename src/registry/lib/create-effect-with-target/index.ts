@@ -43,9 +43,9 @@ export function getTargetElement<T extends TargetType>(
   return targetElement
 }
 
-const createEffectWithTarget = (
+export function createEffectWithTarget(
   useEffectType: typeof useEffect | typeof useLayoutEffect,
-) => {
+) {
   /**
    *
    * @param effect
@@ -100,5 +100,3 @@ const createEffectWithTarget = (
 
   return useEffectWithTarget
 }
-
-export default createEffectWithTarget
