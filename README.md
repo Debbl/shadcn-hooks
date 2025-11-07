@@ -31,7 +31,7 @@
 Each hook can be installed individually using the shadcn CLI:
 
 ```bash
-npx shadcn@latest add "https://shadcn-hooks.vercel.app/r/use-counter.json"
+npx shadcn@latest add @hooks/use-counter
 ```
 
 Or manually copy the source code from the [use-counter](https://shadcn-hooks.vercel.app/docs/hooks/use-counter).
@@ -52,6 +52,18 @@ function Counter() {
       <button onClick={reset}>Reset</button>
     </div>
   )
+}
+```
+
+## 📦 Registry
+
+> components.json
+
+```json
+{
+  "registries": {
+    "@hooks": "https://shadcn-hooks.vercel.app/r/{name}.json"
+  }
 }
 ```
 

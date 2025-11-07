@@ -80,7 +80,7 @@ async function getRegistryItems() {
   consola.success(`registry: done ${count} items`)
 
   const registry = JSON.parse(
-    readFileSync(path.join(CWD, 'registry.json'), 'utf-8'),
+    readFileSync(path.join(CWD, '_registry.json'), 'utf-8'),
   )
   registry.items = registryItems
 
