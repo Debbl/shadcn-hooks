@@ -1,0 +1,43 @@
+---
+title: useHover
+description: A hook to check if the mouse is hovering over an element
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-boolean' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-event-listener' />
+    <br />
+    <RegistrySourceCode value='use-boolean' />
+    <br />
+    <RegistrySourceCode value='use-hover' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to check if the mouse is hovering over an element
+ * @param target - The target to check if the mouse is hovering over
+ * @param options - The options for the hook
+ * @param options.onEnter - The function to call when the mouse enters the target
+ * @param options.onLeave - The function to call when the mouse leaves the target
+ * @param options.onChange - The function to call when the mouse enters or leaves the target
+ * @returns The boolean value indicating if the mouse is hovering over the target
+ */
+export function useHover(target: BasicTarget, options?: Options): boolean
+```
+
+## Credits
+
+- [use-hover](https://ahooks.js.org/hooks/use-hover)
