@@ -15,18 +15,18 @@ export function Demo01() {
       count,
       createdAt: new Date().toISOString(),
     }),
-    [name, count],
+    [count],
   )
 
   return (
     <div className='space-y-4'>
       <div className='space-y-2'>
         <p className='text-muted-foreground text-sm'>
-          User object ID (changes only when name or count changes):{' '}
-          <span className='text-foreground font-mono text-xs font-medium'>
-            {user.id}
-          </span>
+          <span>User object ID (changes only when count changes): </span>
         </p>
+        <code className='text-foreground font-mono text-xs font-medium'>
+          {JSON.stringify(user)}
+        </code>
         <p className='text-muted-foreground text-sm'>
           Created at:{' '}
           <span className='text-foreground font-mono text-xs font-medium'>
@@ -34,11 +34,10 @@ export function Demo01() {
           </span>
         </p>
         <p className='text-muted-foreground text-sm'>
-          Name: <span className='text-foreground font-medium'>{user.name}</span>
+          Name: <span className='text-foreground font-medium'>{name}</span>
         </p>
         <p className='text-muted-foreground text-sm'>
-          Count:{' '}
-          <span className='text-foreground font-medium'>{user.count}</span>
+          Count: <span className='text-foreground font-medium'>{count}</span>
         </p>
       </div>
 
