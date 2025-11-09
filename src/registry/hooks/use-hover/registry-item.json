@@ -1,0 +1,7 @@
+{
+  "registryDependencies": [
+    "@hooks/create-effect-with-target",
+    "@hooks/use-event-listener",
+    "@hooks/use-boolean"
+  ]
+}

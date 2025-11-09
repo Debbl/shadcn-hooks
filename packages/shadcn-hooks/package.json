@@ -36,7 +36,7 @@
   "devDependencies": {
     "@types/node": "^24.10.0",
     "bumpp": "^10.3.1",
-    "tsdown": "^0.16.0",
-    "vitest": "^4.0.6"
+    "tsdown": "^0.16.1",
+    "vitest": "^4.0.8"
   }
 }

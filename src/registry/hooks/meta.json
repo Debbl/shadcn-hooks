@@ -35,6 +35,7 @@
     "---Browser---",
     "use-event-listener",
     "use-hash",
+    "use-hover",
     "use-is-match-media",
     "use-is-online",
 
