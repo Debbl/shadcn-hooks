@@ -1,0 +1,36 @@
+---
+title: useCreation
+description: A hook to create a value only once
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-creation' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-creation' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to create a value only once
+ * @param factory - The factory function to create the value
+ * @param deps - The dependencies to create the value
+ * @returns The created value
+ */
+export function useCreation<T>(factory: () => T, deps: DependencyList): T
+```
+
+## Credits
+
+- [use-creation](https://ahooks.js.org/hooks/use-creation)

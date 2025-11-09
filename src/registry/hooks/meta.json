@@ -8,6 +8,7 @@
     "use-toggle",
 
     "---Advanced---",
+    "use-creation",
     "use-custom-compare-effect",
     "use-latest",
     "use-lock-fn",
