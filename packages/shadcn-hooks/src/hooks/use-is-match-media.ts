@@ -2,7 +2,10 @@ import { useState } from 'react'
 import { useIsomorphicLayoutEffect } from '~/hooks/use-isomorphic-layout-effect'
 
 export function useIsMatchMedia(mediaQueryString: string) {
-  const [isMatch, setIsMatch] = useState(false)
+  const [isMatch, setIsMatch] = useState(() => {
+    if (typeof window === 'undefined') return false
+    return window.matchMedia(mediaQueryString).matches
+  })
 
   useIsomorphicLayoutEffect(() => {
     const mediaQueryList = window.matchMedia(mediaQueryString)

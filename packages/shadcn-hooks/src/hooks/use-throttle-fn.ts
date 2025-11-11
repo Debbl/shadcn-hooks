@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { useLatest } from '~/hooks/use-latest'
 import { useUnmount } from '~/hooks/use-unmount'
 
-interface ThrottleOptions {
+export interface ThrottleOptions {
   /**
    * An optional AbortSignal to cancel the throttled function.
    */
@@ -25,7 +25,7 @@ export function useThrottleFn<Fn extends (...args: any[]) => any>(
 ) {
   const fnRef = useLatest(fn)
 
-  const debouncedFn = useMemo(
+  const throttledFn = useMemo(
     () =>
       throttle(
         (...args: Parameters<Fn>) => fnRef.current(...args),
@@ -35,11 +35,11 @@ export function useThrottleFn<Fn extends (...args: any[]) => any>(
     [],
   )
 
-  useUnmount(() => debouncedFn.cancel())
+  useUnmount(() => throttledFn.cancel())
 
   return {
-    run: debouncedFn,
-    cancel: debouncedFn.cancel,
-    flush: debouncedFn.flush,
+    run: throttledFn,
+    cancel: throttledFn.cancel,
+    flush: throttledFn.flush,
   }
 }

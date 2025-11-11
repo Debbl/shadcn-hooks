@@ -13,9 +13,9 @@ function subscribe() {
  *
  * Example: Disable a button that needs JS to work.
  * ```tsx
- * let hydrated = useHydrated();
+ * const isHydrated = useIsHydrated();
  * return (
- *   <button type="button" disabled={!hydrated} onClick={doSomethingCustom}>
+ *   <button type="button" disabled={!isHydrated} onClick={doSomethingCustom}>
  *     Click me
  *   </button>
  * );

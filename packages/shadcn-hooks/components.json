@@ -19,6 +19,6 @@
     "hooks": "~/hooks"
   },
   "registries": {
-    "@hooks": "https://shadcn-hooks.vercel.app/r/{name}.json"
+    "@hooks": "http://localhost:3000/r/{name}.json"
   }
 }
