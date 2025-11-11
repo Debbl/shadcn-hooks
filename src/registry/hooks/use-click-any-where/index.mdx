@@ -1,0 +1,36 @@
+---
+title: useClickAnyWhere
+description: A hook to click anywhere
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-click-any-where' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-event-listener' />
+    <br />
+    <RegistrySourceCode value='use-click-any-where' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to click anywhere
+ * @param handler - The handler to call when the user clicks anywhere
+ */
+export function useClickAnyWhere(handler: (event: MouseEvent) => void): void
+```
+
+## Credits
+
+- [use-click-any-where](https://usehooks-ts.com/react-hook/use-click-any-where)

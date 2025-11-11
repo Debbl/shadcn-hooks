@@ -33,6 +33,7 @@
     "use-update-effect",
 
     "---Browser---",
+    "use-click-any-where",
     "use-event-listener",
     "use-hash",
     "use-hover",
