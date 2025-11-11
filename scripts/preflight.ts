@@ -3,9 +3,13 @@ import path from 'node:path'
 import consola from 'consola'
 import { globSync } from 'glob'
 import matter from 'gray-matter'
-import type { getRegistryItems as getRegistryItemsShadcn } from 'shadcn/registry'
+import type {
+  getRegistryItems as getRegistryItemsShadcn,
+  getRegistry as getRegistryShadcn,
+} from 'shadcn/registry'
 
 type RegistryItem = Awaited<ReturnType<typeof getRegistryItemsShadcn>>[number]
+type Registry = Awaited<ReturnType<typeof getRegistryShadcn>>
 
 // eslint-disable-next-line n/prefer-global/process
 const CWD = process.cwd()
@@ -81,7 +85,7 @@ async function getRegistryItems() {
 
   const registry = JSON.parse(
     readFileSync(path.join(CWD, '_registry.json'), 'utf-8'),
-  )
+  ) as Registry
   registry.items = registryItems
 
   writeFileSync(
@@ -90,13 +94,32 @@ async function getRegistryItems() {
   )
 
   // write public/r/registry.json
-  const publicRegistryPath = path.join(CWD, 'public/r')
-  if (!existsSync(publicRegistryPath)) {
-    mkdirSync(publicRegistryPath, { recursive: true })
+  const publicRegistryDir = path.join(CWD, 'public/r')
+  if (!existsSync(publicRegistryDir)) {
+    mkdirSync(publicRegistryDir, { recursive: true })
   }
   writeFileSync(
-    path.join(publicRegistryPath, 'registry.json'),
+    path.join(publicRegistryDir, 'registry.json'),
     `${JSON.stringify(registry, null, 2)}\n`,
+  )
+
+  // write public/r/all.json
+  writeFileSync(
+    path.join(publicRegistryDir, 'all.json'),
+    `${JSON.stringify(
+      {
+        $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+        name: 'all',
+        type: 'registry:file',
+        author: 'Brendan Dash (https://shadcn-hooks.vercel.app)',
+        description: 'All shadcn hooks registry items.',
+        registryDependencies: registry.items.map(
+          (item) => `@hooks/${item.name}`,
+        ),
+      } as RegistryItem,
+      null,
+      2,
+    )}\n`,
   )
 }
 
