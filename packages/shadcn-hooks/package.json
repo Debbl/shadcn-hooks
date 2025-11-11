@@ -12,14 +12,21 @@
     "url": "git+https://github.com/Debbl/shadcn-hooks.git"
   },
   "bugs": "https://github.com/Debbl/shadcn-hooks/issues",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "hooks",
+    "shadcn",
+    "react-use",
+    "ahooks",
+    "react-hooks-ts"
+  ],
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist",
     "src"
@@ -32,6 +39,13 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.7",
+    "es-toolkit": "^1.41.0",
+    "swr": "^2.3.6",
+    "use-mcp": "^0.0.21",
+    "use-stick-to-bottom": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
