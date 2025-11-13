@@ -35,6 +35,7 @@
     "dev": "node ./src/index.ts",
     "build": "tsdown",
     "test": "vitest",
+    "sync": "pnpm dlx shadcn@latest add @hooks/all --overwrite",
     "release": "pnpm build && bumpp && pnpm publish",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
