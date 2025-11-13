@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useThrottleFn } from '@/registry/hooks/use-throttle-fn'
-import type { ThrottleOptions } from '@/registry/hooks/use-throttle-fn'
+import { useThrottleFn } from '~/hooks/use-throttle-fn'
+import type { ThrottleOptions } from '~/hooks/use-throttle-fn'
 
 export function useThrottle<T>(
   value: T,

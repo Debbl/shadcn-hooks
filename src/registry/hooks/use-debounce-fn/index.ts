@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { useLatest } from '@/registry/hooks/use-latest'
 import { useUnmount } from '@/registry/hooks/use-unmount'
 
-interface DebounceOptions {
+export interface DebounceOptions {
   /**
    * An optional AbortSignal to cancel the debounced function.
    */

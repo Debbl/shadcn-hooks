@@ -1,7 +1,7 @@
 import { throttle } from 'es-toolkit'
 import { useMemo } from 'react'
-import { useLatest } from '@/registry/hooks/use-latest'
-import { useUnmount } from '@/registry/hooks/use-unmount'
+import { useLatest } from '~/hooks/use-latest'
+import { useUnmount } from '~/hooks/use-unmount'
 
 export interface ThrottleOptions {
   /**

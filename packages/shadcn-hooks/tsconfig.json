@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["ESNext"],
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",

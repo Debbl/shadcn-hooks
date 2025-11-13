@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useDebounceFn } from '@/registry/hooks/use-debounce-fn'
-import type { DebounceOptions } from '@/registry/hooks/use-debounce-fn'
+import { useDebounceFn } from '~/hooks/use-debounce-fn'
+import type { DebounceOptions } from '~/hooks/use-debounce-fn'
 
 export function useDebounce<T>(
   value: T,

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useIsomorphicLayoutEffect } from '@/registry/hooks/use-isomorphic-layout-effect'
+import { useIsomorphicLayoutEffect } from '~/hooks/use-isomorphic-layout-effect'
 
 export function useIsMatchMedia(mediaQueryString: string) {
   const [isMatch, setIsMatch] = useState(() => {

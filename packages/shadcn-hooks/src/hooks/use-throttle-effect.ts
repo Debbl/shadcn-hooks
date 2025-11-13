@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react'
-import { useDebounceFn } from '@/registry/hooks/use-debounce-fn'
-import { useUpdateEffect } from '@/registry/hooks/use-update-effect'
+import { useThrottleFn } from '~/hooks/use-throttle-fn'
+import { useUpdateEffect } from '~/hooks/use-update-effect'
 import type { DependencyList, EffectCallback } from 'react'
-import type { DebounceOptions } from '@/registry/hooks/use-debounce-fn'
+import type { ThrottleOptions } from '~/hooks/use-throttle-fn'
 
-export function useDebounceEffect(
+export function useThrottleEffect(
   effect: EffectCallback,
   deps: DependencyList,
-  debounceMs?: number,
-  options?: DebounceOptions,
+  throttleMs?: number,
+  options?: ThrottleOptions,
 ) {
   const [flag, setFlag] = useState({})
-  const { run } = useDebounceFn(
+  const { run } = useThrottleFn(
     () => {
       setFlag({})
     },
-    debounceMs,
+    throttleMs,
     options,
   )
 
