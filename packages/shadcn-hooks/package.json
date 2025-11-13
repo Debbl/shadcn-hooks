@@ -36,7 +36,6 @@
     "build": "tsdown",
     "test": "vitest",
     "sync": "pnpm dlx shadcn@latest add @hooks/all --overwrite",
-    "release": "pnpm build && bumpp && pnpm publish",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -50,7 +49,6 @@
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
-    "bumpp": "^10.3.1",
     "tsdown": "^0.16.1",
     "vitest": "^4.0.8"
   }

@@ -1,2 +1,10 @@
 packages:
   - 'packages/*'
+
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - 'esbuild'
+  - 'msw'
+  - 'sharp'
+  - 'simple-git-hooks'
+  - 'unrs-resolver'

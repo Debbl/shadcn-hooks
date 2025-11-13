@@ -147,6 +147,9 @@ importers:
       babel-plugin-react-compiler:
         specifier: ^1.0.0
         version: 1.0.0
+      bumpp:
+        specifier: ^10.3.1
+        version: 10.3.1
       consola:
         specifier: ^3.4.2
         version: 3.4.2
@@ -238,9 +241,6 @@ importers:
       '@types/node':
         specifier: ^24.10.0
         version: 24.10.0
-      bumpp:
-        specifier: ^10.3.1
-        version: 10.3.1
       tsdown:
         specifier: ^0.16.1
         version: 0.16.1(synckit@0.11.11)(typescript@5.9.3)
