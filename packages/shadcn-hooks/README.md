@@ -31,15 +31,13 @@
 Each hook can be installed individually using the shadcn CLI:
 
 ```bash
-npx shadcn@latest add @hooks/use-counter
+pnpm install shadcn-hooks
 ```
-
-Or manually copy the source code from the [use-counter](https://shadcn-hooks.vercel.app/docs/hooks/use-counter).
 
 ### Usage
 
 ```tsx
-import { useCounter } from '@/hooks/use-counter'
+import { useCounter } from 'shadcn-hooks'
 
 function Counter() {
   const { count, increment, decrement, reset } = useCounter(0)
@@ -55,18 +53,6 @@ function Counter() {
 }
 ```
 
-## 📦 Registry
-
-> components.json
-
-```json
-{
-  "registries": {
-    "@hooks": "https://shadcn-hooks.vercel.app/r/{name}.json"
-  }
-}
-```
-
 ## 📚 Documentation
 
 Visit [shadcn-hooks.vercel.app](https://shadcn-hooks.vercel.app/) for complete documentation, examples, and API references.
@@ -77,7 +63,3 @@ This collection is inspired by and builds upon the excellent work of:
 
 - [ahooks](https://ahooks.js.org/) - Comprehensive React hooks library
 - [usehooks-ts](https://usehooks-ts.com/) - TypeScript-first hooks collection
-
-## 📄 License
-
-[MIT](LICENSE)
