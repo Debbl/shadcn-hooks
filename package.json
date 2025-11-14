@@ -16,7 +16,6 @@
     "postinstall": "fumadocs-mdx",
     "dev": "node scripts/dev.ts",
     "preflight": "node scripts/preflight.ts",
-    "registry:build": "shadcn build",
     "test": "vitest",
     "release": "bumpp -r && pnpm publish -r",
     "build": "node scripts/build.ts",

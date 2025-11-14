@@ -13,11 +13,6 @@ async function main() {
           stdio: 'inherit',
         },
       })
-      await x('pnpm', ['run', 'registry:build'], {
-        nodeOptions: {
-          stdio: 'inherit',
-        },
-      })
 
       await x('next', ['build', '--webpack'], {
         nodeOptions: {

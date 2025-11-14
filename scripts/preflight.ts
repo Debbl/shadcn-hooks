@@ -3,6 +3,7 @@ import path from 'node:path'
 import consola from 'consola'
 import { globSync } from 'glob'
 import matter from 'gray-matter'
+import { registryItemSchema, registrySchema } from 'shadcn/schema'
 import type { Registry, RegistryItem } from 'shadcn/schema'
 
 // eslint-disable-next-line n/prefer-global/process
@@ -22,7 +23,7 @@ async function generateRegistryItemSchema() {
   )
 }
 
-async function getRegistryItems() {
+async function getRegistry() {
   const registryItemsPaths = globSync(
     ['src/registry/**/registry-item.json', '!meta.json'],
     {
@@ -59,10 +60,7 @@ async function getRegistryItems() {
         ...(isExist
           ? [
               {
-                target: hookPath
-                  .replace('src/registry/', '')
-                  .replace('/index', ''),
-                path: hookPath,
+                path: `registry/${registryType}/${name}${path.extname(hookPath)}`,
                 type,
               },
             ]
@@ -82,6 +80,10 @@ async function getRegistryItems() {
   ) as Registry
   registry.items = registryItems
 
+  // validate registry
+  return registrySchema.parse(registry)
+}
+async function writeRegistry(registry: Registry) {
   writeFileSync(
     path.join(CWD, 'registry.json'),
     `${JSON.stringify(registry, null, 2)}\n`,
@@ -96,29 +98,60 @@ async function getRegistryItems() {
     path.join(publicRegistryDir, 'registry.json'),
     `${JSON.stringify(registry, null, 2)}\n`,
   )
+}
 
-  // write public/r/all.json
-  writeFileSync(
-    path.join(publicRegistryDir, 'all.json'),
-    `${JSON.stringify(
-      {
-        $schema: 'https://ui.shadcn.com/schema/registry-item.json',
-        name: 'all',
-        type: 'registry:file',
-        author: 'Brendan Dash (https://shadcn-hooks.vercel.app)',
-        description: 'All shadcn hooks registry items.',
-        registryDependencies: registry.items.map(
-          (item) => `@hooks/${item.name}`,
-        ),
-      } as RegistryItem,
-      null,
-      2,
-    )}\n`,
-  )
+async function generateRegistryItem(registry: Registry) {
+  for (const item of registry.items) {
+    const registryItem = registryItemSchema.parse(item)
+
+    const files =
+      registryItem.files?.map((file) => {
+        const contentPath = file.path
+        let content = ''
+        if (existsSync(contentPath)) {
+          content = readFileSync(contentPath, 'utf-8')
+        } else {
+          const ext = path.extname(contentPath)
+          const dirname = path.basename(contentPath, ext)
+          const indexPath = path.join(
+            CWD,
+            `src/${path.dirname(contentPath)}/${dirname}/index${ext}`,
+          )
+          if (existsSync(indexPath)) {
+            content = readFileSync(indexPath, 'utf-8')
+          } else {
+            throw new Error(`File ${indexPath} not found`)
+          }
+        }
+
+        return {
+          ...file,
+          content,
+        }
+      }) ?? []
+
+    writeFileSync(
+      path.join(CWD, `public/r/${registryItem.name}.json`),
+      `${JSON.stringify(
+        registryItemSchema.parse({
+          ...registryItem,
+          files,
+        }),
+        null,
+        2,
+      )}\n`,
+    )
+  }
+}
+
+async function generateRegistry() {
+  const registry = await getRegistry()
+
+  await Promise.all([writeRegistry(registry), generateRegistryItem(registry)])
 }
 
 async function main() {
-  await Promise.all([generateRegistryItemSchema(), getRegistryItems()])
+  await Promise.all([generateRegistryItemSchema(), generateRegistry()])
 }
 
 main()

@@ -9,7 +9,8 @@
   "homepage": "https://github.com/Debbl/shadcn-hooks#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Debbl/shadcn-hooks.git"
+    "url": "git+https://github.com/Debbl/shadcn-hooks.git",
+    "directory": "packages/shadcn-hooks"
   },
   "bugs": "https://github.com/Debbl/shadcn-hooks/issues",
   "keywords": [
