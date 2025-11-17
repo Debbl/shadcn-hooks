@@ -21,6 +21,7 @@
     "use-deep-compare-effect",
     "use-deep-compare-layout-effect",
     "use-effect-event",
+    "use-effect-with-target",
     "use-interval",
     "use-is-hydrated",
     "use-isomorphic-layout-effect",
