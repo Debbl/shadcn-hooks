@@ -1,0 +1,181 @@
+---
+title: useEffectWithTarget
+description: A hook to create an effect with a target element that re-runs when the target or dependencies change
+---
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-effect-with-target' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='create-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-effect-with-target' />
+  </Tab>
+</Tabs>
+
+## Usage
+
+`useEffectWithTarget` is similar to `useEffect`, but it accepts a `target` parameter. The effect will re-run when either the dependencies or the target element changes.
+
+### Basic Usage
+
+```tsx
+import { useEffectWithTarget } from '@/hooks/use-effect-with-target'
+import { useRef } from 'react'
+
+function MyComponent() {
+  const divRef = useRef<HTMLDivElement>(null)
+
+  useEffectWithTarget(
+    () => {
+      const element = divRef.current
+      if (element) {
+        // Do something with the element
+        console.log('Element mounted:', element)
+      }
+
+      return () => {
+        // Cleanup
+        console.log('Element unmounted')
+      }
+    },
+    [],
+    divRef,
+  )
+
+  return <div ref={divRef}>Hello</div>
+}
+```
+
+### With DOM Element
+
+```tsx
+import { useEffectWithTarget } from '@/hooks/use-effect-with-target'
+
+function MyComponent() {
+  const element = document.getElementById('my-element')
+
+  useEffectWithTarget(
+    () => {
+      if (element) {
+        // Do something with the element
+      }
+    },
+    [],
+    element,
+  )
+
+  return <div id='my-element'>Hello</div>
+}
+```
+
+### With Function Target
+
+```tsx
+import { useEffectWithTarget } from '@/hooks/use-effect-with-target'
+
+function MyComponent() {
+  useEffectWithTarget(
+    () => {
+      const element = document.querySelector('.my-class')
+      if (element) {
+        // Do something with the element
+      }
+    },
+    [],
+    () => document.querySelector('.my-class'),
+  )
+
+  return <div className='my-class'>Hello</div>
+}
+```
+
+### With Multiple Targets
+
+```tsx
+import { useEffectWithTarget } from '@/hooks/use-effect-with-target'
+import { useRef } from 'react'
+
+function MyComponent() {
+  const ref1 = useRef<HTMLDivElement>(null)
+  const ref2 = useRef<HTMLDivElement>(null)
+
+  useEffectWithTarget(
+    () => {
+      // Effect runs when either ref1 or ref2 changes
+      console.log('Targets changed')
+    },
+    [],
+    [ref1, ref2],
+  )
+
+  return (
+    <>
+      <div ref={ref1}>First</div>
+      <div ref={ref2}>Second</div>
+    </>
+  )
+}
+```
+
+### With Dependencies
+
+```tsx
+import { useEffectWithTarget } from '@/hooks/use-effect-with-target'
+import { useRef, useState } from 'react'
+
+function MyComponent() {
+  const [count, setCount] = useState(0)
+  const divRef = useRef<HTMLDivElement>(null)
+
+  useEffectWithTarget(
+    () => {
+      // Effect runs when count changes or when divRef.current changes
+      console.log('Count:', count)
+    },
+    [count],
+    divRef,
+  )
+
+  return (
+    <div ref={divRef}>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  )
+}
+```
+
+## API
+
+```ts
+type TargetValue<T> = T | undefined | null
+
+type TargetType = HTMLElement | Element | Window | Document
+
+type BasicTarget<T extends TargetType = Element> =
+  | (() => TargetValue<T>)
+  | TargetValue<T>
+  | RefObject<TargetValue<T>>
+
+/**
+ * A hook to create an effect with a target element
+ * @param effect - The effect callback function
+ * @param deps - The dependency array (same as useEffect)
+ * @param target - The target element(s). Can be a DOM element, ref object, function that returns an element, or an array of these
+ * @returns void
+ */
+export const useEffectWithTarget: (
+  effect: EffectCallback,
+  deps: DependencyList,
+  target: BasicTarget<any> | BasicTarget<any>[],
+) => void
+```
+
+## Credits
+
+- [create-effect-with-target](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/utils/createEffectWithTarget.ts)
