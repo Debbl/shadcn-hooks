@@ -61,7 +61,9 @@ async function generateRegistry() {
           ...(isExist
             ? [
                 {
-                  path: `registry/${registryType}/${name}${path.extname(hookPath)}`,
+                  path: `registry/${registryType}/${name}${path.extname(
+                    hookPath,
+                  )}`,
                   type,
                 },
               ]
@@ -89,6 +91,20 @@ async function generateRegistry() {
     writeFileSync(
       path.join(CWD, 'registry.json'),
       `${JSON.stringify(registry, null, 2)}\n`,
+    )
+    const allRegistry = {
+      $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+      name: 'all',
+      type: 'registry:file',
+      author: 'Brendan Dash (https://shadcn-hooks.vercel.app)',
+      description: 'All shadcn hooks registry items.',
+      registryDependencies: registry.items.map((item) => `@hooks/${item.name}`),
+    } satisfies RegistryItem
+
+    // write public/r/all.json
+    writeFileSync(
+      path.join(CWD, 'public/r/all.json'),
+      `${JSON.stringify(allRegistry, null, 2)}\n`,
     )
 
     // write public/r/registry.json
