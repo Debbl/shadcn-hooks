@@ -1,12 +1,7 @@
-import { useEffect } from 'react'
+import { useEffectWithTarget } from '@/registry/hooks/use-effect-with-target'
 import { useLatest } from '@/registry/hooks/use-latest'
-import {
-  createEffectWithTarget,
-  getTargetElement,
-} from '@/registry/lib/create-effect-with-target'
+import { getTargetElement } from '@/registry/lib/create-effect-with-target'
 import type { BasicTarget } from '@/registry/lib/create-effect-with-target'
-
-const useEffectWithTarget = createEffectWithTarget(useEffect)
 
 type noop = (...p: any) => void
 

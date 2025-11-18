@@ -35,6 +35,7 @@
 
     "---Browser---",
     "use-click-any-where",
+    "use-click-away",
     "use-event-listener",
     "use-hash",
     "use-hover",

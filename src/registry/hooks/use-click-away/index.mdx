@@ -1,0 +1,58 @@
+---
+title: useClickAway
+description: A hook to click away from an element
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-click-away' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-latest' />
+    <br />
+    <RegistrySourceCode value='create-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-click-away' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+type TargetValue<T> = T | undefined | null
+
+type TargetType = HTMLElement | Element | Window | Document
+
+type BasicTarget<T extends TargetType = Element> =
+  | (() => TargetValue<T>)
+  | TargetValue<T>
+  | RefObject<TargetValue<T>>
+
+type DocumentEventKey = keyof DocumentEventMap
+
+/**
+ * A hook to click away from an element
+ * @param onClickAway - The function to call when the user clicks away from the target
+ * @param target - The target to click away from
+ * @param eventName - The event to listen for
+ * @param defaultValue - The default value of the boolean
+ */
+export function useClickAway<T extends Event = Event>(
+  onClickAway: (event: T) => void,
+  target: BasicTarget | BasicTarget[],
+  eventName?: DocumentEventKey | DocumentEventKey[],
+): void
+```
+
+## Credits
+
+- [use-click-away](https://ahooks.js.org/hooks/use-click-away)

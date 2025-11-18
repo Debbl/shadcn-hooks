@@ -48,7 +48,7 @@ export function ContainerWithDemoClient({
   }
 
   return (
-    <div className='relative'>
+    <div className='not-prose relative'>
       <Tabs items={['Preview', 'Code']}>
         <Tab value='Preview'>
           <ResizablePanelGroup
