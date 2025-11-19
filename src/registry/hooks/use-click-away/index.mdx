@@ -44,7 +44,12 @@ type DocumentEventKey = keyof DocumentEventMap
  * @param onClickAway - The function to call when the user clicks away from the target
  * @param target - The target to click away from
  * @param eventName - The event to listen for
- * @param defaultValue - The default value of the boolean
+/**
+ * A hook to click away from an element
+ * @param onClickAway - The function to call when the user clicks away from the target
+ * @param target - The target to click away from
+ * @param eventName - The event to listen for
+ */
  */
 export function useClickAway<T extends Event = Event>(
   onClickAway: (event: T) => void,
