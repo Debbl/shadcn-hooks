@@ -42,6 +42,9 @@
     "use-is-match-media",
     "use-is-online",
 
+    "---Dev---",
+    "use-why-did-you-update",
+
     "---External---",
     "use-mcp",
     "use-query",
