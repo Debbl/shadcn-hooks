@@ -39,6 +39,7 @@
     "use-event-listener",
     "use-hash",
     "use-hover",
+    "use-in-viewport",
     "use-is-match-media",
     "use-is-online",
 
