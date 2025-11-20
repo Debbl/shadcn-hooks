@@ -1,0 +1,35 @@
+---
+title: useWhyDidYouUpdate
+description: A hook to log the props that changed in a component
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-why-did-you-update' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-why-did-you-update' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to log the props that changed in a component
+ * @param componentName - The name of the component
+ * @param props - The props that changed in the component
+ */
+export function useWhyDidYouUpdate(componentName: string, props: IProps): void
+```
+
+## Credits
+
+- [use-why-did-you-update](https://ahooks.js.org/hooks/use-why-did-you-update)
