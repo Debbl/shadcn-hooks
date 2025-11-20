@@ -1,0 +1,47 @@
+---
+title: useInViewport
+description: A hook to check if an element is in the viewport
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-in-viewport' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='create-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-in-viewport' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * A hook to check if an element is in the viewport
+ * @param target - The target to check if it is in the viewport
+ * @param options - The options for the hook
+ * @param options.rootMargin - The root margin for the intersection observer
+ * @param options.threshold - The threshold for the intersection observer
+ * @param options.root - The root element for the intersection observer
+ * @param options.callback - The callback function to call when the target is in the viewport
+ * @returns The boolean value indicating if the target is in the viewport and the ratio of the intersection
+ */
+export function useInViewport(
+  target: BasicTarget | BasicTarget[],
+  options?: Options,
+): readonly [boolean | undefined, number | undefined]
+```
+
+## Credits
+
+- [use-in-viewport](https://ahooks.js.org/hooks/use-in-viewport)
