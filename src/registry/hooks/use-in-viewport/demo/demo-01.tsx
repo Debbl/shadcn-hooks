@@ -47,8 +47,10 @@ export function Demo01() {
 
       <div className='space-y-2'>
         <h3 className='text-lg font-semibold'>Scroll to see the target</h3>
-        <div className='h-96 overflow-y-auto rounded-lg border p-4'>
-          <div className='h-64' />
+        <div className='h-[300px] overflow-y-auto rounded-lg border p-4'>
+          <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
+            Scroll down to see the target element
+          </div>
           <div
             ref={targetRef}
             className={`rounded-lg border p-6 transition-colors ${
@@ -63,7 +65,9 @@ export function Demo01() {
               action.
             </p>
           </div>
-          <div className='h-64' />
+          <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
+            Scroll up to see the target element again
+          </div>
         </div>
       </div>
 
@@ -87,8 +91,10 @@ export function Demo01() {
             </p>
           </div>
         </div>
-        <div className='h-64 overflow-y-auto rounded-lg border p-4'>
-          <div className='h-32' />
+        <div className='h-[300px] overflow-y-auto rounded-lg border p-4'>
+          <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
+            Scroll down to see the threshold example
+          </div>
           <div
             ref={thresholdTargetRef}
             className={`rounded-lg border p-6 transition-colors ${
@@ -103,7 +109,9 @@ export function Demo01() {
               at least 50% is visible.
             </p>
           </div>
-          <div className='h-32' />
+          <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
+            Scroll up to see the threshold example again
+          </div>
         </div>
       </div>
     </div>
