@@ -101,17 +101,17 @@ async function generateRegistry() {
       registryDependencies: registry.items.map((item) => `@hooks/${item.name}`),
     } satisfies RegistryItem
 
-    // write public/r/all.json
-    writeFileSync(
-      path.join(CWD, 'public/r/all.json'),
-      `${JSON.stringify(allRegistry, null, 2)}\n`,
-    )
-
-    // write public/r/registry.json
     const publicRegistryDir = path.join(CWD, 'public/r')
     if (!existsSync(publicRegistryDir)) {
       mkdirSync(publicRegistryDir, { recursive: true })
     }
+    // write public/r/all.json
+    writeFileSync(
+      path.join(publicRegistryDir, 'all.json'),
+      `${JSON.stringify(allRegistry, null, 2)}\n`,
+    )
+
+    // write public/r/registry.json
     writeFileSync(
       path.join(publicRegistryDir, 'registry.json'),
       `${JSON.stringify(registry, null, 2)}\n`,
