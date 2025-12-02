@@ -1,0 +1,73 @@
+---
+title: useNetwork
+description: A hook to get the network state
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-network' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-network' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation
+ * The network state
+ */
+export interface NetworkState {
+  /**
+   * The date when the network state was last updated
+   */
+  since?: Date
+  /**
+   * Whether the network is online
+   */
+  online?: boolean
+  /**
+   * The round-trip time in milliseconds
+   */
+  rtt?: number
+  /**
+   * The type of the network
+   */
+  type?: string
+  /**
+   * The downlink speed in Mbps
+   */
+  downlink?: number
+  /**
+   * Whether the user has enabled data saving
+   */
+  saveData?: boolean
+  /**
+   * The maximum downlink speed in Mbps
+   */
+  downlinkMax?: number
+  /**
+   * The effective type of the network
+   */
+  effectiveType?: string
+}
+
+/**
+ * A hook to get the network state
+ * @returns The network state
+ */
+export function useNetwork(): NetworkState
+```
+
+## Credits
+
+- [use-network](https://ahooks.js.org/hooks/use-network)

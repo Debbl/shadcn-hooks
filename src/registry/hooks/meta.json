@@ -42,6 +42,7 @@
     "use-in-viewport",
     "use-is-match-media",
     "use-is-online",
+    "use-network",
 
     "---Dev---",
     "use-why-did-you-update",
