@@ -1,0 +1,45 @@
+---
+title: useFps
+description: A hook to calculate the FPS
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-fps' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-fps' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+interface UseFpsProps {
+  /**
+   * Calculate the FPS on every x frames.
+   * @default 10
+   */
+  every?: number
+}
+
+/**
+ * A hook to calculate the FPS
+ * @param options - The options for the FPS
+ * @param options.every - The number of frames to calculate the FPS on
+ * @default { every: 10 }
+ * @returns The FPS
+ */
+export function useFps(options?: UseFpsProps): number
+```
+
+## Credits
+
+- [use-fps](https://vueuse.org/core/useFps/)
