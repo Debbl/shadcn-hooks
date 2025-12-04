@@ -2,7 +2,7 @@
   "name": "shadcn-hooks",
   "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.24.0",
   "description": "shadcn hooks",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
   "license": "MIT",
@@ -42,16 +42,16 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.90.10",
+    "@tanstack/react-query": "^5.90.12",
     "es-toolkit": "^1.42.0",
-    "swr": "^2.3.6",
+    "swr": "^2.3.7",
     "use-mcp": "^0.0.21",
     "use-stick-to-bottom": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
-    "shadcn": "^3.5.0",
-    "tsdown": "^0.16.5",
-    "vitest": "^4.0.9"
+    "shadcn": "^3.5.1",
+    "tsdown": "^0.16.8",
+    "vitest": "^4.0.15"
   }
 }
