@@ -1,0 +1,59 @@
+---
+title: useControllableValue
+description: A hook to manage a controllable value
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-boolean' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-memoized-fn' />
+    <br />
+    <RegistrySourceCode value='use-update' />
+    <br />
+    <RegistrySourceCode value='use-controllable-value' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface Options<T> {
+  defaultValue?: T
+  defaultValuePropName?: string
+  valuePropName?: string
+  trigger?: string
+}
+
+export type Props = Record<string, any>
+
+export interface StandardProps<T> {
+  value: T
+  defaultValue?: T
+  onChange: (val: T) => void
+}
+
+/**
+ * A hook to toggle a boolean value
+ * @param defaultValue - The default value of the boolean
+ */
+function useControllableValue<T = any>(
+  props: StandardProps<T>,
+): [T, (v: SetStateAction<T>) => void]
+function useControllableValue<T = any>(
+  props?: Props,
+  options?: Options<T>,
+): [T, (v: SetStateAction<T>, ...args: any[]) => void]
+```
+
+## Credits
+
+- [use-controllable-value](https://ahooks.js.org/hooks/use-controllable-value)

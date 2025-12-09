@@ -1,0 +1,4 @@
+{
+  "dependencies": ["es-toolkit"],
+  "registryDependencies": ["@hooks/use-memoized-fn", "@hooks/use-update"]
+}

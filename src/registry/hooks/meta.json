@@ -2,6 +2,7 @@
   "pages": [
     "---State---",
     "use-boolean",
+    "use-controllable-value",
     "use-counter",
     "use-debounce",
     "use-throttle",
