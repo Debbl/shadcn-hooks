@@ -2,7 +2,7 @@
   "name": "shadcn-hooks",
   "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.25.0",
   "description": "shadcn hooks",
   "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
   "license": "MIT",
@@ -49,9 +49,9 @@
     "use-stick-to-bottom": "^1.1.1"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.2",
     "shadcn": "^3.5.1",
-    "tsdown": "^0.17.0",
+    "tsdown": "^0.17.2",
     "vitest": "^4.0.15"
   }
 }
