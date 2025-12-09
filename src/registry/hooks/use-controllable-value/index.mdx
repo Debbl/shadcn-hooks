@@ -42,8 +42,8 @@ export interface StandardProps<T> {
 }
 
 /**
- * A hook to toggle a boolean value
- * @param defaultValue - The default value of the boolean
+ * A hook to manage a controllable value
+ * @param props - The props object containing value, defaultValue, and onChange
  */
 function useControllableValue<T = any>(
   props: StandardProps<T>,
