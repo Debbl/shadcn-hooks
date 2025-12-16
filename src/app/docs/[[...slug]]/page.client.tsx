@@ -98,19 +98,29 @@ export function LLMCopyButton({ slug, url }: { slug: string[]; url: string }) {
       </Button>
 
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant='outline' size='icon' aria-label='More Options'>
-            <ChevronDownIcon />
-          </Button>
-        </DropdownMenuTrigger>
+        <DropdownMenuTrigger
+          render={(props) => (
+            <Button
+              {...props}
+              variant='outline'
+              size='icon'
+              aria-label='More Options'
+            >
+              <ChevronDownIcon />
+            </Button>
+          )}
+        />
         <DropdownMenuContent align='end' className='gap-y-1.5' sideOffset={12}>
           {menuItems.map((item) => (
-            <DropdownMenuItem key={item.label} asChild>
-              <Link href={item.href}>
-                {item.icon}
-                {item.label}
-              </Link>
-            </DropdownMenuItem>
+            <DropdownMenuItem
+              key={item.label}
+              render={(props) => (
+                <Link {...props} href={item.href}>
+                  {item.icon}
+                  {item.label}
+                </Link>
+              )}
+            />
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
@@ -120,11 +130,15 @@ export function LLMCopyButton({ slug, url }: { slug: string[]; url: string }) {
 
 export function GitHubLink({ url }: { url: string }) {
   return (
-    <Button variant='secondary' className='gap-2' asChild>
-      <Link href={url}>
-        <GitHubIcon />
-        View on GitHub
-      </Link>
-    </Button>
+    <Button
+      variant='secondary'
+      className='gap-2'
+      render={(props) => (
+        <Link {...props} href={url}>
+          <GitHubIcon />
+          View on GitHub
+        </Link>
+      )}
+    />
   )
 }

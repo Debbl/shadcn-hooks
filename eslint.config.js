@@ -4,7 +4,7 @@ import { defineConfig } from '@debbl/eslint-config'
 export default defineConfig(
   {
     ignores: {
-      files: ['content/**/*'],
+      files: ['content/**/*', 'src/components/ui'],
     },
     typescript: true,
     react: {
