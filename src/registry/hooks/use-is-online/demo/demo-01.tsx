@@ -13,7 +13,7 @@ export function Demo01() {
   const isOnline = useIsOnline()
 
   return (
-    <Card className='ring-0'>
+    <Card className='shadow-none ring-0'>
       <CardHeader>
         <CardTitle>Online Status</CardTitle>
         <CardDescription>

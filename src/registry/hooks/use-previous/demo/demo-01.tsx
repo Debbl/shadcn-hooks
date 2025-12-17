@@ -15,7 +15,7 @@ export function Demo01() {
   const previousCount = usePrevious(count)
 
   return (
-    <Card className='ring-0'>
+    <Card className='shadow-none ring-0'>
       <CardHeader>
         <CardTitle>Previous Value Demo</CardTitle>
         <CardDescription>

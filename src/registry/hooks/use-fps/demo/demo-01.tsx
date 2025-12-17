@@ -65,7 +65,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <Card className='ring-0'>
+      <Card className='shadow-none ring-0'>
         <CardHeader>
           <CardTitle>FPS Monitor</CardTitle>
           <CardDescription>
@@ -163,13 +163,13 @@ export function Demo01() {
             )}
 
             <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
-              <Card size='sm' className='ring-0'>
+              <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
                   <div className='text-muted-foreground text-xs'>Target</div>
                   <div className='text-lg font-semibold'>60 FPS</div>
                 </CardContent>
               </Card>
-              <Card size='sm' className='ring-0'>
+              <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
                   <div className='text-muted-foreground text-xs'>Average</div>
                   <div
@@ -179,7 +179,7 @@ export function Demo01() {
                   </div>
                 </CardContent>
               </Card>
-              <Card size='sm' className='ring-0'>
+              <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
                   <div className='text-muted-foreground text-xs'>Min</div>
                   <div
@@ -189,7 +189,7 @@ export function Demo01() {
                   </div>
                 </CardContent>
               </Card>
-              <Card size='sm' className='ring-0'>
+              <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
                   <div className='text-muted-foreground text-xs'>Max</div>
                   <div
@@ -204,7 +204,7 @@ export function Demo01() {
         </CardContent>
       </Card>
 
-      <Card className='ring-0'>
+      <Card className='shadow-none ring-0'>
         <CardContent className='pt-6'>
           <p className='text-muted-foreground text-sm'>
             <strong>Tip:</strong> Lower the update frequency (fewer frames) for

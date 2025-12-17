@@ -26,7 +26,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <Card className='ring-0'>
+      <Card className='shadow-none ring-0'>
         <CardHeader>
           <CardTitle>Basic Usage</CardTitle>
         </CardHeader>
@@ -55,7 +55,7 @@ export function Demo01() {
         </CardContent>
       </Card>
 
-      <Card className='ring-0'>
+      <Card className='shadow-none ring-0'>
         <CardHeader>
           <CardTitle>Scroll to see the target</CardTitle>
         </CardHeader>
@@ -66,7 +66,7 @@ export function Demo01() {
             </div>
             <Card
               ref={targetRef}
-              className={`ring-0 transition-colors ${
+              className={`shadow-none ring-0 transition-colors ${
                 isInViewport ? 'border-primary bg-primary/5' : ''
               }`}
             >
@@ -85,7 +85,7 @@ export function Demo01() {
         </CardContent>
       </Card>
 
-      <Card className='ring-0'>
+      <Card className='shadow-none ring-0'>
         <CardHeader>
           <CardTitle>With Threshold (50%)</CardTitle>
           <CardDescription>
@@ -112,7 +112,7 @@ export function Demo01() {
             </div>
             <Card
               ref={thresholdTargetRef}
-              className={`ring-0 transition-colors ${
+              className={`shadow-none ring-0 transition-colors ${
                 isInViewportWithThreshold ? 'border-primary bg-primary/5' : ''
               }`}
             >

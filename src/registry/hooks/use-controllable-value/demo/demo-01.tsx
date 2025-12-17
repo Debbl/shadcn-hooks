@@ -19,7 +19,7 @@ function ControlledInput() {
   })
 
   return (
-    <Card className='ring-0'>
+    <Card className='shadow-none ring-0'>
       <CardHeader>
         <CardTitle>Controlled Mode</CardTitle>
         <CardDescription>
@@ -55,7 +55,7 @@ function UncontrolledInput() {
   })
 
   return (
-    <Card className='ring-0'>
+    <Card className='shadow-none ring-0'>
       <CardHeader>
         <CardTitle>Uncontrolled Mode</CardTitle>
         <CardDescription>The value is managed internally</CardDescription>
@@ -87,7 +87,7 @@ function CounterExample() {
   const [count, setCount] = useControllableValue<number>({ defaultValue: 0 })
 
   return (
-    <Card className='ring-0'>
+    <Card className='shadow-none ring-0'>
       <CardHeader>
         <CardTitle>Counter Example</CardTitle>
         <CardDescription>Using function updater pattern</CardDescription>
@@ -123,7 +123,7 @@ function CounterExample() {
 export function Demo01() {
   return (
     <div className='space-y-4'>
-      <Card className='ring-0'>
+      <Card className='shadow-none ring-0'>
         <CardHeader>
           <CardTitle>useControllableValue</CardTitle>
           <CardDescription>

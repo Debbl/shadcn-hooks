@@ -13,7 +13,7 @@ export function Demo01() {
   const [count, { inc, dec, reset }] = useCounter(0)
 
   return (
-    <Card className='ring-0'>
+    <Card className='shadow-none ring-0'>
       <CardHeader>
         <CardTitle>Counter Demo</CardTitle>
         <CardDescription>
