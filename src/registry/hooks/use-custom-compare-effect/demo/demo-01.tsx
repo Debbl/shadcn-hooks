@@ -106,8 +106,8 @@ export function Demo01() {
           </div>
         </CardHeader>
         <CardContent>
-          <ScrollArea className='max-h-40'>
-            <div className='space-y-1 text-sm'>
+          <ScrollArea className='h-40 max-h-40'>
+            <div className='space-y-1 py-1 text-sm'>
               {log.current.length === 0 ? (
                 <p className='text-foreground'>No logs yet</p>
               ) : (
