@@ -110,7 +110,11 @@ export function LLMCopyButton({ slug, url }: { slug: string[]; url: string }) {
             </Button>
           )}
         />
-        <DropdownMenuContent align='end' className='gap-y-1.5' sideOffset={12}>
+        <DropdownMenuContent
+          align='end'
+          className='w-auto gap-y-1.5'
+          sideOffset={12}
+        >
           {menuItems.map((item) => (
             <DropdownMenuItem
               key={item.label}
