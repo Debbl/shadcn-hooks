@@ -1,5 +1,14 @@
 'use client'
 import { useState } from 'react'
+import { Button } from '~/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { Input } from '~/components/ui/input'
 import { useDebounceFn } from '../index'
 
 export function Demo01() {
@@ -13,39 +22,38 @@ export function Demo01() {
   }, 800)
 
   return (
-    <div className='space-y-3'>
-      <input
-        value={input}
-        onChange={(e) => {
-          const v = e.target.value
-          setInput(v)
-          run(v)
-        }}
-        placeholder='Type to debounce...'
-        className='w-full rounded border p-2'
-      />
-      <div className='flex items-center gap-2'>
-        <button
-          type='button'
-          onClick={() => flush()}
-          className='rounded border px-3 py-1'
-        >
-          Flush
-        </button>
-        <button
-          type='button'
-          onClick={() => cancel()}
-          className='rounded border px-3 py-1'
-        >
-          Cancel
-        </button>
-      </div>
-      <div className='text-muted-foreground text-sm'>
-        <div>
-          Debounced value: <span className='font-mono'>{debouncedValue}</span>
+    <Card>
+      <CardHeader>
+        <CardTitle>Debounce Function Demo</CardTitle>
+        <CardDescription>
+          Type in the input to see the debounced function execute after 800ms
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-3'>
+        <Input
+          value={input}
+          onChange={(e) => {
+            const v = e.target.value
+            setInput(v)
+            run(v)
+          }}
+          placeholder='Type to debounce...'
+        />
+        <div className='flex items-center gap-2'>
+          <Button type='button' variant='outline' onClick={() => flush()}>
+            Flush
+          </Button>
+          <Button type='button' variant='outline' onClick={() => cancel()}>
+            Cancel
+          </Button>
         </div>
-        <div>Invoke count: {invokeCount}</div>
-      </div>
-    </div>
+        <div className='text-muted-foreground space-y-1 text-sm'>
+          <div>
+            Debounced value: <span className='font-mono'>{debouncedValue}</span>
+          </div>
+          <div>Invoke count: {invokeCount}</div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

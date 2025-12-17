@@ -1,5 +1,13 @@
 'use client'
 import { useState } from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { Input } from '~/components/ui/input'
 import { useDebounce } from '../index'
 
 export function Demo01() {
@@ -7,21 +15,28 @@ export function Demo01() {
   const debouncedValue = useDebounce(input, 800)
 
   return (
-    <div className='space-y-3'>
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder='Type to debounce...'
-        className='w-full rounded border p-2'
-      />
-      <div className='text-muted-foreground text-sm'>
-        <div>
-          Input value: <span className='font-mono'>{input}</span>
+    <Card>
+      <CardHeader>
+        <CardTitle>Debounce Demo</CardTitle>
+        <CardDescription>
+          Type in the input to see the debounced value update after 800ms
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-3'>
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder='Type to debounce...'
+        />
+        <div className='text-muted-foreground space-y-1 text-sm'>
+          <div>
+            Input value: <span className='font-mono'>{input}</span>
+          </div>
+          <div>
+            Debounced value: <span className='font-mono'>{debouncedValue}</span>
+          </div>
         </div>
-        <div>
-          Debounced value: <span className='font-mono'>{debouncedValue}</span>
-        </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }

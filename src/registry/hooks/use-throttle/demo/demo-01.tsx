@@ -1,5 +1,13 @@
 'use client'
 import { useState } from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { Input } from '~/components/ui/input'
 import { useThrottle } from '../index'
 
 export function Demo01() {
@@ -7,21 +15,29 @@ export function Demo01() {
   const throttledValue = useThrottle(input, 800)
 
   return (
-    <div className='space-y-3'>
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder='Type to throttle...'
-        className='w-full rounded border p-2'
-      />
-      <div className='text-muted-foreground text-sm'>
-        <div>
-          Input value: <span className='font-mono'>{input}</span>
+    <Card>
+      <CardHeader>
+        <CardTitle>Throttle Demo</CardTitle>
+        <CardDescription>
+          Type in the input to see the throttled value update at most once every
+          800ms
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-3'>
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder='Type to throttle...'
+        />
+        <div className='text-muted-foreground space-y-1 text-sm'>
+          <div>
+            Input value: <span className='font-mono'>{input}</span>
+          </div>
+          <div>
+            Throttled value: <span className='font-mono'>{throttledValue}</span>
+          </div>
         </div>
-        <div>
-          Throttled value: <span className='font-mono'>{throttledValue}</span>
-        </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }

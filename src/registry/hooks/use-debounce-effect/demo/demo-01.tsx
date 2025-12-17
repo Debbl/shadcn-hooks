@@ -1,6 +1,14 @@
 /* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
 'use client'
 import { useState } from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { Input } from '~/components/ui/input'
 import { useDebounceEffect } from '../index'
 
 export function Demo01() {
@@ -18,22 +26,29 @@ export function Demo01() {
   )
 
   return (
-    <div className='space-y-3'>
-      <input
-        value={input}
-        onChange={(e) => {
-          const v = e.target.value
-          setInput(v)
-        }}
-        placeholder='Type to debounce...'
-        className='w-full rounded border p-2'
-      />
-      <div className='text-muted-foreground text-sm'>
-        <div>
-          Debounced value: <span className='font-mono'>{debouncedValue}</span>
+    <Card>
+      <CardHeader>
+        <CardTitle>Debounce Effect Demo</CardTitle>
+        <CardDescription>
+          Type in the input to see the debounced effect execute after 800ms
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-3'>
+        <Input
+          value={input}
+          onChange={(e) => {
+            const v = e.target.value
+            setInput(v)
+          }}
+          placeholder='Type to debounce...'
+        />
+        <div className='text-muted-foreground space-y-1 text-sm'>
+          <div>
+            Debounced value: <span className='font-mono'>{debouncedValue}</span>
+          </div>
+          <div>Invoke count: {invokeCount}</div>
         </div>
-        <div>Invoke count: {invokeCount}</div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }

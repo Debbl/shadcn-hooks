@@ -1,31 +1,29 @@
 'use client'
-import { cls } from 'twl'
+import { Badge } from '~/components/ui/badge'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
 import { useNetwork } from '..'
 
 export function Demo01() {
   const network = useNetwork()
 
   return (
-    <div className='space-y-4'>
-      <div>
-        <h3 className='mb-2 text-lg font-semibold'>Network Status</h3>
-        <p className='text-muted-foreground mb-4 text-sm'>
-          Monitor your network connection state
-        </p>
-      </div>
-
-      <div className='space-y-2'>
+    <Card>
+      <CardHeader>
+        <CardTitle>Network Status</CardTitle>
+        <CardDescription>Monitor your network connection state</CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-3'>
         <div className='flex items-center gap-2'>
           <span className='text-sm font-medium'>Status:</span>
-          <span
-            className={cls`rounded px-2 py-1 text-sm ${
-              network.online
-                ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
-            }`}
-          >
+          <Badge variant={network.online ? 'default' : 'destructive'}>
             {network.online ? 'Online' : 'Offline'}
-          </span>
+          </Badge>
         </div>
 
         {network.since && (
@@ -40,18 +38,14 @@ export function Demo01() {
         {network.effectiveType && (
           <div>
             <span className='text-sm font-medium'>Effective Type: </span>
-            <span className='rounded bg-gray-100 px-2 py-1 text-sm dark:bg-gray-800'>
-              {network.effectiveType}
-            </span>
+            <Badge variant='outline'>{network.effectiveType}</Badge>
           </div>
         )}
 
         {network.type && (
           <div>
             <span className='text-sm font-medium'>Connection Type: </span>
-            <span className='rounded bg-gray-100 px-2 py-1 text-sm dark:bg-gray-800'>
-              {network.type}
-            </span>
+            <Badge variant='outline'>{network.type}</Badge>
           </div>
         )}
 
@@ -76,15 +70,9 @@ export function Demo01() {
         {typeof network.saveData === 'boolean' && (
           <div>
             <span className='text-sm font-medium'>Save Data: </span>
-            <span
-              className={cls`rounded px-2 py-1 text-sm ${
-                network.saveData
-                  ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                  : 'bg-gray-100 dark:bg-gray-800'
-              }`}
-            >
+            <Badge variant={network.saveData ? 'secondary' : 'outline'}>
               {network.saveData ? 'Enabled' : 'Disabled'}
-            </span>
+            </Badge>
           </div>
         )}
 
@@ -96,7 +84,7 @@ export function Demo01() {
             </span>
           </div>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }

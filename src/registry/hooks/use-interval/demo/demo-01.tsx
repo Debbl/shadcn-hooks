@@ -1,6 +1,13 @@
 'use client'
 import { useState } from 'react'
 import { Button } from '~/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
 import { useInterval } from '..'
 
 export function Demo01() {
@@ -30,27 +37,35 @@ export function Demo01() {
   }
 
   return (
-    <div className='space-y-4'>
-      <div className='space-y-2'>
-        <p className='text-muted-foreground text-sm'>
-          Count: <span className='font-mono font-semibold'>{count}</span>
-        </p>
-        <p className='text-muted-foreground text-sm'>
-          {message || 'Interval will execute every second after mount...'}
-        </p>
-      </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Interval Demo</CardTitle>
+        <CardDescription>
+          Execute a function repeatedly at specified intervals
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-4'>
+        <div className='space-y-2'>
+          <p className='text-muted-foreground text-sm'>
+            Count: <span className='font-mono font-semibold'>{count}</span>
+          </p>
+          <p className='text-muted-foreground text-sm'>
+            {message || 'Interval will execute every second after mount...'}
+          </p>
+        </div>
 
-      <div className='flex items-center gap-2'>
-        <Button type='button' onClick={handleStart}>
-          Start Interval (1s)
-        </Button>
-        <Button type='button' variant='outline' onClick={handlePause}>
-          Pause Interval
-        </Button>
-        <Button type='button' variant='outline' onClick={handleClear}>
-          Clear Interval
-        </Button>
-      </div>
-    </div>
+        <div className='flex items-center gap-2'>
+          <Button type='button' onClick={handleStart}>
+            Start Interval (1s)
+          </Button>
+          <Button type='button' variant='outline' onClick={handlePause}>
+            Pause Interval
+          </Button>
+          <Button type='button' variant='outline' onClick={handleClear}>
+            Clear Interval
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

@@ -1,6 +1,13 @@
 'use client'
 import { useRef, useState } from 'react'
 import { Button } from '~/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
 import { useHover } from '..'
 
 export function Demo01() {
@@ -22,9 +29,11 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>Button Hover</h3>
-        <div className='space-y-2 rounded-lg border p-4'>
+      <Card>
+        <CardHeader>
+          <CardTitle>Button Hover</CardTitle>
+        </CardHeader>
+        <CardContent className='space-y-4'>
           <Button ref={buttonRef} type='button' variant='default'>
             Hover me!
           </Button>
@@ -36,24 +45,26 @@ export function Demo01() {
               Enter count: {hoverCount} | Leave count: {leaveCount}
             </p>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>Card Hover</h3>
-        <div
-          ref={cardRef}
-          className={`rounded-lg border p-6 transition-colors ${
-            isCardHovered ? 'border-primary bg-primary/5' : 'bg-muted/50'
-          }`}
-        >
-          <p className='font-medium'>Hover over this card</p>
-          <p className='text-muted-foreground mt-2 text-sm'>
+      <Card
+        ref={cardRef}
+        className={`transition-colors ${
+          isCardHovered ? 'border-primary bg-primary/5' : ''
+        }`}
+      >
+        <CardHeader>
+          <CardTitle>Card Hover</CardTitle>
+          <CardDescription>Hover over this card</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className='text-muted-foreground text-sm'>
             Current hover state:{' '}
             <strong>{isCardHovered ? 'hovering' : 'not hovering'}</strong>
           </p>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }

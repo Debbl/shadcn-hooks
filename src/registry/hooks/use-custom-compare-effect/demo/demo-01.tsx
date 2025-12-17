@@ -1,6 +1,14 @@
 'use client'
 import { useRef, useState } from 'react'
 import { Button } from '~/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { ScrollArea } from '~/components/ui/scroll-area'
 import { useUpdate } from '~/registry/hooks/use-update'
 import { useCustomCompareEffect } from '..'
 
@@ -60,15 +68,22 @@ export function Demo01() {
 
   return (
     <div className='space-y-4'>
-      <div className='bg-background rounded-lg border p-4'>
-        <h3 className='mb-2 font-semibold'>Current User Info</h3>
-        <p>ID: {user.id}</p>
-        <p>Name: {user.name}</p>
-        <p>Age: {user.age}</p>
-        <p className='mt-2 text-sm text-gray-600'>
-          Effect execution count: {effectCount}
-        </p>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Current User Info</CardTitle>
+          <CardDescription>
+            Effect only executes when ID changes (not when name or age changes)
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='space-y-2'>
+          <p>ID: {user.id}</p>
+          <p>Name: {user.name}</p>
+          <p>Age: {user.age}</p>
+          <p className='text-muted-foreground mt-2 text-sm'>
+            Effect execution count: {effectCount}
+          </p>
+        </CardContent>
+      </Card>
 
       <div className='flex flex-wrap gap-2'>
         <Button onClick={updateName}>
@@ -81,29 +96,35 @@ export function Demo01() {
         </Button>
       </div>
 
-      <div className='rounded-lg border p-4'>
-        <div className='mb-2 flex items-center justify-between'>
-          <h3 className='font-semibold'>Comparison Log</h3>
-          <Button onClick={forceUpdate} variant='outline' size='sm'>
-            Refresh Log
-          </Button>
-        </div>
-        <div className='max-h-40 space-y-1 overflow-y-auto text-sm'>
-          {log.current.length === 0 ? (
-            <p className='text-foreground'>No logs yet</p>
-          ) : (
-            log.current.toReversed().map((entry, index) => (
-              <div
-                // eslint-disable-next-line react/no-array-index-key
-                key={`log-${index}-${entry.slice(0, 10)}`}
-                className='bg-background rounded p-1 font-mono text-xs'
-              >
-                {entry}
-              </div>
-            ))
-          )}
-        </div>
-      </div>
+      <Card>
+        <CardHeader>
+          <div className='flex items-center justify-between'>
+            <CardTitle>Comparison Log</CardTitle>
+            <Button onClick={forceUpdate} variant='outline' size='sm'>
+              Refresh Log
+            </Button>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <ScrollArea className='max-h-40'>
+            <div className='space-y-1 text-sm'>
+              {log.current.length === 0 ? (
+                <p className='text-foreground'>No logs yet</p>
+              ) : (
+                log.current.toReversed().map((entry, index) => (
+                  <div
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={`log-${index}-${entry.slice(0, 10)}`}
+                    className='bg-muted rounded p-1 font-mono text-xs'
+                  >
+                    {entry}
+                  </div>
+                ))
+              )}
+            </div>
+          </ScrollArea>
+        </CardContent>
+      </Card>
     </div>
   )
 }
