@@ -1,6 +1,13 @@
 'use client'
 import { useState } from 'react'
 import { Button } from '~/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
 import { useTimeout } from '..'
 
 export function Demo01() {
@@ -25,24 +32,32 @@ export function Demo01() {
   }
 
   return (
-    <div className='space-y-4'>
-      <div className='space-y-2'>
-        <p className='text-muted-foreground text-sm'>
-          Count: <span className='font-mono font-semibold'>{count}</span>
-        </p>
-        <p className='text-muted-foreground text-sm'>
-          {message || 'Timeout will execute in 3 seconds after mount...'}
-        </p>
-      </div>
+    <Card className='shadow-none ring-0'>
+      <CardHeader>
+        <CardTitle>Timeout Demo</CardTitle>
+        <CardDescription>
+          Execute a function after a specified delay
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-4'>
+        <div className='space-y-2'>
+          <p className='text-muted-foreground text-sm'>
+            Count: <span className='font-mono font-semibold'>{count}</span>
+          </p>
+          <p className='text-muted-foreground text-sm'>
+            {message || 'Timeout will execute in 3 seconds after mount...'}
+          </p>
+        </div>
 
-      <div className='flex items-center gap-2'>
-        <Button type='button' onClick={handleStart}>
-          Start Timeout (3s)
-        </Button>
-        <Button type='button' variant='outline' onClick={handleClear}>
-          Clear Timeout
-        </Button>
-      </div>
-    </div>
+        <div className='flex items-center gap-2'>
+          <Button type='button' onClick={handleStart}>
+            Start Timeout (3s)
+          </Button>
+          <Button type='button' variant='outline' onClick={handleClear}>
+            Clear Timeout
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

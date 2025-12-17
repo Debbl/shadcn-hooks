@@ -1,5 +1,12 @@
 'use client'
 import { useState } from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
 import { useClickAnyWhere } from '..'
 
 export function Demo01() {
@@ -19,25 +26,25 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>Click Anywhere</h3>
-        <div className='space-y-2 rounded-lg border p-4'>
-          <p className='text-sm'>
+      <Card className='shadow-none ring-0'>
+        <CardHeader>
+          <CardTitle>Click Anywhere</CardTitle>
+          <CardDescription>
             Click anywhere on the page to see the counter increase
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='space-y-2'>
+          <p>
+            Total clicks: <strong>{clickCount}</strong>
           </p>
-          <div className='space-y-2'>
-            <p>
-              Total clicks: <strong>{clickCount}</strong>
+          {lastClickPosition && (
+            <p className='text-muted-foreground text-sm'>
+              Last click position: ({lastClickPosition.x}, {lastClickPosition.y}
+              )
             </p>
-            {lastClickPosition && (
-              <p className='text-muted-foreground text-sm'>
-                Last click position: ({lastClickPosition.x},{' '}
-                {lastClickPosition.y})
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   )
 }

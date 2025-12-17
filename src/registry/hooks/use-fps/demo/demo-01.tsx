@@ -1,6 +1,15 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import { cls } from 'twl'
+import { Badge } from '~/components/ui/badge'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { Label } from '~/components/ui/label'
+import { Slider } from '~/components/ui/slider'
 import { useFps } from '..'
 
 export function Demo01() {
@@ -36,6 +45,14 @@ export function Demo01() {
     return 'Not Available'
   }
 
+  const getFpsBadgeVariant = (
+    fpsValue: number,
+  ): 'default' | 'secondary' | 'destructive' => {
+    if (fpsValue >= 55) return 'default'
+    if (fpsValue >= 30) return 'secondary'
+    return 'destructive'
+  }
+
   const averageFps =
     fpsHistory.length > 0
       ? Math.round(
@@ -48,144 +65,155 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>FPS Monitor</h3>
-        <p className='text-muted-foreground text-sm'>
-          Monitor your application's frames per second in real-time. Try
-          scrolling or interacting with the page to see FPS changes.
-        </p>
-      </div>
-
-      <div className='space-y-4 rounded-lg border p-6'>
-        <div className='space-y-2'>
-          <div className='flex items-center justify-between'>
-            <label htmlFor='every' className='text-sm font-medium'>
-              Update Frequency (frames)
-            </label>
-            <span className='text-muted-foreground text-sm'>
-              Calculate FPS every {every} frame{every !== 1 ? 's' : ''}
-            </span>
-          </div>
-          <input
-            id='every'
-            type='range'
-            min={1}
-            max={30}
-            value={every}
-            onChange={(e) => {
-              const value = Number.parseInt(e.target.value, 10)
-              if (!Number.isNaN(value) && value >= 1 && value <= 30) {
-                setEvery(value)
-              }
-            }}
-            className='w-full'
-          />
-          <div className='text-muted-foreground flex justify-between text-xs'>
-            <span>1</span>
-            <span>15</span>
-            <span>30</span>
-          </div>
-        </div>
-
-        <div className='space-y-4'>
-          <div className='flex items-center gap-4'>
-            <div className='flex-1'>
-              <div className='text-muted-foreground text-sm'>Current FPS</div>
-              <div className={cls`text-4xl font-bold ${getFpsColor(fps)}`}>
-                {fps}
-              </div>
-            </div>
-            <div className='flex-1'>
-              <div className='text-muted-foreground text-sm'>Status</div>
-              <div className={cls`text-lg font-semibold ${getFpsColor(fps)}`}>
-                {getFpsStatus(fps)}
-              </div>
-            </div>
-          </div>
-
-          <div className='bg-muted relative h-6 w-full overflow-hidden rounded-full'>
-            <div
-              className={cls`h-full transition-all duration-300 ${getFpsBgColor(
-                fps,
-              )} ${fps === 0 ? 'bg-gray-400' : ''}`}
-              style={{ width: `${Math.min((fps / 60) * 100, 100)}%` }}
-            />
-            <div className='absolute inset-0 flex items-center justify-center'>
-              <span className='text-xs font-medium text-white dark:text-gray-900'>
-                {fps > 0 ? `${Math.round((fps / 60) * 100)}%` : '0%'}
+      <Card className='shadow-none ring-0'>
+        <CardHeader>
+          <CardTitle>FPS Monitor</CardTitle>
+          <CardDescription>
+            Monitor your application's frames per second in real-time. Try
+            scrolling or interacting with the page to see FPS changes.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='space-y-4'>
+          <div className='space-y-2'>
+            <div className='flex items-center justify-between'>
+              <Label htmlFor='every'>Update Frequency (frames)</Label>
+              <span className='text-muted-foreground text-sm'>
+                Calculate FPS every {every} frame{every !== 1 ? 's' : ''}
               </span>
             </div>
+            <Slider
+              id='every'
+              min={1}
+              max={30}
+              value={[every]}
+              onValueChange={(value) => {
+                const numValue = Array.isArray(value) ? value[0] : value
+                if (
+                  !Number.isNaN(numValue) &&
+                  numValue >= 1 &&
+                  numValue <= 30
+                ) {
+                  setEvery(numValue)
+                }
+              }}
+            />
+            <div className='text-muted-foreground flex justify-between text-xs'>
+              <span>1</span>
+              <span>15</span>
+              <span>30</span>
+            </div>
           </div>
 
-          {fpsHistory.length > 0 && (
-            <div className='space-y-2'>
-              <div className='flex items-center justify-between text-sm'>
-                <span className='text-muted-foreground'>FPS History</span>
-                <span className='text-muted-foreground text-xs'>
-                  Last {fpsHistory.length} readings
-                </span>
-              </div>
-              <div className='bg-muted/30 relative h-24 w-full overflow-hidden rounded-lg border p-2'>
-                <div className='flex h-full items-end gap-0.5'>
-                  {fpsHistory.map((value, index) => (
-                    <div
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={index}
-                      className={cls`flex-1 transition-all ${getFpsBgColor(
-                        value,
-                      )}`}
-                      style={{
-                        height: `${Math.min((value / 60) * 100, 100)}%`,
-                      }}
-                      title={`${value} FPS`}
-                    />
-                  ))}
+          <div className='space-y-4'>
+            <div className='flex items-center gap-4'>
+              <div className='flex-1'>
+                <div className='text-muted-foreground text-sm'>Current FPS</div>
+                <div className={`text-4xl font-bold ${getFpsColor(fps)}`}>
+                  {fps}
                 </div>
               </div>
+              <div className='flex-1'>
+                <div className='text-muted-foreground text-sm'>Status</div>
+                <Badge variant={getFpsBadgeVariant(fps)} className='text-lg'>
+                  {getFpsStatus(fps)}
+                </Badge>
+              </div>
             </div>
-          )}
 
-          <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
-            <div className='rounded-lg border p-3'>
-              <div className='text-muted-foreground text-xs'>Target</div>
-              <div className='text-lg font-semibold'>60 FPS</div>
-            </div>
-            <div className='rounded-lg border p-3'>
-              <div className='text-muted-foreground text-xs'>Average</div>
+            <div className='bg-muted relative h-6 w-full overflow-hidden rounded-full'>
               <div
-                className={cls`text-lg font-semibold ${getFpsColor(averageFps)}`}
-              >
-                {averageFps || '-'} FPS
+                className={`h-full transition-all duration-300 ${getFpsBgColor(
+                  fps,
+                )} ${fps === 0 ? 'bg-gray-400' : ''}`}
+                style={{ width: `${Math.min((fps / 60) * 100, 100)}%` }}
+              />
+              <div className='absolute inset-0 flex items-center justify-center'>
+                <span className='text-xs font-medium text-white dark:text-gray-900'>
+                  {fps > 0 ? `${Math.round((fps / 60) * 100)}%` : '0%'}
+                </span>
               </div>
             </div>
-            <div className='rounded-lg border p-3'>
-              <div className='text-muted-foreground text-xs'>Min</div>
-              <div
-                className={cls`text-lg font-semibold ${getFpsColor(minFps)}`}
-              >
-                {minFps || '-'} FPS
+
+            {fpsHistory.length > 0 && (
+              <div className='space-y-2'>
+                <div className='flex items-center justify-between text-sm'>
+                  <span className='text-muted-foreground'>FPS History</span>
+                  <span className='text-muted-foreground text-xs'>
+                    Last {fpsHistory.length} readings
+                  </span>
+                </div>
+                <div className='bg-muted/30 relative h-24 w-full overflow-hidden rounded-lg border p-2'>
+                  <div className='flex h-full items-end gap-0.5'>
+                    {fpsHistory.map((value, index) => (
+                      <div
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                        className={`flex-1 transition-all ${getFpsBgColor(
+                          value,
+                        )}`}
+                        style={{
+                          height: `${Math.min((value / 60) * 100, 100)}%`,
+                        }}
+                        title={`${value} FPS`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className='rounded-lg border p-3'>
-              <div className='text-muted-foreground text-xs'>Max</div>
-              <div
-                className={cls`text-lg font-semibold ${getFpsColor(maxFps)}`}
-              >
-                {maxFps || '-'} FPS
-              </div>
+            )}
+
+            <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
+              <Card size='sm' className='shadow-none ring-0'>
+                <CardContent className='pt-3'>
+                  <div className='text-muted-foreground text-xs'>Target</div>
+                  <div className='text-lg font-semibold'>60 FPS</div>
+                </CardContent>
+              </Card>
+              <Card size='sm' className='shadow-none ring-0'>
+                <CardContent className='pt-3'>
+                  <div className='text-muted-foreground text-xs'>Average</div>
+                  <div
+                    className={`text-lg font-semibold ${getFpsColor(averageFps)}`}
+                  >
+                    {averageFps || '-'} FPS
+                  </div>
+                </CardContent>
+              </Card>
+              <Card size='sm' className='shadow-none ring-0'>
+                <CardContent className='pt-3'>
+                  <div className='text-muted-foreground text-xs'>Min</div>
+                  <div
+                    className={`text-lg font-semibold ${getFpsColor(minFps)}`}
+                  >
+                    {minFps || '-'} FPS
+                  </div>
+                </CardContent>
+              </Card>
+              <Card size='sm' className='shadow-none ring-0'>
+                <CardContent className='pt-3'>
+                  <div className='text-muted-foreground text-xs'>Max</div>
+                  <div
+                    className={`text-lg font-semibold ${getFpsColor(maxFps)}`}
+                  >
+                    {maxFps || '-'} FPS
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className='bg-muted/50 rounded-lg border p-4'>
-        <p className='text-muted-foreground text-sm'>
-          <strong>Tip:</strong> Lower the update frequency (fewer frames) for
-          more stable readings, or increase it for more responsive updates. The
-          default is 10 frames. Try scrolling or interacting with the page to
-          see how FPS changes in real-time.
-        </p>
-      </div>
+      <Card className='shadow-none ring-0'>
+        <CardContent className='pt-6'>
+          <p className='text-muted-foreground text-sm'>
+            <strong>Tip:</strong> Lower the update frequency (fewer frames) for
+            more stable readings, or increase it for more responsive updates.
+            The default is 10 frames. Try scrolling or interacting with the page
+            to see how FPS changes in real-time.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   )
 }

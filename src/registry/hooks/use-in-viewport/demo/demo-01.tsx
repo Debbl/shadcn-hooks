@@ -1,5 +1,13 @@
 'use client'
 import { useRef, useState } from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
+import { ScrollArea } from '~/components/ui/scroll-area'
 import { useInViewport } from '..'
 
 export function Demo01() {
@@ -18,9 +26,11 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>Basic Usage</h3>
-        <div className='space-y-2 rounded-lg border p-4'>
+      <Card className='shadow-none ring-0'>
+        <CardHeader>
+          <CardTitle>Basic Usage</CardTitle>
+        </CardHeader>
+        <CardContent className='space-y-2'>
           <div className='space-y-1 text-sm'>
             <p>
               In viewport:{' '}
@@ -42,38 +52,48 @@ export function Demo01() {
               Callback called: {callbackCount} times
             </p>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>Scroll to see the target</h3>
-        <div className='h-[300px] overflow-y-auto rounded-lg border p-4'>
-          <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
-            Scroll down to see the target element
-          </div>
-          <div
-            ref={targetRef}
-            className={`rounded-lg border p-6 transition-colors ${
-              isInViewport
-                ? 'border-primary bg-primary/5'
-                : 'bg-muted/50 border-muted'
-            }`}
-          >
-            <p className='font-medium'>Target Element</p>
-            <p className='text-muted-foreground mt-2 text-sm'>
-              Scroll this element into and out of view to see the hook in
-              action.
-            </p>
-          </div>
-          <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
-            Scroll up to see the target element again
-          </div>
-        </div>
-      </div>
+      <Card className='shadow-none ring-0'>
+        <CardHeader>
+          <CardTitle>Scroll to see the target</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ScrollArea className='h-[300px] rounded-lg border p-4'>
+            <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
+              Scroll down to see the target element
+            </div>
+            <Card
+              ref={targetRef}
+              className={`shadow-none ring-0 transition-colors ${
+                isInViewport ? 'border-primary bg-primary/5' : ''
+              }`}
+            >
+              <CardHeader>
+                <CardTitle>Target Element</CardTitle>
+                <CardDescription>
+                  Scroll this element into and out of view to see the hook in
+                  action.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
+              Scroll up to see the target element again
+            </div>
+          </ScrollArea>
+        </CardContent>
+      </Card>
 
-      <div className='space-y-2'>
-        <h3 className='text-lg font-semibold'>With Threshold (50%)</h3>
-        <div className='space-y-2 rounded-lg border p-4'>
+      <Card className='shadow-none ring-0'>
+        <CardHeader>
+          <CardTitle>With Threshold (50%)</CardTitle>
+          <CardDescription>
+            This example requires 50% of the element to be visible before
+            considering it in viewport.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='space-y-4'>
           <div className='space-y-1 text-sm'>
             <p>
               In viewport (50% threshold):{' '}
@@ -85,35 +105,31 @@ export function Demo01() {
                     : 'false'}
               </strong>
             </p>
-            <p className='text-muted-foreground'>
-              This example requires 50% of the element to be visible before
-              considering it in viewport.
-            </p>
           </div>
-        </div>
-        <div className='h-[300px] overflow-y-auto rounded-lg border p-4'>
-          <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
-            Scroll down to see the threshold example
-          </div>
-          <div
-            ref={thresholdTargetRef}
-            className={`rounded-lg border p-6 transition-colors ${
-              isInViewportWithThreshold
-                ? 'border-primary bg-primary/5'
-                : 'bg-muted/50 border-muted'
-            }`}
-          >
-            <p className='font-medium'>50% Threshold Example</p>
-            <p className='text-muted-foreground mt-2 text-sm'>
-              Scroll this element. It will only be considered "in viewport" when
-              at least 50% is visible.
-            </p>
-          </div>
-          <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
-            Scroll up to see the threshold example again
-          </div>
-        </div>
-      </div>
+          <ScrollArea className='h-[300px] rounded-lg border p-4'>
+            <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
+              Scroll down to see the threshold example
+            </div>
+            <Card
+              ref={thresholdTargetRef}
+              className={`shadow-none ring-0 transition-colors ${
+                isInViewportWithThreshold ? 'border-primary bg-primary/5' : ''
+              }`}
+            >
+              <CardHeader>
+                <CardTitle>50% Threshold Example</CardTitle>
+                <CardDescription>
+                  Scroll this element. It will only be considered "in viewport"
+                  when at least 50% is visible.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
+              Scroll up to see the threshold example again
+            </div>
+          </ScrollArea>
+        </CardContent>
+      </Card>
     </div>
   )
 }
