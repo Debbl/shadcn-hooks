@@ -13,7 +13,7 @@ export function Demo01() {
   const network = useNetwork()
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Network Status</CardTitle>
         <CardDescription>Monitor your network connection state</CardDescription>

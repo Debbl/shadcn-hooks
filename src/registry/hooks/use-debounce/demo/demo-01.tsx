@@ -15,7 +15,7 @@ export function Demo01() {
   const debouncedValue = useDebounce(input, 800)
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Debounce Demo</CardTitle>
         <CardDescription>

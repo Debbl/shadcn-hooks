@@ -45,7 +45,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Window Events</CardTitle>
         </CardHeader>
@@ -67,7 +67,7 @@ export function Demo01() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Element Events</CardTitle>
         </CardHeader>
@@ -79,7 +79,7 @@ export function Demo01() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Keyboard Events</CardTitle>
         </CardHeader>

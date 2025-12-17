@@ -22,7 +22,7 @@ function DemoComponent({
   useWhyDidYouUpdate('DemoComponent', { name, count, active })
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardContent className='pt-6'>
         <div className='space-y-2 text-sm'>
           <p>
@@ -50,7 +50,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-4'>
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Why Did You Update</CardTitle>
           <CardDescription>
@@ -63,7 +63,7 @@ export function Demo01() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className='ring-0'>
         <CardContent className='pt-6'>
           <div className='space-y-3'>
             <div className='flex items-center gap-2'>

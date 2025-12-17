@@ -15,7 +15,7 @@ export function Demo01() {
   const throttledValue = useThrottle(input, 800)
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Throttle Demo</CardTitle>
         <CardDescription>

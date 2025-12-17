@@ -26,7 +26,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Click Anywhere</CardTitle>
           <CardDescription>

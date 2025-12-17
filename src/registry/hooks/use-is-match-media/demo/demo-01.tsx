@@ -13,7 +13,7 @@ export function Demo01() {
   const isMatch = useIsMatchMedia('(min-width: 768px)')
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Media Query Match</CardTitle>
         <CardDescription>

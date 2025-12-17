@@ -29,7 +29,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-6'>
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Button Hover</CardTitle>
         </CardHeader>
@@ -50,7 +50,7 @@ export function Demo01() {
 
       <Card
         ref={cardRef}
-        className={`transition-colors ${
+        className={`ring-0 transition-colors ${
           isCardHovered ? 'border-primary bg-primary/5' : ''
         }`}
       >

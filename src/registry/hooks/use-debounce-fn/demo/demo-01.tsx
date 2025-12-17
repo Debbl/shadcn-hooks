@@ -22,7 +22,7 @@ export function Demo01() {
   }, 800)
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Debounce Function Demo</CardTitle>
         <CardDescription>

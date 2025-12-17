@@ -32,7 +32,7 @@ export function Demo01() {
   }
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Timeout Demo</CardTitle>
         <CardDescription>

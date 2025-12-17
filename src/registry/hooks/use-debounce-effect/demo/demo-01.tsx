@@ -26,7 +26,7 @@ export function Demo01() {
   )
 
   return (
-    <Card>
+    <Card className='ring-0'>
       <CardHeader>
         <CardTitle>Debounce Effect Demo</CardTitle>
         <CardDescription>

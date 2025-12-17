@@ -68,7 +68,7 @@ export function Demo01() {
 
   return (
     <div className='space-y-4'>
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <CardTitle>Current User Info</CardTitle>
           <CardDescription>
@@ -96,7 +96,7 @@ export function Demo01() {
         </Button>
       </div>
 
-      <Card>
+      <Card className='ring-0'>
         <CardHeader>
           <div className='flex items-center justify-between'>
             <CardTitle>Comparison Log</CardTitle>
