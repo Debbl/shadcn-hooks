@@ -19,14 +19,21 @@ export default function Page() {
       </h1>
 
       <div className='mt-4 flex gap-4'>
-        <Button asChild>
-          <Link href='/docs/introduction'>
-            Get Started <ArrowRightIcon />
-          </Link>
-        </Button>
-        <Button asChild variant='outline'>
-          <Link href='/docs/hooks/use-boolean'>Browse Hooks</Link>
-        </Button>
+        <Button
+          render={(props) => (
+            <Link {...props} href='/docs/introduction'>
+              Get Started <ArrowRightIcon />
+            </Link>
+          )}
+        />
+        <Button
+          variant='outline'
+          render={(props) => (
+            <Link {...props} href='/docs/hooks/use-boolean'>
+              Browse Hooks
+            </Link>
+          )}
+        />
       </div>
 
       <div className='flex h-9 items-center justify-center'>

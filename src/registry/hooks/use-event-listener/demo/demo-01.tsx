@@ -11,7 +11,7 @@ export function Demo01() {
   const [scrollY, setScrollY] = useState(0)
   const [clickCount, setClickCount] = useState(0)
   const [keyPressed, setKeyPressed] = useState<string>('')
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const buttonRef = useRef<HTMLDivElement>(null)
 
   // Window resize event
   useEventListener('resize', () => {
@@ -65,9 +65,7 @@ export function Demo01() {
       <div className='space-y-2'>
         <h3 className='text-lg font-semibold'>Element Events</h3>
         <div className='space-y-2 rounded-lg border p-4'>
-          <Button ref={buttonRef} type='button'>
-            Click me! (Clicked: {clickCount})
-          </Button>
+          <Button ref={buttonRef}>Click me! (Clicked: {clickCount})</Button>
           <p className='text-muted-foreground text-sm'>
             Click the button above to see the counter increase
           </p>
