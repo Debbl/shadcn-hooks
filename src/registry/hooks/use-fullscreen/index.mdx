@@ -1,0 +1,63 @@
+---
+title: useFullscreen
+description: A hook to manage fullscreen state
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-fullscreen' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-event-listener' />
+    <br />
+    <RegistrySourceCode value='use-isomorphic-layout-effect' />
+    <br />
+    <RegistrySourceCode value='use-unmount' />
+    <br />
+    <RegistrySourceCode value='use-latest' />
+    <br />
+    <RegistrySourceCode value='use-memoized-fn' />
+    <br />
+    <RegistrySourceCode value='use-fullscreen' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface UseFullscreenOptions {
+  /**
+   * Automatically exit fullscreen when component is unmounted
+   *
+   * @default false
+   */
+  autoExit?: boolean
+}
+
+/**
+ * A hook to manage fullscreen state
+ * @param target - The target element to make fullscreen. If not provided, uses document.documentElement
+ * @param options - Configuration options
+ */
+export function useFullscreen(
+  target?: BasicTarget<HTMLElement | Element>,
+  options?: UseFullscreenOptions,
+): {
+  isSupported: boolean
+  isFullscreen: boolean
+  enter: PickFunction<() => Promise<void>>
+  exit: PickFunction<() => Promise<void>>
+  toggle: PickFunction<() => Promise<void>>
+}
+```
+
+## Credits
+
+- [use-fullscreen](https://vueuse.org/core/useFullscreen/)
