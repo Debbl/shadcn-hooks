@@ -1,0 +1,40 @@
+---
+title: useResetState
+description: A hook to reset a state
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-reset-state' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-reset-state' />
+    <br />
+    <RegistrySourceCode value='use-reset-state' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+type ResetState = () => void
+
+/**
+ * A hook to reset a state
+ * @param initialState - The initial state
+ */
+export function useResetState<S>(
+  initialState: S | (() => S),
+): readonly [S, Dispatch<SetStateAction<S>>, ResetState]
+```
+
+## Credits
+
+- [use-reset-state](https://ahooks.js.org/hooks/use-reset-state)
