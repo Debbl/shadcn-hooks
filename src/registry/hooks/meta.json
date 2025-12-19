@@ -5,6 +5,7 @@
     "use-controllable-value",
     "use-counter",
     "use-debounce",
+    "use-reset-state",
     "use-throttle",
     "use-toggle",
 
