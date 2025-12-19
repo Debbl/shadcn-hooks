@@ -77,6 +77,7 @@ This collection is inspired by and builds upon the excellent work of:
 
 - [ahooks](https://ahooks.js.org/) - Comprehensive React hooks library
 - [usehooks-ts](https://usehooks-ts.com/) - TypeScript-first hooks collection
+- [vueuse](https://github.com/vueuse/vueuse) - Collection of essential Vue Composition Utilities for Vue 3
 
 ## 📄 License
 
