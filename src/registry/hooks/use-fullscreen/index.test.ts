@@ -424,13 +424,6 @@ describe('useFullscreen', () => {
       configurable: true,
     })
 
-    Object.defineProperty(document, 'msFullscreenElement', {
-      value: null,
-      writable: true,
-      configurable: true,
-    })
-
-    // msFullscreenElement is used for both fullscreenElementProperty and fullscreenEnabledProperty
     const { result } = renderHook(() => useFullscreen(element))
 
     await act(async () => {
@@ -476,6 +469,7 @@ describe('useFullscreen', () => {
   })
 
   it('should check initial fullscreen state on mount', async () => {
+    // Set up fullscreen state before rendering hook
     Object.defineProperty(document, 'fullscreenElement', {
       value: element,
       writable: true,
@@ -489,6 +483,16 @@ describe('useFullscreen', () => {
     })
 
     const { result } = renderHook(() => useFullscreen(element))
+
+    // Wait for the effect to run and then trigger the event to update state
+    // The useIsomorphicLayoutEffect will call handlerCallback, but we also
+    // need to wait for useEffectWithTarget to set up properties
+    await waitFor(() => {
+      expect(result.current.isSupported).toBe(true)
+    })
+
+    // Now trigger the fullscreenchange event to update the state
+    triggerFullscreenChange(element)
 
     await waitFor(() => {
       expect(result.current.isFullscreen).toBe(true)

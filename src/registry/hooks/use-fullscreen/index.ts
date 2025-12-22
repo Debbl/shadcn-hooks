@@ -1,7 +1,7 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useRef, useState } from 'react'
+import { useEffectWithTarget } from '@/registry/hooks/use-effect-with-target'
 import { useEventListener } from '@/registry/hooks/use-event-listener'
 import { useIsomorphicLayoutEffect } from '@/registry/hooks/use-isomorphic-layout-effect'
-import { useLatest } from '@/registry/hooks/use-latest'
 import { useMemoizedFn } from '@/registry/hooks/use-memoized-fn'
 import { useUnmount } from '@/registry/hooks/use-unmount'
 import { getTargetElement as getTargetElementUtil } from '@/registry/lib/create-effect-with-target'
@@ -55,6 +55,10 @@ type FullscreenElementProperty =
   | 'mozFullScreenElement'
   | 'msFullscreenElement'
 
+function getTargetElement(target: BasicTarget<any>) {
+  return getTargetElementUtil(target, document.documentElement)
+}
+
 /**
  * Reactive Fullscreen API.
  *
@@ -62,160 +66,30 @@ type FullscreenElementProperty =
  * @param options - Configuration options
  */
 export function useFullscreen(
-  target?: BasicTarget<HTMLElement | Element>,
+  target?: BasicTarget<any>,
   options: UseFullscreenOptions = {},
 ) {
   const { autoExit = false } = options
 
-  const [isFullscreen, setIsFullscreen] = useState(false)
-  const targetRef = useLatest(target)
-
-  const getTargetElement = useMemoizedFn(() => {
-    const element = getTargetElementUtil(
-      targetRef.current,
-      isBrowser ? document.documentElement : undefined,
-    )
-    return element
+  const properties = useRef<{
+    requestMethod: RequestMethod | undefined
+    exitMethod: ExitMethod | undefined
+    fullscreenEnabledProperty: FullscreenEnabledProperty | undefined
+    fullscreenElementProperty: FullscreenElementProperty | undefined
+  }>({
+    requestMethod: undefined,
+    exitMethod: undefined,
+    fullscreenEnabledProperty: undefined,
+    fullscreenElementProperty: undefined,
   })
-
-  const requestMethod = useMemo<RequestMethod | undefined>(() => {
-    if (!isBrowser) return undefined
-
-    const methods: RequestMethod[] = [
-      'requestFullscreen',
-      'webkitRequestFullscreen',
-      'webkitEnterFullscreen',
-      'webkitEnterFullScreen',
-      'webkitRequestFullScreen',
-      'mozRequestFullScreen',
-      'msRequestFullscreen',
-    ]
-
-    const element = getTargetElement()
-    for (const method of methods) {
-      if (element && method in element) {
-        return method
-      }
-      if (document && method in document) {
-        return method
-      }
-    }
-
-    return undefined
-  }, [getTargetElement])
-
-  const exitMethod = useMemo<ExitMethod | undefined>(() => {
-    if (!isBrowser) return undefined
-
-    const methods: ExitMethod[] = [
-      'exitFullscreen',
-      'webkitExitFullscreen',
-      'webkitExitFullScreen',
-      'webkitCancelFullScreen',
-      'mozCancelFullScreen',
-      'msExitFullscreen',
-    ]
-
-    const element = getTargetElement()
-    for (const method of methods) {
-      if (element && method in element) {
-        return method
-      }
-      if (document && method in document) {
-        return method
-      }
-    }
-
-    return undefined
-  }, [getTargetElement])
-
-  const fullscreenEnabledProperty = useMemo<
-    FullscreenEnabledProperty | undefined
-  >(() => {
-    if (!isBrowser) return undefined
-
-    const properties: FullscreenEnabledProperty[] = [
-      'fullScreen',
-      'webkitIsFullScreen',
-      'webkitDisplayingFullscreen',
-      'mozFullScreen',
-      'msFullscreenElement',
-    ]
-
-    const element = getTargetElement()
-    for (const property of properties) {
-      if (document && property in document) {
-        return property
-      }
-      if (element && property in element) {
-        return property
-      }
-    }
-
-    return undefined
-  }, [getTargetElement])
-
-  const fullscreenElementProperty = useMemo<
-    FullscreenElementProperty | undefined
-  >(() => {
-    if (!isBrowser) return undefined
-
-    const properties: FullscreenElementProperty[] = [
-      'fullscreenElement',
-      'webkitFullscreenElement',
-      'mozFullScreenElement',
-      'msFullscreenElement',
-    ]
-
-    for (const property of properties) {
-      if (document && property in document) {
-        return property
-      }
-    }
-
-    return undefined
-  }, [])
-
-  const isSupported = useMemo(() => {
-    if (!isBrowser) return false
-    const element = getTargetElement()
-    return !!(
-      element &&
-      document &&
-      requestMethod !== undefined &&
-      exitMethod !== undefined &&
-      fullscreenEnabledProperty !== undefined
-    )
-  }, [getTargetElement, requestMethod, exitMethod, fullscreenEnabledProperty])
-
-  const isCurrentElementFullScreen = useCallback((): boolean => {
-    if (!fullscreenElementProperty || !isBrowser) return false
-    const element = getTargetElement()
-    return document[fullscreenElementProperty as keyof Document] === element
-  }, [fullscreenElementProperty, getTargetElement])
-
-  const isElementFullScreen = useCallback((): boolean => {
-    if (!fullscreenEnabledProperty || !isBrowser) return false
-
-    const element = getTargetElement()
-    const doc = document as any
-
-    if (doc[fullscreenEnabledProperty] != null) {
-      return Boolean(doc[fullscreenEnabledProperty])
-    }
-
-    // Fallback for WebKit and iOS Safari browsers
-    if (element && (element as any)[fullscreenEnabledProperty] != null) {
-      return Boolean((element as any)[fullscreenEnabledProperty])
-    }
-
-    return false
-  }, [fullscreenEnabledProperty, getTargetElement])
+  const [isSupported, setIsSupported] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
   const exit = useMemoizedFn(async () => {
+    const { exitMethod } = properties.current
     if (!isSupported || !isFullscreen) return
 
-    const element = getTargetElement()
+    const element = getTargetElement(target)
     const doc = document as any
 
     if (exitMethod) {
@@ -230,14 +104,157 @@ export function useFullscreen(
     setIsFullscreen(false)
   })
 
+  useEffectWithTarget(
+    () => {
+      if (!isBrowser) {
+        properties.current = {
+          requestMethod: undefined,
+          exitMethod: undefined,
+          fullscreenEnabledProperty: undefined,
+          fullscreenElementProperty: undefined,
+        }
+
+        return
+      }
+
+      const targetElement = getTargetElement(target)
+
+      const getRequestMethod = () => {
+        const methods: RequestMethod[] = [
+          'requestFullscreen',
+          'webkitRequestFullscreen',
+          'webkitEnterFullscreen',
+          'webkitEnterFullScreen',
+          'webkitRequestFullScreen',
+          'mozRequestFullScreen',
+          'msRequestFullscreen',
+        ]
+
+        return methods.find(
+          (method) =>
+            (targetElement && method in targetElement) ||
+            (document && method in document),
+        )
+      }
+
+      const getExitMethod = () => {
+        const methods: ExitMethod[] = [
+          'exitFullscreen',
+          'webkitExitFullscreen',
+          'webkitExitFullScreen',
+          'webkitCancelFullScreen',
+          'mozCancelFullScreen',
+          'msExitFullscreen',
+        ]
+
+        return methods.find(
+          (method) =>
+            (targetElement && method in targetElement) ||
+            (document && method in document),
+        )
+      }
+
+      const getFullscreenEnabledProperty = () => {
+        const properties: FullscreenEnabledProperty[] = [
+          'fullScreen',
+          'webkitIsFullScreen',
+          'webkitDisplayingFullscreen',
+          'mozFullScreen',
+          'msFullscreenElement',
+        ]
+
+        for (const property of properties) {
+          if (document && property in document) {
+            return property
+          }
+          if (targetElement && property in targetElement) {
+            return property
+          }
+        }
+
+        return undefined
+      }
+
+      const getFullscreenElementProperty = () => {
+        const properties: FullscreenElementProperty[] = [
+          'fullscreenElement',
+          'webkitFullscreenElement',
+          'mozFullScreenElement',
+          'msFullscreenElement',
+        ]
+
+        for (const property of properties) {
+          if (document && property in document) {
+            return property
+          }
+        }
+
+        return undefined
+      }
+
+      const requestMethod = getRequestMethod()
+      const exitMethod = getExitMethod()
+      const fullscreenEnabledProperty = getFullscreenEnabledProperty()
+      const fullscreenElementProperty = getFullscreenElementProperty()
+
+      properties.current = {
+        requestMethod,
+        exitMethod,
+        fullscreenEnabledProperty,
+        fullscreenElementProperty,
+      }
+
+      const isSupported = !!(
+        targetElement &&
+        document &&
+        requestMethod !== undefined &&
+        exitMethod !== undefined &&
+        fullscreenEnabledProperty !== undefined
+      )
+
+      setIsSupported(isSupported)
+    },
+    [autoExit],
+    target,
+  )
+
+  const isCurrentElementFullScreen = useMemoizedFn((): boolean => {
+    const { fullscreenElementProperty } = properties.current
+    if (!fullscreenElementProperty || !isBrowser) return false
+
+    const element = getTargetElement(target)
+
+    return document[fullscreenElementProperty as keyof Document] === element
+  })
+
+  const isElementFullScreen = useMemoizedFn((): boolean => {
+    const { fullscreenEnabledProperty } = properties.current
+    if (!fullscreenEnabledProperty || !isBrowser) return false
+
+    const element = getTargetElement(target)
+    const doc = document as any
+
+    if (doc[fullscreenEnabledProperty] != null) {
+      return Boolean(doc[fullscreenEnabledProperty])
+    }
+
+    // Fallback for WebKit and iOS Safari browsers
+    if (element && (element as any)[fullscreenEnabledProperty] != null) {
+      return Boolean((element as any)[fullscreenEnabledProperty])
+    }
+
+    return false
+  })
+
   const enter = useMemoizedFn(async () => {
+    const { requestMethod } = properties.current
     if (!isSupported || isFullscreen) return
 
     if (isElementFullScreen()) {
       await exit()
     }
 
-    const element = getTargetElement()
+    const element = getTargetElement(target)
     if (requestMethod && element && (element as any)[requestMethod] != null) {
       await (element as any)[requestMethod]()
       setIsFullscreen(true)
@@ -250,6 +267,7 @@ export function useFullscreen(
 
   const handlerCallback = useMemoizedFn(() => {
     const isElementFullScreenValue = isElementFullScreen()
+
     if (
       !isElementFullScreenValue ||
       (isElementFullScreenValue && isCurrentElementFullScreen())
@@ -258,16 +276,17 @@ export function useFullscreen(
     }
   })
 
+  const listenerOptions = { capture: false, passive: true }
   // Listen to fullscreen change events on document
   useEventListener(eventHandlers as any, handlerCallback, {
     target: () => document,
-    passive: true,
+    ...listenerOptions,
   })
 
   // Listen to fullscreen change events on target element
   useEventListener(eventHandlers as any, handlerCallback, {
-    target: () => getTargetElement(),
-    passive: true,
+    target: () => getTargetElement(target),
+    ...listenerOptions,
   })
 
   // Check initial state on mount
@@ -277,11 +296,8 @@ export function useFullscreen(
     }
   }, [])
 
-  // Auto exit on unmount if enabled
   useUnmount(() => {
-    if (autoExit) {
-      exit()
-    }
+    if (autoExit) exit()
   })
 
   return {
