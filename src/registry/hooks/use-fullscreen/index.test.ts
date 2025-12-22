@@ -484,19 +484,12 @@ describe('useFullscreen', () => {
 
     const { result } = renderHook(() => useFullscreen(element))
 
-    // Wait for the effect to run and then trigger the event to update state
-    // The useIsomorphicLayoutEffect will call handlerCallback, but we also
-    // need to wait for useEffectWithTarget to set up properties
-    await waitFor(() => {
-      expect(result.current.isSupported).toBe(true)
-    })
+    expect(result.current.isSupported).toBe(true)
 
     // Now trigger the fullscreenchange event to update the state
     triggerFullscreenChange(element)
 
-    await waitFor(() => {
-      expect(result.current.isFullscreen).toBe(true)
-    })
+    expect(result.current.isFullscreen).toBe(true)
   })
 
   it('should handle unsupported environment', () => {

@@ -59,6 +59,99 @@ function getTargetElement(target: BasicTarget<any>) {
   return getTargetElementUtil(target, document.documentElement)
 }
 
+function getProperties(target: BasicTarget<any>) {
+  const targetElement = getTargetElement(target)
+
+  const getRequestMethod = () => {
+    const methods: RequestMethod[] = [
+      'requestFullscreen',
+      'webkitRequestFullscreen',
+      'webkitEnterFullscreen',
+      'webkitEnterFullScreen',
+      'webkitRequestFullScreen',
+      'mozRequestFullScreen',
+      'msRequestFullscreen',
+    ]
+
+    return methods.find(
+      (method) =>
+        (targetElement && method in targetElement) ||
+        (document && method in document),
+    )
+  }
+
+  const getExitMethod = () => {
+    const methods: ExitMethod[] = [
+      'exitFullscreen',
+      'webkitExitFullscreen',
+      'webkitExitFullScreen',
+      'webkitCancelFullScreen',
+      'mozCancelFullScreen',
+      'msExitFullscreen',
+    ]
+
+    return methods.find(
+      (method) =>
+        (targetElement && method in targetElement) ||
+        (document && method in document),
+    )
+  }
+
+  const getFullscreenEnabledProperty = () => {
+    const properties: FullscreenEnabledProperty[] = [
+      'fullScreen',
+      'webkitIsFullScreen',
+      'webkitDisplayingFullscreen',
+      'mozFullScreen',
+      'msFullscreenElement',
+    ]
+
+    return properties.find(
+      (property) =>
+        (document && property in document) ||
+        (targetElement && property in targetElement),
+    )
+  }
+
+  const getFullscreenElementProperty = () => {
+    const properties: FullscreenElementProperty[] = [
+      'fullscreenElement',
+      'webkitFullscreenElement',
+      'mozFullScreenElement',
+      'msFullscreenElement',
+    ]
+
+    return properties.find(
+      (property) =>
+        (document && property in document) ||
+        (targetElement && property in targetElement),
+    )
+  }
+
+  return {
+    requestMethod: getRequestMethod(),
+    exitMethod: getExitMethod(),
+    fullscreenEnabledProperty: getFullscreenEnabledProperty(),
+    fullscreenElementProperty: getFullscreenElementProperty(),
+  }
+}
+
+function getIsSupported(
+  target: BasicTarget<any>,
+  properties: ReturnType<typeof getProperties>,
+) {
+  const targetElement = getTargetElement(target)
+
+  const { requestMethod, exitMethod, fullscreenEnabledProperty } = properties
+  return !!(
+    targetElement &&
+    document &&
+    requestMethod !== undefined &&
+    exitMethod !== undefined &&
+    fullscreenEnabledProperty !== undefined
+  )
+}
+
 /**
  * Reactive Fullscreen API.
  *
@@ -82,7 +175,11 @@ export function useFullscreen(
     fullscreenEnabledProperty: undefined,
     fullscreenElementProperty: undefined,
   })
-  const [isSupported, setIsSupported] = useState(false)
+  const [isSupported, setIsSupported] = useState(() => {
+    if (!isBrowser) return false
+
+    return getIsSupported(target, getProperties(target))
+  })
   const [isFullscreen, setIsFullscreen] = useState(false)
 
   const exit = useMemoizedFn(async () => {
@@ -107,112 +204,14 @@ export function useFullscreen(
   useEffectWithTarget(
     () => {
       if (!isBrowser) {
-        properties.current = {
-          requestMethod: undefined,
-          exitMethod: undefined,
-          fullscreenEnabledProperty: undefined,
-          fullscreenElementProperty: undefined,
-        }
-
         return
       }
 
-      const targetElement = getTargetElement(target)
-
-      const getRequestMethod = () => {
-        const methods: RequestMethod[] = [
-          'requestFullscreen',
-          'webkitRequestFullscreen',
-          'webkitEnterFullscreen',
-          'webkitEnterFullScreen',
-          'webkitRequestFullScreen',
-          'mozRequestFullScreen',
-          'msRequestFullscreen',
-        ]
-
-        return methods.find(
-          (method) =>
-            (targetElement && method in targetElement) ||
-            (document && method in document),
-        )
-      }
-
-      const getExitMethod = () => {
-        const methods: ExitMethod[] = [
-          'exitFullscreen',
-          'webkitExitFullscreen',
-          'webkitExitFullScreen',
-          'webkitCancelFullScreen',
-          'mozCancelFullScreen',
-          'msExitFullscreen',
-        ]
-
-        return methods.find(
-          (method) =>
-            (targetElement && method in targetElement) ||
-            (document && method in document),
-        )
-      }
-
-      const getFullscreenEnabledProperty = () => {
-        const properties: FullscreenEnabledProperty[] = [
-          'fullScreen',
-          'webkitIsFullScreen',
-          'webkitDisplayingFullscreen',
-          'mozFullScreen',
-          'msFullscreenElement',
-        ]
-
-        for (const property of properties) {
-          if (document && property in document) {
-            return property
-          }
-          if (targetElement && property in targetElement) {
-            return property
-          }
-        }
-
-        return undefined
-      }
-
-      const getFullscreenElementProperty = () => {
-        const properties: FullscreenElementProperty[] = [
-          'fullscreenElement',
-          'webkitFullscreenElement',
-          'mozFullScreenElement',
-          'msFullscreenElement',
-        ]
-
-        for (const property of properties) {
-          if (document && property in document) {
-            return property
-          }
-        }
-
-        return undefined
-      }
-
-      const requestMethod = getRequestMethod()
-      const exitMethod = getExitMethod()
-      const fullscreenEnabledProperty = getFullscreenEnabledProperty()
-      const fullscreenElementProperty = getFullscreenElementProperty()
-
       properties.current = {
-        requestMethod,
-        exitMethod,
-        fullscreenEnabledProperty,
-        fullscreenElementProperty,
+        ...getProperties(target),
       }
 
-      const isSupported = !!(
-        targetElement &&
-        document &&
-        requestMethod !== undefined &&
-        exitMethod !== undefined &&
-        fullscreenEnabledProperty !== undefined
-      )
-
-      setIsSupported(isSupported)
+      setIsSupported(getIsSupported(target, properties.current))
     },
     [],
     target,
