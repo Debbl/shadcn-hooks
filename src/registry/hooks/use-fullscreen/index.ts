@@ -207,9 +207,7 @@ export function useFullscreen(
         return
       }
 
-      properties.current = {
-        ...getProperties(target),
-      }
+      properties.current = getProperties(target)
 
       setIsSupported(getIsSupported(target, properties.current))
     },
