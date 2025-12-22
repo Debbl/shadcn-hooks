@@ -214,7 +214,7 @@ export function useFullscreen(
 
       setIsSupported(isSupported)
     },
-    [autoExit],
+    [],
     target,
   )
 
