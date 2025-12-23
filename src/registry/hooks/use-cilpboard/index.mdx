@@ -1,0 +1,80 @@
+---
+title: useClipboard
+description: A hook to copy text to clipboard
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-clipboard' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-event-listener' />
+    <br />
+    <RegistrySourceCode value='use-memoized-fn' />
+    <br />
+    <RegistrySourceCode value='use-unmount' />
+    <br />
+    <RegistrySourceCode value='is-browser' />
+    <br />
+    <RegistrySourceCode value='use-clipboard' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface UseClipboardOptions {
+  /**
+   * Enabled reading for clipboard
+   *
+   * @default false
+   */
+  read?: boolean
+
+  /**
+   * Copy source
+   */
+  source?: string
+
+  /**
+   * Milliseconds to reset state of `copied` ref
+   *
+   * @default 1500
+   */
+  copiedDuring?: number
+
+  /**
+   * Whether fallback to document.execCommand('copy') if clipboard is undefined.
+   *
+   * @default false
+   */
+  legacy?: boolean
+}
+
+export interface UseClipboardReturn {
+  isSupported: boolean
+  text: string
+  copied: boolean
+  copy: (text?: string) => Promise<void>
+}
+
+type PermissionState = 'granted' | 'denied' | 'prompt' | undefined
+
+/**
+ * A hook to copy text to clipboard
+ * @param options - The options for the clipboard
+ * @returns The clipboard state and methods
+ */
+export function useClipboard(options?: UseClipboardOptions): UseClipboardReturn
+```
+
+## Credits
+
+- [use-clipboard](https://vueuse.org/core/useClipboard/)

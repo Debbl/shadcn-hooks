@@ -38,6 +38,7 @@
     "---Browser---",
     "use-click-any-where",
     "use-click-away",
+    "use-clipboard",
     "use-event-listener",
     "use-fps",
     "use-fullscreen",
