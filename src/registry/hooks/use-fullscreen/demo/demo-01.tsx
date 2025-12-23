@@ -86,7 +86,7 @@ export function Demo01() {
             <p className='text-sm font-medium'>Target Element</p>
             <div
               ref={containerRef}
-              className='relative flex min-h-[200px] flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-900'
+              className='relative flex min-h-50 flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-900'
             >
               <div className='space-y-4 text-center'>
                 <div className='bg-primary/10 mx-auto flex h-16 w-16 items-center justify-center rounded-full'>
