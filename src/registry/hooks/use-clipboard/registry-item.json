@@ -1,0 +1,8 @@
+{
+  "registryDependencies": [
+    "@hooks/use-unmount",
+    "@hooks/use-event-listener",
+    "@hooks/use-memoized-fn",
+    "@hooks/is-browser"
+  ]
+}
