@@ -19,6 +19,7 @@
     "test": "vitest",
     "release": "bumpp",
     "build": "node scripts/build.ts",
+    "build:shadcn-hooks": "pnpm --filter shadcn-hooks build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start --webpack",
     "typecheck": "tsc --noEmit",
