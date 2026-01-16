@@ -1,6 +1,7 @@
 name: Release
 
 permissions:
+  id-token: write # Required for OIDC
   contents: write
 
 on:
@@ -36,6 +37,21 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
+
+      - name: Typecheck
+        run: nr typecheck
+
+      - name: Publish to NPM
+        run: pnpm -r publish --access public --no-git-checks
 
       - run: npx changelogithub
         env:

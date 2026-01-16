@@ -1,4 +1,5 @@
 {
+  "dependencies": ["es-toolkit"],
   "registryDependencies": [
     "@hooks/use-isomorphic-layout-effect",
     "@hooks/use-event-listener",
@@ -6,7 +7,6 @@
     "@hooks/use-latest",
     "@hooks/use-memoized-fn",
     "@hooks/create-effect-with-target",
-    "@hooks/is-browser",
-    "es-toolkit"
+    "@hooks/is-browser"
   ]
 }
