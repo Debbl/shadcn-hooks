@@ -17,7 +17,7 @@
     "dev": "node scripts/dev.ts",
     "preflight": "node scripts/preflight.ts",
     "test": "vitest",
-    "release": "bumpp",
+    "release": "bumpp -r",
     "build": "node scripts/build.ts",
     "build:shadcn-hooks": "pnpm --filter shadcn-hooks build",
     "build:analyze": "ANALYZE=true next build",
