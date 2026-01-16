@@ -17,7 +17,7 @@
     "dev": "node scripts/dev.ts",
     "preflight": "node scripts/preflight.ts",
     "test": "vitest",
-    "release": "bumpp -r && pnpm publish -r",
+    "release": "bumpp",
     "build": "node scripts/build.ts",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start --webpack",
