@@ -1,3 +1,7 @@
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
+import process from 'node:process'
 import {
   DocsBody,
   DocsDescription,
@@ -53,6 +57,17 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
+  // Calculate hash of the opengraph route file
+  const routeFilePath = join(
+    process.cwd(),
+    'src/app/docs/og/[[...slug]]/route.tsx',
+  )
+  const routeFileContent = readFileSync(routeFilePath, 'utf-8')
+  const hash = createHash('sha256')
+    .update(routeFileContent)
+    .digest('hex')
+    .slice(0, 16)
+
   return {
     metadataBase: new URL(websiteConfig.baseUrl),
     title: `${page.data.title} - Shadcn Hooks`,
@@ -62,6 +77,7 @@ export async function generateMetadata(props: {
     },
     openGraph: {
       type: 'article',
+      images: [`/docs/og/${page.slugs.join('/')}/opengraph-image?${hash}`],
       title: page.data.title,
       description: page.data.description,
     },

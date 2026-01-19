@@ -52,6 +52,3 @@ content/docs/lib
 public/r
 registry.json
 schema/registry-item.json
-
-# opengraph image
-src/app/docs/\[\[...slug\]\]/opengraph-image.tsx
