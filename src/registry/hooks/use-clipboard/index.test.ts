@@ -100,8 +100,10 @@ describe('useClipboard', () => {
   }
 
   describe('basic functionality', () => {
-    it('should return initial state', () => {
+    it('should return initial state', async () => {
       const { result } = renderHook(() => useClipboard())
+
+      await waitForPermissions()
 
       expect(result.current.isSupported).toBe(true)
       expect(result.current.text).toBe('')
@@ -224,6 +226,8 @@ describe('useClipboard', () => {
 
       const { result } = renderHook(() => useClipboard({ legacy: true }))
 
+      await waitForPermissions()
+
       expect(result.current.isSupported).toBe(true)
 
       await act(async () => {
@@ -243,12 +247,14 @@ describe('useClipboard', () => {
       }
     })
 
-    it('should return false for isSupported when clipboard API is not available and legacy is false', () => {
+    it('should return false for isSupported when clipboard API is not available and legacy is false', async () => {
       // Remove clipboard API completely
       const originalClipboard = (navigator as any).clipboard
       delete (navigator as any).clipboard
 
       const { result } = renderHook(() => useClipboard({ legacy: false }))
+
+      await waitForPermissions()
 
       expect(result.current.isSupported).toBe(false)
 
