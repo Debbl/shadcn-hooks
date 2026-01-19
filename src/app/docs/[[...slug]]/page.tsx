@@ -77,7 +77,12 @@ export async function generateMetadata(props: {
     },
     openGraph: {
       type: 'article',
-      images: [`/docs/og/${page.slugs.join('/')}/opengraph-image?${hash}`],
+      images: [
+        {
+          url: `/docs/og/${page.slugs.join('/')}/opengraph-image?${hash}`,
+          type: 'image/png',
+        },
+      ],
       title: page.data.title,
       url: `/docs/${page.slugs.join('/')}`,
       description: page.data.description,
