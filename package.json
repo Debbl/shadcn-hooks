@@ -22,7 +22,7 @@
     "build:shadcn-hooks": "pnpm --filter shadcn-hooks build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start --webpack",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "prepare": "simple-git-hooks"
