@@ -1,21 +1,24 @@
 import { notFound } from 'next/navigation'
 import { ImageResponse } from 'next/og'
 import { source } from '~/lib/source'
+import type { NextRequest } from 'next/server'
 
 export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
-  return source.generateParams()
+  return source.generateParams().map((i) => ({
+    slug: i.slug.concat(['opengraph-image']),
+  }))
 }
 
-export default async function Image({
-  params,
-}: {
-  params: Promise<{ slug?: string[] }>
-}) {
-  const { slug } = await params
+export async function GET(
+  _req: NextRequest,
+  ctx: RouteContext<'/docs/og/[[...slug]]'>,
+) {
+  const { slug } = await ctx.params
+  if (!slug) notFound()
 
-  const page = source.getPage(slug)
+  const page = source.getPage(slug.slice(0, -1))
 
   if (!page) notFound()
 

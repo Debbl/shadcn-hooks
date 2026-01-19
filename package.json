@@ -14,11 +14,11 @@
   },
   "scripts": {
     "postinstall": "fumadocs-mdx",
-    "dev": "node scripts/dev.ts",
+    "dev": "next dev --webpack",
     "preflight": "node scripts/preflight.ts",
     "test": "vitest",
     "release": "bumpp -r",
-    "build": "node scripts/build.ts",
+    "build": "next build --webpack",
     "build:shadcn-hooks": "pnpm --filter shadcn-hooks build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start --webpack",
