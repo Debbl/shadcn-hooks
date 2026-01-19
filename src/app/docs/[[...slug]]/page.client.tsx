@@ -135,6 +135,7 @@ export function LLMCopyButton({ slug, url }: { slug: string[]; url: string }) {
 export function GitHubLink({ url }: { url: string }) {
   return (
     <Button
+      nativeButton={false}
       variant='secondary'
       className='gap-2'
       render={(props) => (

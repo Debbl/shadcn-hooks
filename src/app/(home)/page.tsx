@@ -20,6 +20,7 @@ export default function Page() {
 
       <div className='mt-4 flex gap-4'>
         <Button
+          nativeButton={false}
           render={(props) => (
             <Link {...props} href='/docs/introduction'>
               Get Started <ArrowRightIcon />
@@ -27,6 +28,7 @@ export default function Page() {
           )}
         />
         <Button
+          nativeButton={false}
           variant='outline'
           render={(props) => (
             <Link {...props} href='/docs/hooks/use-boolean'>
