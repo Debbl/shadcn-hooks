@@ -11,7 +11,7 @@ export interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <SerwistProvider swUrl='/sw.js'>
+    <SerwistProvider swUrl='/sw.js' disable>
       <RootProvider
         search={{
           enabled: true,
