@@ -8,3 +8,6 @@ onlyBuiltDependencies:
   - sharp
   - simple-git-hooks
   - unrs-resolver
+
+overrides:
+  'eslint-plugin-react-hooks>zod-validation-error': '4.0.2'

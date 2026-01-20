@@ -5,6 +5,7 @@ import {
   frontmatterSchema,
   metaSchema,
 } from 'fumadocs-mdx/config'
+import lastModified from 'fumadocs-mdx/plugins/last-modified'
 import { remarkDemo } from './remark/remark-demo'
 import { remarkInstallCli } from './remark/remark-install-cli'
 import { remarkPackageInstall } from './remark/remark-package-install'
@@ -32,7 +33,7 @@ export const registry = defineDocs({
 })
 
 export default defineConfig({
-  lastModifiedTime: 'git',
+  plugins: [lastModified()],
   mdxOptions: {
     remarkPlugins: [
       remarkDemo,
