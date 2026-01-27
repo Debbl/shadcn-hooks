@@ -1,0 +1,54 @@
+---
+title: useScrollLock
+description: A hook to lock the scroll of the body
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-scroll-lock' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-isomorphic-layout-effect' />
+    <br />
+    <RegistrySourceCode value='is-browser' />
+    <br />
+    <RegistrySourceCode value='use-scroll-lock' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+interface UseScrollLockOptions {
+  autoLock?: boolean
+  lockTarget?: HTMLElement | string
+  widthReflow?: boolean
+}
+
+interface UseScrollLockReturn {
+  isLocked: boolean
+  lock: () => void
+  unlock: () => void
+}
+
+/**
+ * A hook to lock the scroll of the body
+ * @param options - The options for the hook
+ * @param options.autoLock - Whether to automatically lock the scroll when the component is mounted
+ * @param options.lockTarget - The target element to lock the scroll on
+ * @param options.widthReflow - Whether to reflow the width of the body when the scroll is locked
+ * @returns The scroll lock state and the functions to lock and unlock the scroll
+ */
+function useScrollLock(options?: UseScrollLockOptions): UseScrollLockReturn
+```
+
+## Credits
+
+- [use-scroll-lock](https://usehooks-ts.com/react-hook/use-scroll-lock)
