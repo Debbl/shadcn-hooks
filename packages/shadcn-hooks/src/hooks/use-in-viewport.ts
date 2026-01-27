@@ -5,7 +5,7 @@ import type { BasicTarget } from '~/lib/create-effect-with-target'
 
 type CallbackType = (entry: IntersectionObserverEntry) => void
 
-export interface Options {
+export interface UseInViewportOptions {
   rootMargin?: string
   threshold?: number | number[]
   root?: BasicTarget<Element>
@@ -14,7 +14,7 @@ export interface Options {
 
 export function useInViewport(
   target: BasicTarget | BasicTarget[],
-  options?: Options,
+  options?: UseInViewportOptions,
 ) {
   const { callback, ...option } = options || {}
 
