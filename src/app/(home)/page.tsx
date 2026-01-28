@@ -48,7 +48,7 @@ export default function Page() {
           >
             <GithubStarsLogo className='size-6' />
 
-            <span className='bg-accent flex items-center gap-x-1 rounded-lg py-1 pr-[5px] pl-1.5 text-sm select-none group-hover:bg-white dark:group-hover:bg-neutral-900'>
+            <span className='bg-accent flex items-center gap-x-1 rounded-lg py-1 pr-1.25 pl-1.5 text-sm select-none group-hover:bg-white dark:group-hover:bg-neutral-900'>
               <GithubStarsNumber />
               <GithubStarsParticles>
                 <GithubStarsIcon

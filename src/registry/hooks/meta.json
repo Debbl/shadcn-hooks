@@ -48,6 +48,7 @@
     "use-is-match-media",
     "use-is-online",
     "use-network",
+    "use-scroll-lock",
 
     "---Dev---",
     "use-why-did-you-update",
