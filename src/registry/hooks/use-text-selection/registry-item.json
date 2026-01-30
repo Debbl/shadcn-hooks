@@ -1,0 +1,6 @@
+{
+  "registryDependencies": [
+    "@hooks/create-effect-with-target",
+    "@hooks/use-effect-with-target"
+  ]
+}
