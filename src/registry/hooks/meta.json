@@ -49,6 +49,7 @@
     "use-is-online",
     "use-network",
     "use-scroll-lock",
+    "use-text-selection",
 
     "---Dev---",
     "use-why-did-you-update",

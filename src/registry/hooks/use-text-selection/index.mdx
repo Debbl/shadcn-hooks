@@ -1,0 +1,53 @@
+---
+title: useTextSelection
+description: A hook to get the text selection and its bounding rect from an element
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-text-selection' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='create-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-text-selection' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+interface Rect {
+  top: number
+  left: number
+  bottom: number
+  right: number
+  height: number
+  width: number
+}
+
+export interface State extends Rect {
+  text: string
+}
+
+/**
+ * A hook to get the text selection from an element
+ * @param target - The target to get the text selection from
+ */
+export function useTextSelection(
+  target?: BasicTarget<Document | Element>,
+): State
+```
+
+## Credits
+
+- [use-text-selection](https://ahooks.js.org/hooks/use-text-selection)
