@@ -83,7 +83,7 @@ export function useTextSelection(
 
       // clear the previous range on any click
       const mousedownHandler = (e: MouseEvent) => {
-        // 如果是鼠标右键需要跳过 这样选中的数据就不会被清空
+        // if the mouse button is right, skip it because the selection will be cleared
         if (e.button === 2) {
           return
         }
