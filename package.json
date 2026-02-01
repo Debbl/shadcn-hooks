@@ -37,7 +37,7 @@
     "dequal": "^2.0.3",
     "embla-carousel-react": "^8.6.0",
     "es-toolkit": "^1.44.0",
-    "fumadocs-core": "16.4.7",
+    "fumadocs-core": "16.4.11",
     "fumadocs-docgen": "^3.0.5",
     "fumadocs-mdx": "^14.2.6",
     "fumadocs-ui": "16.4.7",
