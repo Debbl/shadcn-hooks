@@ -1,7 +1,7 @@
 {
   "name": "shadcn-hooks-monorepo",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "packageManager": "pnpm@10.28.2",
   "description": "shadcn hooks",
