@@ -17,6 +17,25 @@ async function generateRegistryItemSchema() {
     delete data.required
   }
 
+  // Ensure font conditional only applies when "type" exists: in JSON Schema,
+  // "properties" does not require keys to exist, so missing "type" would
+  // incorrectly trigger the "then" (required name/type/font). Add "required":
+  // ["type"] to the "if" so items without "type" (e.g. hooks) go to "else".
+  const allOf = data.allOf as
+    | Array<{ if?: { required?: string[] }; then?: { required?: string[] } }>
+    | undefined
+  if (Array.isArray(allOf)) {
+    const fontRule = allOf.find(
+      (r) =>
+        r.then?.required?.includes('font') &&
+        r.if &&
+        !r.if.required?.includes('type'),
+    )
+    if (fontRule?.if) {
+      fontRule.if.required = ['type']
+    }
+  }
+
   writeFileSync(
     path.join(CWD, 'schema/registry-item.json'),
     `${JSON.stringify(data, null, 2)}\n`,
