@@ -27,6 +27,7 @@ export function Demo01() {
     unlock: unlockContainer,
   } = useScrollLock({
     autoLock: false,
+    // eslint-disable-next-line react-hooks/refs
     lockTarget: containerRef.current || undefined,
   })
 
@@ -111,6 +112,7 @@ export function Demo01() {
             <div className='space-y-2'>
               {Array.from({ length: 5 }).map((_, i) => (
                 <div
+                  // eslint-disable-next-line react/no-array-index-key
                   key={`test-content-${i}`}
                   className='rounded-lg border bg-gray-50 p-4 dark:bg-gray-900'
                 >
@@ -199,6 +201,7 @@ export function Demo01() {
             >
               {Array.from({ length: 15 }).map((_, i) => (
                 <div
+                  // eslint-disable-next-line react/no-array-index-key
                   key={`container-item-${i}`}
                   className='rounded-lg border bg-white p-3 dark:bg-gray-800'
                 >
