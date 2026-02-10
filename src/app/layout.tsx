@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { websiteConfig } from '~/constants'
 import { Providers } from '~/providers'
 import './globals.css'
@@ -57,6 +58,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Providers>{children}</Providers>
       </body>
+      <GoogleAnalytics gaId='G-PZCVKTSB2B' />
     </html>
   )
 }
