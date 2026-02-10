@@ -11,6 +11,7 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
@@ -53,10 +54,12 @@ export function Demo01() {
                   )}
                 ></DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuLabel>Menu Items</DropdownMenuLabel>
-                  <DropdownMenuItem onClick={() => setIsOpen(false)}>
-                    Item 1
-                  </DropdownMenuItem>
+                  <DropdownMenuGroup>
+                    <DropdownMenuLabel>Menu Items</DropdownMenuLabel>
+                    <DropdownMenuItem onClick={() => setIsOpen(false)}>
+                      Item 1
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

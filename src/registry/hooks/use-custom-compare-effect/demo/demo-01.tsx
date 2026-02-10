@@ -108,9 +108,11 @@ export function Demo01() {
         <CardContent>
           <ScrollArea className='h-40 max-h-40'>
             <div className='space-y-1 py-1 text-sm'>
+              {/* eslint-disable-next-line react-hooks/refs */}
               {log.current.length === 0 ? (
                 <p className='text-foreground'>No logs yet</p>
               ) : (
+                // eslint-disable-next-line react-hooks/refs
                 log.current.toReversed().map((entry, index) => (
                   <div
                     // eslint-disable-next-line react/no-array-index-key

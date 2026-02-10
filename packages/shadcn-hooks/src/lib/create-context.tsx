@@ -17,7 +17,7 @@ function createContext<ContextValueType extends object | null>(
 
     const value = React.useMemo(
       () => context,
-      // eslint-disable-next-line react-compiler/react-compiler, react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-compiler/react-compiler, react-hooks/exhaustive-deps, react-hooks/use-memo
       Object.values(context),
     ) as ContextValueType
     return <Context value={value}>{children}</Context>
@@ -82,7 +82,7 @@ function createContextScope(
 
       const value = React.useMemo(
         () => context,
-        // eslint-disable-next-line react-compiler/react-compiler, react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-compiler/react-compiler, react-hooks/exhaustive-deps, react-hooks/use-memo
         Object.values(context),
       ) as ContextValueType
       return <Context value={value}>{children}</Context>

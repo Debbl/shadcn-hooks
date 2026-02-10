@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
-/* eslint-disable react/no-unstable-default-props */
 'use client'
 
 import { useMotionValue, useSpring, useTransform } from 'motion/react'
@@ -247,6 +246,7 @@ function SlidingNumber({
     ? newIntStrRaw.padStart(finalIntLength, '0')
     : newIntStrRaw
 
+  // eslint-disable-next-line react-hooks/refs
   const prevFormatted = formatNumber(prevNumberRef.current)
   const [prevIntStrRaw = '', prevDecStrRaw = ''] = prevFormatted.split('.')
   const prevIntStr = padStart
