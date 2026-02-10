@@ -43,7 +43,10 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.20",
-    "es-toolkit": "^1.44.0"
+    "es-toolkit": "^1.44.0",
+    "swr": "^2.4.0",
+    "use-mcp": "^0.0.21",
+    "use-stick-to-bottom": "^1.1.3"
   },
   "devDependencies": {
     "@types/node": "^25.2.2",
