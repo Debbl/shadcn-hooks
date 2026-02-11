@@ -24,17 +24,24 @@ This skill is a decision-and-implementation guide for [shadcn-hooks](https://git
 
 ## Installation
 
-Hooks can be installed individually via the shadcn CLI:
+**Prefer the shadcn CLI** — it copies only the hooks you need into your project (zero extra runtime dependencies, tree-shake friendly):
 
 ```bash
+# Install a single hook (recommended)
 npx shadcn@latest add @hooks/use-boolean
+
+# Install multiple hooks at once
+npx shadcn@latest add @hooks/use-boolean @hooks/use-mount @hooks/use-debounce
 ```
 
-Or install the npm package directly:
+Alternatively, install the full npm package (all hooks bundled):
 
 ```bash
 npm install shadcn-hooks
 ```
+
+> When using the shadcn CLI, import from the local path (e.g. `import { useBoolean } from "@/hooks/use-boolean"`).
+> When using the npm package, import from `"shadcn-hooks"` (e.g. `import { useBoolean } from "shadcn-hooks"`).
 
 ## Functions
 

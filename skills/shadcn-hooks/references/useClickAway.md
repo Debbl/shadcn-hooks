@@ -5,7 +5,7 @@ Detect clicks outside of target element(s). Supports Shadow DOM and custom event
 ## Usage
 
 ```tsx
-import { useClickAway } from 'shadcn-hooks'
+import { useClickAway } from '@/hooks/use-click-away'
 
 function Dropdown() {
   const ref = useRef<HTMLDivElement>(null)

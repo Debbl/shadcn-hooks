@@ -5,7 +5,7 @@ Throttled function with `run`, `cancel`, `flush` controls. Automatically cancels
 ## Usage
 
 ```tsx
-import { useThrottleFn } from 'shadcn-hooks'
+import { useThrottleFn } from '@/hooks/use-throttle-fn'
 
 function Component() {
   const { run, cancel, flush } = useThrottleFn((value: string) => {

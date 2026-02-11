@@ -5,7 +5,7 @@ Reactive Fullscreen API with cross-browser support (including webkit/moz/ms pref
 ## Usage
 
 ```tsx
-import { useFullscreen } from 'shadcn-hooks'
+import { useFullscreen } from '@/hooks/use-fullscreen'
 
 function Component() {
   const ref = useRef<HTMLDivElement>(null)

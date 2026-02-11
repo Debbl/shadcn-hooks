@@ -5,7 +5,7 @@
 ## Usage
 
 ```tsx
-import { useUpdateEffect } from 'shadcn-hooks'
+import { useUpdateEffect } from '@/hooks/use-update-effect'
 
 function Component({ value }: { value: string }) {
   useUpdateEffect(() => {

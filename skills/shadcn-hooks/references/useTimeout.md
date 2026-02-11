@@ -5,7 +5,7 @@ Timeout timer with auto-cleanup. Returns a `clear` function to cancel the timeou
 ## Usage
 
 ```tsx
-import { useTimeout } from 'shadcn-hooks'
+import { useTimeout } from '@/hooks/use-timeout'
 
 function Component() {
   const clear = useTimeout(() => {

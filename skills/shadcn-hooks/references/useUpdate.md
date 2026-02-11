@@ -5,7 +5,7 @@ Returns a function that forces a component re-render.
 ## Usage
 
 ```tsx
-import { useUpdate } from 'shadcn-hooks'
+import { useUpdate } from '@/hooks/use-update'
 
 function Component() {
   const update = useUpdate()

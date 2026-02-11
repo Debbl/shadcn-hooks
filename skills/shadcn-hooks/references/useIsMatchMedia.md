@@ -5,7 +5,7 @@ Reactive CSS media query matching. Automatically updates when the media query re
 ## Usage
 
 ```tsx
-import { useIsMatchMedia } from 'shadcn-hooks'
+import { useIsMatchMedia } from '@/hooks/use-is-match-media'
 
 function Component() {
   const isDark = useIsMatchMedia('(prefers-color-scheme: dark)')

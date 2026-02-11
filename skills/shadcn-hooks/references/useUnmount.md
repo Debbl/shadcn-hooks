@@ -5,7 +5,7 @@ Runs a cleanup function when the component unmounts. Always calls the latest ver
 ## Usage
 
 ```tsx
-import { useUnmount } from 'shadcn-hooks'
+import { useUnmount } from '@/hooks/use-unmount'
 
 function Component() {
   useUnmount(() => {

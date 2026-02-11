@@ -5,7 +5,7 @@ Uses `useLayoutEffect` on the client and `useEffect` on the server. Prevents SSR
 ## Usage
 
 ```tsx
-import { useIsomorphicLayoutEffect } from 'shadcn-hooks'
+import { useIsomorphicLayoutEffect } from '@/hooks/use-isomorphic-layout-effect'
 
 function Component() {
   useIsomorphicLayoutEffect(() => {

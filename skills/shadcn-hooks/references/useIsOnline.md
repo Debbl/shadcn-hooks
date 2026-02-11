@@ -5,7 +5,7 @@ Reactive online/offline network status. Returns `true` on the server for SSR saf
 ## Usage
 
 ```tsx
-import { useIsOnline } from 'shadcn-hooks'
+import { useIsOnline } from '@/hooks/use-is-online'
 
 function Component() {
   const isOnline = useIsOnline()

@@ -5,7 +5,7 @@
 ## Usage
 
 ```tsx
-import { useDeepCompareLayoutEffect } from 'shadcn-hooks'
+import { useDeepCompareLayoutEffect } from '@/hooks/use-deep-compare-layout-effect'
 
 function Component({ style }: { style: React.CSSProperties }) {
   useDeepCompareLayoutEffect(() => {

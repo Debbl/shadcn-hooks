@@ -5,7 +5,7 @@ Returns `true` after client hydration completes. During SSR it always returns `f
 ## Usage
 
 ```tsx
-import { useIsHydrated } from 'shadcn-hooks'
+import { useIsHydrated } from '@/hooks/use-is-hydrated'
 
 function Component() {
   const isHydrated = useIsHydrated()

@@ -5,7 +5,7 @@ Counter with `inc`, `dec`, `set`, `reset` helpers.
 ## Usage
 
 ```tsx
-import { useCounter } from 'shadcn-hooks'
+import { useCounter } from '@/hooks/use-counter'
 
 function Component() {
   const [count, { inc, dec, set, reset }] = useCounter(0)

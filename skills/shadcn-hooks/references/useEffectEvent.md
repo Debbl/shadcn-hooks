@@ -5,7 +5,7 @@ Ponyfill for React 19's `useEffectEvent`. Returns a stable function reference th
 ## Usage
 
 ```tsx
-import { useEffectEvent } from 'shadcn-hooks'
+import { useEffectEvent } from '@/hooks/use-effect-event'
 
 function Component({
   url,

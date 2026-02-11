@@ -5,7 +5,7 @@ Returns a throttled version of a value. The throttled value updates at most once
 ## Usage
 
 ```tsx
-import { useThrottle } from 'shadcn-hooks'
+import { useThrottle } from '@/hooks/use-throttle'
 
 function Component() {
   const [value, setValue] = useState('')

@@ -5,7 +5,7 @@ Boolean state with `set`, `setTrue`, `setFalse`, `toggle` helpers.
 ## Usage
 
 ```tsx
-import { useBoolean } from 'shadcn-hooks'
+import { useBoolean } from '@/hooks/use-boolean'
 
 function Component() {
   const [value, { set, setTrue, setFalse, toggle }] = useBoolean(false)

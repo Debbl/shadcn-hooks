@@ -5,7 +5,7 @@ Returns a stable function reference that never changes identity, while always ca
 ## Usage
 
 ```tsx
-import { useMemoizedFn } from 'shadcn-hooks'
+import { useMemoizedFn } from '@/hooks/use-memoized-fn'
 
 function Component({ onClick }: { onClick: (id: string) => void }) {
   // `memoizedOnClick` has a stable identity across re-renders

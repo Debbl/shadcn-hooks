@@ -5,7 +5,7 @@
 ## Usage
 
 ```tsx
-import { useEffectWithTarget } from 'shadcn-hooks'
+import { useEffectWithTarget } from '@/hooks/use-effect-with-target'
 
 function Component() {
   const ref = useRef<HTMLDivElement>(null)

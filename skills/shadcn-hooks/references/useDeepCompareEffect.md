@@ -5,7 +5,7 @@
 ## Usage
 
 ```tsx
-import { useDeepCompareEffect } from 'shadcn-hooks'
+import { useDeepCompareEffect } from '@/hooks/use-deep-compare-effect'
 
 function Component({ filters }: { filters: { status: string; page: number } }) {
   useDeepCompareEffect(() => {

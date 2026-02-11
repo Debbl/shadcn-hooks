@@ -5,7 +5,7 @@ Listen to click events anywhere on the document.
 ## Usage
 
 ```tsx
-import { useClickAnyWhere } from 'shadcn-hooks'
+import { useClickAnyWhere } from '@/hooks/use-click-any-where'
 
 function Component() {
   useClickAnyWhere((event) => {

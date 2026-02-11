@@ -5,7 +5,7 @@ Track element visibility via IntersectionObserver. Returns whether the element i
 ## Usage
 
 ```tsx
-import { useInViewport } from 'shadcn-hooks'
+import { useInViewport } from '@/hooks/use-in-viewport'
 
 function Component() {
   const ref = useRef<HTMLDivElement>(null)

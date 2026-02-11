@@ -5,7 +5,7 @@ Reactive hover state of an element with optional enter/leave/change callbacks.
 ## Usage
 
 ```tsx
-import { useHover } from 'shadcn-hooks'
+import { useHover } from '@/hooks/use-hover'
 
 function Component() {
   const ref = useRef<HTMLDivElement>(null)

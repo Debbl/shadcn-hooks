@@ -5,7 +5,7 @@ State hook that provides a `reset` function to restore the initial value.
 ## Usage
 
 ```tsx
-import { useResetState } from 'shadcn-hooks'
+import { useResetState } from '@/hooks/use-reset-state'
 
 function Component() {
   const [form, setForm, resetForm] = useResetState({

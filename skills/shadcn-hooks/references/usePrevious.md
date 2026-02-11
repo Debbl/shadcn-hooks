@@ -5,7 +5,7 @@ Returns the previous value of a state. Supports a custom comparator to decide wh
 ## Usage
 
 ```tsx
-import usePrevious from 'shadcn-hooks'
+import { usePrevious } from '@/hooks/use-previous'
 
 function Component() {
   const [count, setCount] = useState(0)
