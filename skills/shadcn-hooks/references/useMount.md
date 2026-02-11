@@ -5,7 +5,7 @@ Runs a callback only on component mount. Supports both synchronous and async cal
 ## Usage
 
 ```tsx
-import { useMount } from 'shadcn-hooks'
+import { useMount } from '@/hooks/use-mount'
 
 function Component() {
   useMount(() => {

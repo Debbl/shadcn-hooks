@@ -5,7 +5,7 @@ Reactive `window.location.hash`. Automatically updates when the hash changes.
 ## Usage
 
 ```tsx
-import { useHash } from 'shadcn-hooks'
+import { useHash } from '@/hooks/use-hash'
 
 function Component() {
   const hash = useHash()

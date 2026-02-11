@@ -5,7 +5,7 @@ Throttled `useEffect`. The effect runs at most once per specified interval, even
 ## Usage
 
 ```tsx
-import { useThrottleEffect } from 'shadcn-hooks'
+import { useThrottleEffect } from '@/hooks/use-throttle-effect'
 
 function Component() {
   const [position, setPosition] = useState({ x: 0, y: 0 })

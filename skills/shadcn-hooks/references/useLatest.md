@@ -5,7 +5,7 @@ Ref that always holds the latest value. Useful for accessing the current value i
 ## Usage
 
 ```tsx
-import { useLatest } from 'shadcn-hooks'
+import { useLatest } from '@/hooks/use-latest'
 
 function Component({ value }: { value: number }) {
   const latestValue = useLatest(value)

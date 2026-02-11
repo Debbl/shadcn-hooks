@@ -5,7 +5,7 @@ Declarative event listener with auto-cleanup. Supports type-safe event maps for 
 ## Usage
 
 ```tsx
-import { useEventListener } from 'shadcn-hooks'
+import { useEventListener } from '@/hooks/use-event-listener'
 
 function Component() {
   // Listen on window (default)

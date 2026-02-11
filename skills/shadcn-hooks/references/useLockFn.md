@@ -5,7 +5,7 @@ Prevents concurrent execution of an async function. While the function is runnin
 ## Usage
 
 ```tsx
-import { useLockFn } from 'shadcn-hooks'
+import { useLockFn } from '@/hooks/use-lock-fn'
 
 function Component() {
   const submit = useLockFn(async () => {

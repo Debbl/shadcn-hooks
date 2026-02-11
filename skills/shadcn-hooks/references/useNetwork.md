@@ -5,7 +5,7 @@ Reactive network connection information including online status, connection type
 ## Usage
 
 ```tsx
-import { useNetwork } from 'shadcn-hooks'
+import { useNetwork } from '@/hooks/use-network'
 
 function Component() {
   const network = useNetwork()

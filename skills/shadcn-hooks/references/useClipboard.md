@@ -5,7 +5,7 @@ Reactive Clipboard API with read/write support. Includes permission handling and
 ## Usage
 
 ```tsx
-import { useClipboard } from 'shadcn-hooks'
+import { useClipboard } from '@/hooks/use-clipboard'
 
 function Component() {
   const { text, copied, copy, isSupported } = useClipboard()

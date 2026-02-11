@@ -5,7 +5,7 @@ Lock/unlock scroll on a target element. Handles scrollbar width reflow to preven
 ## Usage
 
 ```tsx
-import { useScrollLock } from 'shadcn-hooks'
+import { useScrollLock } from '@/hooks/use-scroll-lock'
 
 function Modal() {
   // Auto-locks body scroll when mounted, unlocks on unmount

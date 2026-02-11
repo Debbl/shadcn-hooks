@@ -5,7 +5,7 @@
 ## Usage
 
 ```tsx
-import { useCustomCompareEffect } from 'shadcn-hooks'
+import { useCustomCompareEffect } from '@/hooks/use-custom-compare-effect'
 
 function Component({ data }: { data: number[] }) {
   useCustomCompareEffect(

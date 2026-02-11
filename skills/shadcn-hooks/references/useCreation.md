@@ -5,7 +5,7 @@ Memoized factory with deep dependency comparison. Similar to `useMemo`, but uses
 ## Usage
 
 ```tsx
-import { useCreation } from 'shadcn-hooks'
+import { useCreation } from '@/hooks/use-creation'
 
 function Component({ config }: { config: { threshold: number } }) {
   // Re-creates only when config deeply changes, not on every render

@@ -5,7 +5,7 @@ Interval timer with auto-cleanup. Returns a `clear` function to stop the interva
 ## Usage
 
 ```tsx
-import { useInterval } from 'shadcn-hooks'
+import { useInterval } from '@/hooks/use-interval'
 
 function Component() {
   const [count, setCount] = useState(0)

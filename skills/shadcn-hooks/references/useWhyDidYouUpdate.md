@@ -5,7 +5,7 @@ Logs which props changed between renders to the console. Useful for debugging un
 ## Usage
 
 ```tsx
-import { useWhyDidYouUpdate } from 'shadcn-hooks'
+import { useWhyDidYouUpdate } from '@/hooks/use-why-did-you-update'
 
 function Component(props: { name: string; count: number }) {
   useWhyDidYouUpdate('Component', props)

@@ -5,7 +5,7 @@ Reactive FPS (frames per second) measurement using `requestAnimationFrame`.
 ## Usage
 
 ```tsx
-import { useFps } from 'shadcn-hooks'
+import { useFps } from '@/hooks/use-fps'
 
 function Component() {
   const fps = useFps()

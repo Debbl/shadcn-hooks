@@ -7,7 +7,7 @@ Toggle between two values with utility actions. Defaults to toggling between `tr
 ### Boolean toggle
 
 ```tsx
-import useToggle from 'shadcn-hooks'
+import { useToggle } from '@/hooks/use-toggle'
 
 function Component() {
   const [state, { toggle, set, setLeft, setRight }] = useToggle()

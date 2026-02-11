@@ -5,7 +5,7 @@ Returns a debounced version of a value. The debounced value only updates after t
 ## Usage
 
 ```tsx
-import { useDebounce } from 'shadcn-hooks'
+import { useDebounce } from '@/hooks/use-debounce'
 
 function Component() {
   const [search, setSearch] = useState('')

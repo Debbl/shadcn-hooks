@@ -5,7 +5,7 @@ Reactive text selection state with bounding rect. Returns the selected text and 
 ## Usage
 
 ```tsx
-import { useTextSelection } from 'shadcn-hooks'
+import { useTextSelection } from '@/hooks/use-text-selection'
 
 function Component() {
   const { text, left, top, width, height } = useTextSelection()

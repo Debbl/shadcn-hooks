@@ -5,7 +5,7 @@ Debounced function with `run`, `cancel`, `flush` controls. Automatically cancels
 ## Usage
 
 ```tsx
-import { useDebounceFn } from 'shadcn-hooks'
+import { useDebounceFn } from '@/hooks/use-debounce-fn'
 
 function Component() {
   const { run, cancel, flush } = useDebounceFn((value: string) => {

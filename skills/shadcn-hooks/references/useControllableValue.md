@@ -7,7 +7,7 @@ Supports both controlled and uncontrolled component patterns. Automatically dete
 ### Uncontrolled
 
 ```tsx
-import { useControllableValue } from 'shadcn-hooks'
+import { useControllableValue } from '@/hooks/use-controllable-value'
 
 function Input(props: Record<string, unknown>) {
   const [value, setValue] = useControllableValue<string>(props, {

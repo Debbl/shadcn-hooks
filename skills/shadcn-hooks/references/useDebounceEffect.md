@@ -5,7 +5,7 @@ Debounced `useEffect`. The effect only runs after the dependencies stop changing
 ## Usage
 
 ```tsx
-import { useDebounceEffect } from 'shadcn-hooks'
+import { useDebounceEffect } from '@/hooks/use-debounce-effect'
 
 function Component() {
   const [search, setSearch] = useState('')
