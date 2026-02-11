@@ -1,0 +1,29 @@
+---
+title: AI Skills
+description: Install AI Skills to help coding assistants understand and use hooks correctly.
+---
+
+Shadcn Hooks provides an [AI Skills](https://github.com/Debbl/shadcn-hooks/tree/main/skills/shadcn-hooks) directory that helps AI coding assistants (Cursor, Codex, etc.) understand and correctly apply every hook. Once installed, your AI assistant can automatically suggest the right hook for any requirement, with accurate type signatures and usage patterns.
+
+Run via [skills CLI](https://skills.sh/docs/cli):
+
+```bash
+npx skills add Debbl/shadcn-hooks
+```
+
+This downloads the skill and configures it for use with your AI agent (Cursor, Codex, etc.).
+
+## What's Included
+
+The skill contains:
+
+- **`SKILL.md`** — A decision-and-implementation guide with a categorized table of all hooks, their descriptions, and invocation rules (`AUTO` / `EXTERNAL`).
+- **`references/`** — One reference file per hook with:
+  - Description and usage examples
+  - Full TypeScript type declarations
+  - Parameters and return value tables
+
+This allows AI assistants to:
+1. **Auto-suggest** the right hook when it matches your requirement
+2. **Generate correct code** with proper type signatures and options
+3. **Follow best practices** for each hook's usage pattern

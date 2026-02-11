@@ -3,4 +3,29 @@ title: Installation
 description: How to install dependencies and structure your app.
 ---
 
+## Install Hooks
+
+### CLI
+
+Use the shadcn CLI to add hooks to your project. Dependencies are resolved automatically.
+
+```package-install
+npx shadcn@latest add @hooks/use-boolean
+```
+
 [shadcn/installation](https://ui.shadcn.com/docs/installation)
+
+### npm Package
+
+Or install all hooks at once via npm:
+
+```package-install
+npm install shadcn-hooks
+```
+
+Then import directly:
+
+```tsx
+import { useBoolean, useCounter, useClipboard } from "shadcn-hooks";
+```
+
