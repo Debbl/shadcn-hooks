@@ -5,7 +5,7 @@
   "private": true,
   "packageManager": "pnpm@10.29.3",
   "description": "shadcn hooks",
-  "author": "Brendan Dash <me@aiwna.run> (https://github.com/Debbl/)",
+  "author": "Brendan Dash <me@aiwan.run> (https://github.com/Debbl/)",
   "license": "MIT",
   "homepage": "https://github.com/Debbl/shadcn-hooks",
   "repository": {
