@@ -1,0 +1,46 @@
+---
+title: useActiveElement
+description: A hook to track the currently focused element in the document
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-active-element' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-active-element' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface UseActiveElementOptions {
+  /**
+   * Search active element deeply inside shadow dom.
+   * @default true
+   */
+  deep?: boolean
+  /**
+   * Track active element when it's removed from the DOM
+   * Using a MutationObserver under the hood
+   * @default false
+   */
+  triggerOnRemoval?: boolean
+}
+
+export function useActiveElement<T extends Element = HTMLElement>(
+  options?: UseActiveElementOptions,
+): T | null
+```
+
+## Credits
+
+- [useActiveElement](https://vueuse.org/core/useActiveElement/)

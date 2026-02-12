@@ -36,6 +36,7 @@
     "use-update-effect",
 
     "---Browser---",
+    "use-active-element",
     "use-click-any-where",
     "use-click-away",
     "use-clipboard",
