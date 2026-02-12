@@ -1,1 +1,4 @@
-{ "registryDependencies": ["@hooks/use-isomorphic-layout-effect"] }
+{
+  "dependencies": ["dequal"],
+  "registryDependencies": ["@hooks/use-isomorphic-layout-effect"]
+}
