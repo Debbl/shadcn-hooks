@@ -35,7 +35,7 @@ const previousValue = usePrevious(value, (prev, next) => {
 ```ts
 export type ShouldUpdateFunc<T> = (prev?: T, next?: T) => boolean
 
-export default function usePrevious<T>(
+export function usePrevious<T>(
   state: T,
   shouldUpdate?: ShouldUpdateFunc<T>,
 ): T | undefined
