@@ -1,0 +1,36 @@
+---
+title: useDocumentVisibility
+description: A hook to track the document visibility state
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-document-visibility' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-document-visibility' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+/**
+ * Reactively track `document.visibilityState`.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilityState
+ * @returns The current document visibility state.
+ */
+export function useDocumentVisibility(): DocumentVisibilityState
+```
+
+## Credits
+
+- [useDocumentVisibility](https://github.com/vueuse/vueuse/blob/main/packages/core/useDocumentVisibility/index.ts)
