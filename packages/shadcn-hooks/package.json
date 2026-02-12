@@ -39,8 +39,12 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "peerDependencies": {
+    "react": ">=18"
+  },
   "dependencies": {
     "@tanstack/react-query": "^5.90.21",
+    "dequal": "^2.0.3",
     "es-toolkit": "^1.44.0",
     "swr": "^2.4.0",
     "use-mcp": "^0.0.21",

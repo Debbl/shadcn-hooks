@@ -246,9 +246,15 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.90.21
         version: 5.90.21(react@19.2.4)
+      dequal:
+        specifier: ^2.0.3
+        version: 2.0.3
       es-toolkit:
         specifier: ^1.44.0
         version: 1.44.0
+      react:
+        specifier: '>=18'
+        version: 19.2.4
       swr:
         specifier: ^2.4.0
         version: 2.4.0(react@19.2.4)
