@@ -102,6 +102,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useClickAway`](references/useClickAway.md)                   | Detect clicks outside of target element(s)        | AUTO       |
 | [`useClipboard`](references/useClipboard.md)                   | Reactive Clipboard API with read/write support    | AUTO       |
 | [`useDocumentVisibility`](references/useDocumentVisibility.md) | Reactive document visibility state                | AUTO       |
+| [`useElementSize`](references/useElementSize.md)               | Reactive element size via ResizeObserver          | AUTO       |
 | [`useEventListener`](references/useEventListener.md)           | Declarative event listener with auto-cleanup      | AUTO       |
 | [`useFps`](references/useFps.md)                               | Reactive FPS (frames per second) measurement      | AUTO       |
 | [`useFullscreen`](references/useFullscreen.md)                 | Reactive Fullscreen API                           | AUTO       |

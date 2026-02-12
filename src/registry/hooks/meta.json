@@ -41,6 +41,7 @@
     "use-click-away",
     "use-clipboard",
     "use-document-visibility",
+    "use-element-size",
     "use-event-listener",
     "use-fps",
     "use-fullscreen",

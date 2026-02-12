@@ -1,0 +1,60 @@
+---
+title: useElementSize
+description: A hook to track an element's width and height
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-element-size' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='create-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-effect-with-target' />
+    <br />
+    <RegistrySourceCode value='use-element-size' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface ElementSize {
+  width: number
+  height: number
+}
+
+export interface UseElementSizeOptions {
+  /**
+   * ResizeObserver box model to use for measuring.
+   *
+   * @default 'content-box'
+   */
+  box?: ResizeObserverBoxOptions
+}
+
+/**
+ * A hook to track an element's width and height.
+ *
+ * @param target - The target element to observe
+ * @param initialSize - Initial width and height
+ * @param options - Measurement options
+ * @returns Current element size
+ */
+export function useElementSize(
+  target: BasicTarget<Element>,
+  initialSize?: ElementSize,
+  options?: UseElementSizeOptions,
+): ElementSize
+```
+
+## Credits
+
+- [useElementSize](https://vueuse.org/core/useElementSize/)
