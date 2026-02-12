@@ -40,6 +40,7 @@
     "use-click-any-where",
     "use-click-away",
     "use-clipboard",
+    "use-document-visibility",
     "use-event-listener",
     "use-fps",
     "use-fullscreen",

@@ -95,23 +95,24 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 
 ### Browser
 
-| Function                                             | Description                                       | Invocation |
-| ---------------------------------------------------- | ------------------------------------------------- | ---------- |
-| [`useActiveElement`](references/useActiveElement.md) | Track the currently focused element               | AUTO       |
-| [`useClickAnyWhere`](references/useClickAnyWhere.md) | Listen to click events anywhere on the document   | AUTO       |
-| [`useClickAway`](references/useClickAway.md)         | Detect clicks outside of target element(s)        | AUTO       |
-| [`useClipboard`](references/useClipboard.md)         | Reactive Clipboard API with read/write support    | AUTO       |
-| [`useEventListener`](references/useEventListener.md) | Declarative event listener with auto-cleanup      | AUTO       |
-| [`useFps`](references/useFps.md)                     | Reactive FPS (frames per second) measurement      | AUTO       |
-| [`useFullscreen`](references/useFullscreen.md)       | Reactive Fullscreen API                           | AUTO       |
-| [`useHash`](references/useHash.md)                   | Reactive `window.location.hash`                   | AUTO       |
-| [`useHover`](references/useHover.md)                 | Reactive hover state of an element                | AUTO       |
-| [`useInViewport`](references/useInViewport.md)       | Track element visibility via IntersectionObserver | AUTO       |
-| [`useIsMatchMedia`](references/useIsMatchMedia.md)   | Reactive CSS media query matching                 | AUTO       |
-| [`useIsOnline`](references/useIsOnline.md)           | Reactive online/offline network status            | AUTO       |
-| [`useNetwork`](references/useNetwork.md)             | Reactive network connection information           | AUTO       |
-| [`useScrollLock`](references/useScrollLock.md)       | Lock/unlock scroll on a target element            | AUTO       |
-| [`useTextSelection`](references/useTextSelection.md) | Reactive text selection state with bounding rect  | AUTO       |
+| Function                                                       | Description                                       | Invocation |
+| -------------------------------------------------------------- | ------------------------------------------------- | ---------- |
+| [`useActiveElement`](references/useActiveElement.md)           | Track the currently focused element               | AUTO       |
+| [`useClickAnyWhere`](references/useClickAnyWhere.md)           | Listen to click events anywhere on the document   | AUTO       |
+| [`useClickAway`](references/useClickAway.md)                   | Detect clicks outside of target element(s)        | AUTO       |
+| [`useClipboard`](references/useClipboard.md)                   | Reactive Clipboard API with read/write support    | AUTO       |
+| [`useDocumentVisibility`](references/useDocumentVisibility.md) | Reactive document visibility state                | AUTO       |
+| [`useEventListener`](references/useEventListener.md)           | Declarative event listener with auto-cleanup      | AUTO       |
+| [`useFps`](references/useFps.md)                               | Reactive FPS (frames per second) measurement      | AUTO       |
+| [`useFullscreen`](references/useFullscreen.md)                 | Reactive Fullscreen API                           | AUTO       |
+| [`useHash`](references/useHash.md)                             | Reactive `window.location.hash`                   | AUTO       |
+| [`useHover`](references/useHover.md)                           | Reactive hover state of an element                | AUTO       |
+| [`useInViewport`](references/useInViewport.md)                 | Track element visibility via IntersectionObserver | AUTO       |
+| [`useIsMatchMedia`](references/useIsMatchMedia.md)             | Reactive CSS media query matching                 | AUTO       |
+| [`useIsOnline`](references/useIsOnline.md)                     | Reactive online/offline network status            | AUTO       |
+| [`useNetwork`](references/useNetwork.md)                       | Reactive network connection information           | AUTO       |
+| [`useScrollLock`](references/useScrollLock.md)                 | Lock/unlock scroll on a target element            | AUTO       |
+| [`useTextSelection`](references/useTextSelection.md)           | Reactive text selection state with bounding rect  | AUTO       |
 
 ### Dev
 
