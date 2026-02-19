@@ -98,6 +98,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | Function                                                       | Description                                       | Invocation |
 | -------------------------------------------------------------- | ------------------------------------------------- | ---------- |
 | [`useActiveElement`](references/useActiveElement.md)           | Track the currently focused element               | AUTO       |
+| [`useBattery`](references/useBattery.md)                       | Reactive battery level and charging information   | AUTO       |
 | [`useClickAnyWhere`](references/useClickAnyWhere.md)           | Listen to click events anywhere on the document   | AUTO       |
 | [`useClickAway`](references/useClickAway.md)                   | Detect clicks outside of target element(s)        | AUTO       |
 | [`useClipboard`](references/useClipboard.md)                   | Reactive Clipboard API with read/write support    | AUTO       |
