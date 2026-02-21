@@ -1,0 +1,43 @@
+---
+title: useBattery
+description: A hook to monitor battery information
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-battery' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-battery' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface UseBatteryState {
+  isSupported: boolean
+  charging: boolean
+  chargingTime: number
+  dischargingTime: number
+  level: number
+}
+
+/**
+ * Monitor the current battery information using the Battery Status API.
+ *
+ * @returns Current battery state and support flag.
+ */
+export function useBattery(): UseBatteryState
+```
+
+## Credits
+
+- [useBattery](https://vueuse.org/core/useBattery/)

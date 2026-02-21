@@ -37,6 +37,7 @@
 
     "---Browser---",
     "use-active-element",
+    "use-battery",
     "use-click-any-where",
     "use-click-away",
     "use-clipboard",
