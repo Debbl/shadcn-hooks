@@ -11,7 +11,7 @@ const CWD = process.cwd()
 
 async function generateRegistryItemSchema() {
   const res = await fetch('https://ui.shadcn.com/schema/registry-item.json')
-  const data = await res.json()
+  const data = (await res.json()) as any
 
   if (data.properties) {
     delete data.required
