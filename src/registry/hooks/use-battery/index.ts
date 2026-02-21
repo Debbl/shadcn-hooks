@@ -55,15 +55,17 @@ function isBatterySupported(): boolean {
  * @returns Current battery state and support flag.
  */
 export function useBattery(): UseBatteryState {
-  const isSupported = isBatterySupported()
+  const [state, setState] = useState<UseBatteryState>(() => {
+    const isSupported = isBatterySupported()
 
-  const [state, setState] = useState<UseBatteryState>(() => ({
-    isSupported,
-    ...DEFAULT_BATTERY_STATE,
-  }))
+    return {
+      isSupported,
+      ...DEFAULT_BATTERY_STATE,
+    }
+  })
 
   useEffect(() => {
-    if (!isSupported) {
+    if (!state.isSupported) {
       return
     }
 
@@ -114,7 +116,7 @@ export function useBattery(): UseBatteryState {
         battery?.removeEventListener(eventName, updateBatteryState)
       })
     }
-  }, [isSupported])
+  }, [state.isSupported])
 
   return state
 }
