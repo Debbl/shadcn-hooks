@@ -48,6 +48,9 @@ public/swe-worker*
 content/docs/hooks
 content/docs/lib
 
+# wrangler
+.wrangler
+
 # registry
 public/r
 registry.json
