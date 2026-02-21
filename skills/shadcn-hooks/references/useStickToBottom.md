@@ -13,7 +13,7 @@ npm install use-stick-to-bottom
 Or via shadcn CLI:
 
 ```bash
-npx shadcn@latest add https://shadcn-hooks.vercel.app/r/use-stick-to-bottom.json
+npx shadcn@latest add https://shadcn-hooks.com/r/use-stick-to-bottom.json
 ```
 
 ## Usage

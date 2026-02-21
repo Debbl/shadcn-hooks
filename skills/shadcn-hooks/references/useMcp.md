@@ -13,7 +13,7 @@ npm install use-mcp
 Or via shadcn CLI:
 
 ```bash
-npx shadcn@latest add https://shadcn-hooks.vercel.app/r/use-mcp.json
+npx shadcn@latest add https://shadcn-hooks.com/r/use-mcp.json
 ```
 
 ## Usage

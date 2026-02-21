@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://shadcn-hooks.vercel.app/">📚 Documentation</a>
+  <a href="https://shadcn-hooks.com/">📚 Documentation</a>
   •
   <a href="https://github.com/shadcn-ui/ui">Shadcn UI</a>
 </p>
@@ -55,7 +55,7 @@ function Counter() {
 
 ## 📚 Documentation
 
-Visit [shadcn-hooks.vercel.app](https://shadcn-hooks.vercel.app/) for complete documentation, examples, and API references.
+Visit [shadcn-hooks.com](https://shadcn-hooks.com/) for complete documentation, examples, and API references.
 
 ## 🤝 Credits
 

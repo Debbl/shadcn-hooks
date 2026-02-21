@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://shadcn-hooks.vercel.app/">📚 Documentation</a>
+  <a href="https://shadcn-hooks.com/">📚 Documentation</a>
   •
   <a href="https://github.com/shadcn-ui/ui">Shadcn UI</a>
 </p>
@@ -34,7 +34,7 @@ Each hook can be installed individually using the shadcn CLI:
 npx shadcn@latest add @hooks/use-counter
 ```
 
-Or manually copy the source code from the [use-counter](https://shadcn-hooks.vercel.app/docs/hooks/use-counter).
+Or manually copy the source code from the [use-counter](https://shadcn-hooks.com/docs/hooks/use-counter).
 
 ### Usage
 
@@ -62,14 +62,14 @@ function Counter() {
 ```json
 {
   "registries": {
-    "@hooks": "https://shadcn-hooks.vercel.app/r/{name}.json"
+    "@hooks": "https://shadcn-hooks.com/r/{name}.json"
   }
 }
 ```
 
 ## 📚 Documentation
 
-Visit [shadcn-hooks.vercel.app](https://shadcn-hooks.vercel.app/) for complete documentation, examples, and API references.
+Visit [shadcn-hooks.com](https://shadcn-hooks.com/) for complete documentation, examples, and API references.
 
 ## 🤝 Credits
 

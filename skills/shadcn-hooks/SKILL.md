@@ -45,7 +45,7 @@ npm install shadcn-hooks
 
 ## Functions
 
-All functions listed below are part of [shadcn-hooks](https://shadcn-hooks.vercel.app/). Each section categorizes functions based on their functionality.
+All functions listed below are part of [shadcn-hooks](https://shadcn-hooks.com/). Each section categorizes functions based on their functionality.
 
 IMPORTANT: Each function entry includes a short `Description` and a detailed `Reference`. When using any function, always consult the corresponding document in `./references` for Usage details and Type Declarations.
 

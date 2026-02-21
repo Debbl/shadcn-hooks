@@ -73,7 +73,7 @@ async function generateRegistry() {
       registryItems.push({
         type: _type ?? type,
         name,
-        author: 'Brendan Dash (https://shadcn-hooks.vercel.app)',
+        author: 'Brendan Dash (https://shadcn-hooks.com)',
         description: docsMatter.description ?? rest.description,
         ...rest,
         files: [
@@ -115,7 +115,7 @@ async function generateRegistry() {
       $schema: 'https://ui.shadcn.com/schema/registry-item.json',
       name: 'all',
       type: 'registry:file',
-      author: 'Brendan Dash (https://shadcn-hooks.vercel.app)',
+      author: 'Brendan Dash (https://shadcn-hooks.com)',
       description: 'All shadcn hooks registry items.',
       registryDependencies: registry.items.map((item) => `@hooks/${item.name}`),
     } satisfies RegistryItem

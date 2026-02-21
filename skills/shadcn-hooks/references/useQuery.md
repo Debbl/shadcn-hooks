@@ -13,7 +13,7 @@ npm install @tanstack/react-query
 Or via shadcn CLI:
 
 ```bash
-npx shadcn@latest add https://shadcn-hooks.vercel.app/r/use-query.json
+npx shadcn@latest add https://shadcn-hooks.com/r/use-query.json
 ```
 
 ## Usage

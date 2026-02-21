@@ -3,6 +3,6 @@ export const websiteConfig = {
     // eslint-disable-next-line n/prefer-global/process
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000'
-      : 'https://shadcn-hooks.vercel.app',
+      : 'https://shadcn-hooks.com',
   githubUrl: 'https://github.com/Debbl/shadcn-hooks',
 }

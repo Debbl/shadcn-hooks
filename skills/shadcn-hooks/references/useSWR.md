@@ -13,7 +13,7 @@ npm install swr
 Or via shadcn CLI:
 
 ```bash
-npx shadcn@latest add https://shadcn-hooks.vercel.app/r/use-swr.json
+npx shadcn@latest add https://shadcn-hooks.com/r/use-swr.json
 ```
 
 ## Usage
