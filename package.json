@@ -12,16 +12,13 @@
     "type": "git",
     "url": "https://github.com/Debbl/shadcn-hooks.git"
   },
-  "engines": {
-    "node": ">=24.13.0"
-  },
   "scripts": {
     "postinstall": "fumadocs-mdx",
     "dev": "next dev",
-    "preflight": "node scripts/preflight.mts",
+    "preflight": "tsx scripts/preflight.ts",
     "test": "vitest",
     "release": "bumpp -r",
-    "build": "node scripts/build.mts",
+    "build": "tsx scripts/build.ts",
     "build:shadcn-hooks": "pnpm --filter shadcn-hooks build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
