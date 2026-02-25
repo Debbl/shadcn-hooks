@@ -51,6 +51,7 @@
     "use-in-viewport",
     "use-is-match-media",
     "use-is-online",
+    "use-mouse",
     "use-network",
     "use-scroll-lock",
     "use-text-selection",
