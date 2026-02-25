@@ -112,6 +112,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useInViewport`](references/useInViewport.md)                 | Track element visibility via IntersectionObserver | AUTO       |
 | [`useIsMatchMedia`](references/useIsMatchMedia.md)             | Reactive CSS media query matching                 | AUTO       |
 | [`useIsOnline`](references/useIsOnline.md)                     | Reactive online/offline network status            | AUTO       |
+| [`useMouse`](references/useMouse.md)                           | Reactive pointer coordinates for mouse/touch      | AUTO       |
 | [`useNetwork`](references/useNetwork.md)                       | Reactive network connection information           | AUTO       |
 | [`useScrollLock`](references/useScrollLock.md)                 | Lock/unlock scroll on a target element            | AUTO       |
 | [`useTextSelection`](references/useTextSelection.md)           | Reactive text selection state with bounding rect  | AUTO       |

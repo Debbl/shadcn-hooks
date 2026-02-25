@@ -1,0 +1,55 @@
+---
+title: useMouse
+description: A hook to track mouse position with optional touch support
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-mouse' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-event-listener' />
+    <br />
+    <RegistrySourceCode value='use-mouse' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export type UseMouseCoordType = 'page' | 'client' | 'screen' | 'movement'
+export type UseMouseSourceType = 'mouse' | 'touch' | null
+
+export interface UseMouseInitialValue {
+  x: number
+  y: number
+}
+
+export interface UseMouseState extends UseMouseInitialValue {
+  sourceType: UseMouseSourceType
+}
+
+export interface UseMouseOptions {
+  type?: UseMouseCoordType
+  touch?: boolean
+  resetOnTouchEnds?: boolean
+  initialValue?: UseMouseInitialValue
+  window?: Window
+}
+
+/**
+ * Reactive mouse position with optional touch support.
+ */
+export function useMouse(options?: UseMouseOptions): UseMouseState
+```
+
+## Credits
+
+- [useMouse](https://vueuse.org/core/useMouse/)
