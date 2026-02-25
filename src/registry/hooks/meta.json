@@ -54,6 +54,7 @@
     "use-network",
     "use-scroll-lock",
     "use-text-selection",
+    "use-title",
 
     "---Dev---",
     "use-why-did-you-update",
