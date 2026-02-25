@@ -36,6 +36,14 @@ npx shadcn@latest add @hooks/use-counter
 
 Or manually copy the source code from the [use-counter](https://shadcn-hooks.com/docs/hooks/use-counter).
 
+## 🤖 Skills
+
+Install [Shadcn Hooks](https://skills.sh/debbl/shadcn-hooks/shadcn-hooks) as a skill:
+
+```bash
+npx skills add https://github.com/debbl/shadcn-hooks --skill shadcn-hooks
+```
+
 ### Usage
 
 ```tsx
