@@ -149,4 +149,39 @@ describe('useTitle', () => {
     expect(document.title).toBe('Settings | App')
     expect(result.current[0]).toBe('Settings')
   })
+
+  it('should sync external title after internal title is set before observer callback', () => {
+    let mutationCallback: MutationCallback | undefined
+
+    globalThis.MutationObserver = class MockMutationObserver {
+      constructor(callback: MutationCallback) {
+        mutationCallback = callback
+      }
+
+      disconnect() {}
+
+      observe() {}
+
+      takeRecords() {
+        return []
+      }
+    } as unknown as typeof MutationObserver
+
+    const { result } = renderHook(() =>
+      useTitle('Home', {
+        observe: true,
+        titleTemplate: '%s | App',
+      }),
+    )
+
+    expect(document.title).toBe('Home | App')
+    expect(result.current[0]).toBe('Home')
+
+    act(() => {
+      document.title = 'useTitle - Shadcn Hooks'
+      mutationCallback?.([], {} as MutationObserver)
+    })
+
+    expect(result.current[0]).toBe('useTitle - Shadcn Hooks')
+  })
 })

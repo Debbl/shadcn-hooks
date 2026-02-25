@@ -55,7 +55,7 @@ export function useTitle(
   const [title, setTitle] = useState<string>(
     () => newTitle ?? getDocumentTitle(),
   )
-  const skipNextMutationRef = useRef(false)
+  const lastInternalTitleRef = useRef<string | null>(null)
 
   useEffect(() => {
     if (newTitle == null) {
@@ -74,7 +74,7 @@ export function useTitle(
 
     const nextDocumentTitle = formatTitle(title)
     if (document.title !== nextDocumentTitle) {
-      skipNextMutationRef.current = true
+      lastInternalTitleRef.current = nextDocumentTitle
       document.title = nextDocumentTitle
     }
   }, [formatTitle, title])
@@ -88,24 +88,24 @@ export function useTitle(
       return
     }
 
-    const titleElement = document.querySelector('title')
-    if (!titleElement) {
+    const observerTarget = document.head ?? document.documentElement
+    if (!observerTarget) {
       return
     }
 
     const observer = new MutationObserver(() => {
-      if (skipNextMutationRef.current) {
-        skipNextMutationRef.current = false
+      const nextTitle = document.title
+      if (lastInternalTitleRef.current === nextTitle) {
+        lastInternalTitleRef.current = null
         return
       }
 
       setTitle((currentTitle) => {
-        const nextTitle = document.title
         return currentTitle === nextTitle ? currentTitle : nextTitle
       })
     })
 
-    observer.observe(titleElement, {
+    observer.observe(observerTarget, {
       childList: true,
       subtree: true,
       characterData: true,
