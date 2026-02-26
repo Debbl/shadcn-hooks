@@ -116,6 +116,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useNetwork`](references/useNetwork.md)                       | Reactive network connection information           | AUTO       |
 | [`useScrollLock`](references/useScrollLock.md)                 | Lock/unlock scroll on a target element            | AUTO       |
 | [`useTextSelection`](references/useTextSelection.md)           | Reactive text selection state with bounding rect  | AUTO       |
+| [`useTitle`](references/useTitle.md)                           | Reactive document title management                | AUTO       |
 
 ### Dev
 

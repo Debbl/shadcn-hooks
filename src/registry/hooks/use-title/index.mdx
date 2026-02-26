@@ -1,0 +1,54 @@
+---
+title: useTitle
+description: A hook to reactively manage document.title
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-title' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-isomorphic-layout-effect' />
+    <br />
+    <RegistrySourceCode value='use-title' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface UseTitleOptions {
+  /**
+   * Observe external changes to `document.title`.
+   * @default false
+   */
+  observe?: boolean
+  /**
+   * Optional template for the final browser title.
+   * Use `%s` as the placeholder when providing a string template.
+   */
+  titleTemplate?: string | ((title: string) => string)
+}
+
+/**
+ * Reactively read and update `document.title`.
+ *
+ * @param newTitle Optional initial/controlled title value.
+ * @param options Hook options.
+ */
+export function useTitle(
+  newTitle?: string | null,
+  options?: UseTitleOptions,
+): readonly [string, Dispatch<SetStateAction<string>>]
+```
+
+## Credits
+
+- [useTitle](https://github.com/vueuse/vueuse/blob/main/packages/core/useTitle/index.ts)
