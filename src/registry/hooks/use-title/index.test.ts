@@ -150,6 +150,44 @@ describe('useTitle', () => {
     expect(result.current[0]).toBe('Settings')
   })
 
+  it('should ignore repeated mutation callbacks from the same internal title update', () => {
+    let mutationCallback: MutationCallback | undefined
+
+    globalThis.MutationObserver = class MockMutationObserver {
+      constructor(callback: MutationCallback) {
+        mutationCallback = callback
+      }
+
+      disconnect() {}
+
+      observe() {}
+
+      takeRecords() {
+        return []
+      }
+    } as unknown as typeof MutationObserver
+
+    const { result } = renderHook(() =>
+      useTitle('Home', {
+        observe: true,
+        titleTemplate: '%s | App',
+      }),
+    )
+
+    expect(document.title).toBe('Home | App')
+    expect(result.current[0]).toBe('Home')
+
+    act(() => {
+      result.current[1]('Settings')
+      mutationCallback?.([], {} as MutationObserver)
+      mutationCallback?.([], {} as MutationObserver)
+      mutationCallback?.([], {} as MutationObserver)
+    })
+
+    expect(document.title).toBe('Settings | App')
+    expect(result.current[0]).toBe('Settings')
+  })
+
   it('should sync external title after internal title is set before observer callback', () => {
     let mutationCallback: MutationCallback | undefined
 

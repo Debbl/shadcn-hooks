@@ -73,8 +73,8 @@ export function useTitle(
     }
 
     const nextDocumentTitle = formatTitle(title)
+    lastInternalTitleRef.current = nextDocumentTitle
     if (document.title !== nextDocumentTitle) {
-      lastInternalTitleRef.current = nextDocumentTitle
       document.title = nextDocumentTitle
     }
   }, [formatTitle, title])
@@ -96,7 +96,6 @@ export function useTitle(
     const observer = new MutationObserver(() => {
       const nextTitle = document.title
       if (lastInternalTitleRef.current === nextTitle) {
-        lastInternalTitleRef.current = null
         return
       }
 

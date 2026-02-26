@@ -15,7 +15,6 @@ export function Demo01() {
   const [inputValue, setInputValue] = useState('Shadcn Hooks')
   const [title, setTitle] = useTitle('Shadcn Hooks', {
     observe: true,
-    titleTemplate: '%s | Demo',
   })
 
   return (
