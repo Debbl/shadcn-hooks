@@ -33,7 +33,11 @@ export function Demo01() {
         </CardDescription>
       </CardHeader>
       <CardContent className='space-y-4'>
+        <label htmlFor='hash-input' className='text-sm font-medium'>
+          Hash value
+        </label>
         <Input
+          id='hash-input'
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
           placeholder='Type hash without #'
