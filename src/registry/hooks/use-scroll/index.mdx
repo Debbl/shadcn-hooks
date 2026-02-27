@@ -1,0 +1,83 @@
+---
+title: useScroll
+description: A hook to reactively track scroll position, direction, and boundary arrival state for any scrollable target.
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-scroll' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-latest' />
+    <br />
+    <RegistrySourceCode value='use-event-listener' />
+    <br />
+    <RegistrySourceCode value='use-scroll' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export interface UseScrollOffset {
+  left?: number
+  right?: number
+  top?: number
+  bottom?: number
+}
+
+export interface UseScrollDirections {
+  left: boolean
+  right: boolean
+  up: boolean
+  down: boolean
+}
+
+export interface UseScrollArrivedState {
+  left: boolean
+  right: boolean
+  top: boolean
+  bottom: boolean
+}
+
+export interface UseScrollOptions {
+  /** Throttle interval in ms for scroll event handling. @default 0 */
+  throttle?: number
+  /** Idle duration in ms to detect when scrolling has stopped. @default 200 */
+  idle?: number
+  /** Pixel offsets for boundary arrival detection. */
+  offset?: UseScrollOffset
+  /** Callback fired on each scroll event. */
+  onScroll?: (e: Event) => void
+  /** Callback fired when scrolling stops. */
+  onStop?: (e: Event) => void
+}
+
+export interface UseScrollReturn {
+  x: number
+  y: number
+  isScrolling: boolean
+  directions: UseScrollDirections
+  arrivedState: UseScrollArrivedState
+  measure: () => void
+}
+
+/**
+ * Reactive scroll position, direction, and boundary tracking.
+ */
+export function useScroll(
+  target?: UseScrollTarget,
+  options?: UseScrollOptions,
+): UseScrollReturn
+```
+
+## Credits
+
+- [useScroll](https://vueuse.org/core/useScroll/)
