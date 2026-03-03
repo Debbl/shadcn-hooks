@@ -56,6 +56,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useBoolean`](references/useBoolean.md)                     | Boolean state with `set`, `setTrue`, `setFalse`, `toggle` helpers | AUTO       |
 | [`useControllableValue`](references/useControllableValue.md) | Supports both controlled and uncontrolled component patterns      | AUTO       |
 | [`useCounter`](references/useCounter.md)                     | Counter with `inc`, `dec`, `set`, `reset` helpers                 | AUTO       |
+| [`useDefault`](references/useDefault.md)                     | Returns a fallback when state is `null` or `undefined`            | AUTO       |
 | [`useDebounce`](references/useDebounce.md)                   | Debounced reactive value                                          | AUTO       |
 | [`useResetState`](references/useResetState.md)               | State with a `reset` function to restore the initial value        | AUTO       |
 | [`useThrottle`](references/useThrottle.md)                   | Throttled reactive value                                          | AUTO       |

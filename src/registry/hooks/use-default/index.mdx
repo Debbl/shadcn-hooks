@@ -1,0 +1,38 @@
+---
+title: useDefault
+description: A hook to return a default value when state is nullish
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-default' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-default' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export type UseDefaultState<T> = T | null | undefined
+
+/**
+ * Returns `defaultValue` when the current state is `null` or `undefined`.
+ */
+export function useDefault<T>(
+  initialValue: UseDefaultState<T>,
+  defaultValue: T,
+): readonly [T, Dispatch<SetStateAction<UseDefaultState<T>>>]
+```
+
+## Credits
+
+- [useDefault](https://usehooks.com/usedefault)

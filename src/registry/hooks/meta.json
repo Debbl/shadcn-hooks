@@ -4,6 +4,7 @@
     "use-boolean",
     "use-controllable-value",
     "use-counter",
+    "use-default",
     "use-debounce",
     "use-reset-state",
     "use-throttle",
