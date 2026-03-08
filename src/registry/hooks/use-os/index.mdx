@@ -1,0 +1,61 @@
+---
+title: useOs
+description: A hook to detect the current operating system
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-os' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-os' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+export type UseOSReturnValue =
+  | 'undetermined'
+  | 'macos'
+  | 'ios'
+  | 'windows'
+  | 'android'
+  | 'linux'
+  | 'chromeos'
+
+export interface UseOsOptions {
+  /**
+   * Defer browser OS detection until after mount to avoid server/client mismatches.
+   * @default true
+   */
+  getValueInEffect?: boolean
+}
+
+/**
+ * Detect the current operating system from the browser environment.
+ *
+ * @param options Hook options.
+ * @returns The detected operating system or `undetermined`.
+ */
+export function getOS(options?: UseOsOptions): UseOSReturnValue
+
+/**
+ * Reactively detect the current operating system from `navigator.userAgent`.
+ *
+ * @param options Hook options.
+ * @returns The detected operating system or `undetermined`.
+ */
+export function useOs(options?: UseOsOptions): UseOSReturnValue
+```
+
+## Credits
+
+- [use-os](https://github.com/mantinedev/mantine/blob/master/packages/%40mantine/hooks/src/use-os/use-os.ts)
