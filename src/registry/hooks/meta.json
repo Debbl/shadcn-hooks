@@ -53,6 +53,7 @@
     "use-is-online",
     "use-mouse",
     "use-network",
+    "use-os",
     "use-scroll-lock",
     "use-text-selection",
     "use-title",

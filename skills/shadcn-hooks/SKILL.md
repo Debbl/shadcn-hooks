@@ -114,6 +114,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useIsOnline`](references/useIsOnline.md)                     | Reactive online/offline network status            | AUTO       |
 | [`useMouse`](references/useMouse.md)                           | Reactive pointer coordinates for mouse/touch      | AUTO       |
 | [`useNetwork`](references/useNetwork.md)                       | Reactive network connection information           | AUTO       |
+| [`useOs`](references/useOs.md)                                 | Reactive browser operating system detection       | AUTO       |
 | [`useScrollLock`](references/useScrollLock.md)                 | Lock/unlock scroll on a target element            | AUTO       |
 | [`useTextSelection`](references/useTextSelection.md)           | Reactive text selection state with bounding rect  | AUTO       |
 | [`useTitle`](references/useTitle.md)                           | Reactive document title management                | AUTO       |

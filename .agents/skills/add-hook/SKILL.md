@@ -5,7 +5,7 @@ description: Step-by-step guide for adding a new React hook to the shadcn-hooks 
 
 # Add Hook
 
-Guide for adding a new hook to the shadcn-hooks project. The source of truth is `src/registry/hooks/`. The `packages/shadcn-hooks/` directory is auto-generated via `pnpm run sync` and should NOT be edited manually.
+Guide for adding a new hook to the shadcn-hooks project. The source of truth is `src/registry/hooks/`. The `packages/shadcn-hooks/` directory is auto-generated and should NOT be edited manually. Do NOT run any `sync` command as part of this skill; the user will run it manually when needed.
 
 ## Checklist
 
@@ -275,8 +275,10 @@ Add an entry to the appropriate category table in `skills/shadcn-hooks/SKILL.md`
 1. Run linter: check edited files for lint errors
 2. Run tests: `pnpm test run src/registry/hooks/use-<name>/index.test.ts`
 3. Verify the dev server renders the doc page correctly (if running)
+4. Do not modify `packages/shadcn-hooks/` and do not run `pnpm run sync` or `pnpm --dir packages/shadcn-hooks sync`; leave that step to the user
 
 ## Notes
 
-- `packages/shadcn-hooks/` is auto-generated. Run `pnpm run sync` inside `packages/shadcn-hooks/` to regenerate after adding a new hook.
+- `packages/shadcn-hooks/` is auto-generated. Never edit files in that directory manually as part of this skill.
+- Do not execute any `sync` command from this skill. The user will run sync manually after reviewing the changes.
 - `packages/shadcn-hooks/src/index.ts` exports are also auto-managed — no manual editing needed.
