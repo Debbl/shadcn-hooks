@@ -1,1 +1,1 @@
-{ "registryDependencies": ["@hooks/use-fps"] }
+{ "registryDependencies": ["@shadcnhooks/use-fps"] }

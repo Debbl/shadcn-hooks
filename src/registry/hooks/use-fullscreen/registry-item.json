@@ -1,12 +1,12 @@
 {
   "dependencies": ["es-toolkit"],
   "registryDependencies": [
-    "@hooks/use-isomorphic-layout-effect",
-    "@hooks/use-event-listener",
-    "@hooks/use-unmount",
-    "@hooks/use-latest",
-    "@hooks/use-memoized-fn",
-    "@hooks/create-effect-with-target",
-    "@hooks/is-browser"
+    "@shadcnhooks/use-isomorphic-layout-effect",
+    "@shadcnhooks/use-event-listener",
+    "@shadcnhooks/use-unmount",
+    "@shadcnhooks/use-latest",
+    "@shadcnhooks/use-memoized-fn",
+    "@shadcnhooks/create-effect-with-target",
+    "@shadcnhooks/is-browser"
   ]
 }

@@ -31,7 +31,7 @@
 Each hook can be installed individually using the shadcn CLI:
 
 ```bash
-npx shadcn@latest add @hooks/use-counter
+npx shadcn@latest add @shadcnhooks/use-counter
 ```
 
 Or manually copy the source code from the [use-counter](https://shadcn-hooks.com/docs/hooks/use-counter).
@@ -70,7 +70,7 @@ function Counter() {
 ```json
 {
   "registries": {
-    "@hooks": "https://shadcn-hooks.com/r/{name}.json"
+    "@shadcnhooks": "https://shadcn-hooks.com/r/{name}.json"
   }
 }
 ```

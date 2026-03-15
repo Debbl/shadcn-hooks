@@ -1,8 +1,8 @@
 {
   "registryDependencies": [
-    "@hooks/use-unmount",
-    "@hooks/use-event-listener",
-    "@hooks/use-memoized-fn",
-    "@hooks/is-browser"
+    "@shadcnhooks/use-unmount",
+    "@shadcnhooks/use-event-listener",
+    "@shadcnhooks/use-memoized-fn",
+    "@shadcnhooks/is-browser"
   ]
 }

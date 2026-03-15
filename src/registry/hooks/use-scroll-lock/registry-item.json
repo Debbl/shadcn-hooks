@@ -1,6 +1,6 @@
 {
   "registryDependencies": [
-    "@hooks/use-isomorphic-layout-effect",
-    "@hooks/is-browser"
+    "@shadcnhooks/use-isomorphic-layout-effect",
+    "@shadcnhooks/is-browser"
   ]
 }

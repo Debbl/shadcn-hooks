@@ -1,4 +1,7 @@
 {
   "dependencies": ["es-toolkit"],
-  "registryDependencies": ["@hooks/use-latest", "@hooks/use-unmount"]
+  "registryDependencies": [
+    "@shadcnhooks/use-latest",
+    "@shadcnhooks/use-unmount"
+  ]
 }

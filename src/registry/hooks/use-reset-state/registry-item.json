@@ -1,4 +1,7 @@
 {
   "dependencies": ["es-toolkit"],
-  "registryDependencies": ["@hooks/use-creation", "@hooks/use-memoized-fn"]
+  "registryDependencies": [
+    "@shadcnhooks/use-creation",
+    "@shadcnhooks/use-memoized-fn"
+  ]
 }
