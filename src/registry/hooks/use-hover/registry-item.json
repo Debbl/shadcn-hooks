@@ -1,7 +1,7 @@
 {
   "registryDependencies": [
-    "@hooks/create-effect-with-target",
-    "@hooks/use-event-listener",
-    "@hooks/use-boolean"
+    "@shadcnhooks/create-effect-with-target",
+    "@shadcnhooks/use-event-listener",
+    "@shadcnhooks/use-boolean"
   ]
 }

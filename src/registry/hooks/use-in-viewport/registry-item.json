@@ -1,7 +1,7 @@
 {
   "registryDependencies": [
-    "@hooks/use-effect-with-target",
-    "@hooks/create-effect-with-target",
-    "@hooks/use-in-viewport"
+    "@shadcnhooks/use-effect-with-target",
+    "@shadcnhooks/create-effect-with-target",
+    "@shadcnhooks/use-in-viewport"
   ]
 }

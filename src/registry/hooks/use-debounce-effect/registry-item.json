@@ -1,3 +1,6 @@
 {
-  "registryDependencies": ["@hooks/use-debounce-fn", "@hooks/use-update-effect"]
+  "registryDependencies": [
+    "@shadcnhooks/use-debounce-fn",
+    "@shadcnhooks/use-update-effect"
+  ]
 }

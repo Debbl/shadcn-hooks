@@ -1,1 +1,1 @@
-{ "registryDependencies": ["@hooks/use-isomorphic-layout-effect"] }
+{ "registryDependencies": ["@shadcnhooks/use-isomorphic-layout-effect"] }

@@ -28,10 +28,10 @@ This skill is a decision-and-implementation guide for [shadcn-hooks](https://git
 
 ```bash
 # Install a single hook (recommended)
-npx shadcn@latest add @hooks/use-boolean
+npx shadcn@latest add @shadcnhooks/use-boolean
 
 # Install multiple hooks at once
-npx shadcn@latest add @hooks/use-boolean @hooks/use-mount @hooks/use-debounce
+npx shadcn@latest add @shadcnhooks/use-boolean @shadcnhooks/use-mount @shadcnhooks/use-debounce
 ```
 
 Alternatively, install the full npm package (all hooks bundled):

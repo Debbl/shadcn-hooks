@@ -106,11 +106,14 @@ export function useHover(
 
 ```json
 {
-  "registryDependencies": ["@hooks/use-dependency-a", "@hooks/use-dependency-b"]
+  "registryDependencies": [
+    "@shadcnhooks/use-dependency-a",
+    "@shadcnhooks/use-dependency-b"
+  ]
 }
 ```
 
-- List all hooks/libs this hook depends on, prefixed with `@hooks/`
+- List all hooks/libs this hook depends on, prefixed with `@shadcnhooks/`
 - If no dependencies: `{ "registryDependencies": [] }`
 
 ### 1c. `demo/demo-01.tsx` — Demo component

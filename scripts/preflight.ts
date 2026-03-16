@@ -117,7 +117,9 @@ async function generateRegistry() {
       type: 'registry:file',
       author: 'Brendan Dash (https://shadcn-hooks.com)',
       description: 'All shadcn hooks registry items.',
-      registryDependencies: registry.items.map((item) => `@hooks/${item.name}`),
+      registryDependencies: registry.items.map(
+        (item) => `@shadcnhooks/${item.name}`,
+      ),
     } satisfies RegistryItem
 
     const publicRegistryDir = path.join(CWD, 'public/r')

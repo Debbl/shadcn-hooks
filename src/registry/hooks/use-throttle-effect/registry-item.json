@@ -1,3 +1,6 @@
 {
-  "registryDependencies": ["@hooks/use-throttle-fn", "@hooks/use-update-effect"]
+  "registryDependencies": [
+    "@shadcnhooks/use-throttle-fn",
+    "@shadcnhooks/use-update-effect"
+  ]
 }

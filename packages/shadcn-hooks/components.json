@@ -19,6 +19,6 @@
     "hooks": "~/hooks"
   },
   "registries": {
-    "@hooks": "http://localhost:3000/r/{name}.json"
+    "@shadcnhooks": "http://localhost:3000/r/{name}.json"
   }
 }

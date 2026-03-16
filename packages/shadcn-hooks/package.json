@@ -34,7 +34,7 @@
     "dev": "node ./src/index.ts",
     "build": "tsdown",
     "test": "vitest",
-    "sync": "pnpm dlx shadcn@latest add @hooks/all --overwrite",
+    "sync": "pnpm dlx shadcn@latest add @shadcnhooks/all --overwrite",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
