@@ -12,7 +12,7 @@ export function Demo01() {
   const [scrollY, setScrollY] = useState(0)
   const [clickCount, setClickCount] = useState(0)
   const [keyPressed, setKeyPressed] = useState<string>('')
-  const buttonRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   // Window resize event
   useEventListener('resize', () => {
