@@ -5,13 +5,11 @@ import { SquareArrowOutUpRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { parseAsString, useQueryState } from 'nuqs'
-import { useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { cn } from '~/lib/utils'
 import { useIsHydrated } from '~/registry/hooks/use-is-hydrated'
 import { buttonVariants } from '../ui/button'
 import { ResizablePanel, ResizablePanelGroup } from '../ui/resizable'
-import type { ImperativePanelHandle } from 'react-resizable-panels'
 
 export interface ContainerWithDemoProps {
   name: string
@@ -24,7 +22,6 @@ export function ContainerWithDemoClient({
   children,
   code = '',
 }: ContainerWithDemoProps) {
-  const viewPanelRef = useRef<ImperativePanelHandle>(null)
   const [view] = useQueryState('view', parseAsString)
 
   const pathname = usePathname()
@@ -52,14 +49,10 @@ export function ContainerWithDemoClient({
       <Tabs items={['Preview', 'Code']}>
         <Tab value='Preview'>
           <ResizablePanelGroup
-            direction='horizontal'
+            orientation='horizontal'
             className='bg-transparent'
           >
-            <ResizablePanel
-              ref={viewPanelRef}
-              defaultSize={100}
-              className='bg-transparent'
-            >
+            <ResizablePanel defaultSize={100} className='bg-transparent'>
               {children}
             </ResizablePanel>
             {/* <ResizableHandle withHandle className='bg-transparent' /> */}

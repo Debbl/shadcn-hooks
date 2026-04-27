@@ -9,11 +9,13 @@ import {
   GithubStarsParticles,
 } from '~/components/animate-ui/primitives/animate/github-stars'
 import { Button } from '~/components/ui/button'
+import { WebMcpProvider } from '~/components/webmcp-provider'
 import { websiteConfig } from '~/constants'
 
 export default function Page() {
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-y-4'>
+      <WebMcpProvider />
       <h1 className='text-center text-4xl font-bold'>
         A comprehensive React Hooks Collection built with Shadcn
       </h1>
