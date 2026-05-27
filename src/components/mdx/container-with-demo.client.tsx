@@ -9,7 +9,11 @@ import { createPortal } from 'react-dom'
 import { cn } from '~/lib/utils'
 import { useIsHydrated } from '~/registry/hooks/use-is-hydrated'
 import { buttonVariants } from '../ui/button'
-import { ResizablePanel, ResizablePanelGroup } from '../ui/resizable'
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from '../ui/resizable'
 
 export interface ContainerWithDemoProps {
   name: string
@@ -50,12 +54,10 @@ export function ContainerWithDemoClient({
         <Tab value='Preview'>
           <ResizablePanelGroup
             orientation='horizontal'
-            className='bg-transparent'
+            className='w-full max-w-none bg-transparent'
           >
-            <ResizablePanel defaultSize={100} className='bg-transparent'>
-              {children}
-            </ResizablePanel>
-            {/* <ResizableHandle withHandle className='bg-transparent' /> */}
+            <ResizablePanel defaultSize='100%'>{children}</ResizablePanel>
+            <ResizableHandle withHandle />
             <ResizablePanel />
           </ResizablePanelGroup>
         </Tab>
