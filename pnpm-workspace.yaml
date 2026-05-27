@@ -1,6 +1,20 @@
 packages:
   - packages/*
 
+allowBuilds:
+  esbuild: true
+  msw: true
+  sharp: true
+  simple-git-hooks: true
+  unrs-resolver: true
+  workerd: true
+
+minimumReleaseAgeExclude:
+  - fumadocs-mdx@15.0.9
+  - miniflare@4.20260526.0
+  - shadcn@4.8.1
+  - wrangler@4.95.0
+
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild
