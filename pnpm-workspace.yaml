@@ -14,6 +14,10 @@ minimumReleaseAgeExclude:
   - miniflare@4.20260526.0
   - shadcn@4.8.1
   - wrangler@4.95.0
+  - baseline-browser-mapping@2.11.23
+  - fumadocs-core@16.15.10
+  - fumadocs-ui@16.15.10
+  - zod@4.6.4
 
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
