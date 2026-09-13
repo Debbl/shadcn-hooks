@@ -33,7 +33,7 @@ export function Demo01() {
         </div>
 
         <div className='flex items-center gap-2'>
-          <span className='text-muted-foreground text-sm'>Source</span>
+          <span className='text-sm text-muted-foreground'>Source</span>
           <Badge variant={mouse.sourceType ? 'default' : 'secondary'}>
             {mouse.sourceType ?? 'none'}
           </Badge>

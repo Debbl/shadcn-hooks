@@ -36,11 +36,11 @@ export function ContainerWithDemoClient({
       <>
         {isHydrated ? (
           createPortal(
-            <div className='bg-background fixed inset-0 z-50'>{children}</div>,
+            <div className='fixed inset-0 z-50 bg-background'>{children}</div>,
             document.body,
           )
         ) : (
-          <div className='bg-background fixed inset-0 z-50 flex items-center justify-center'>
+          <div className='fixed inset-0 z-50 flex items-center justify-center bg-background'>
             Loading...
           </div>
         )}

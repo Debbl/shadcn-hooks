@@ -1,34 +1,9 @@
 {
-  "eslint.useFlatConfig": true,
-  // do not want to autofix some rules on save
-  "eslint.codeActionsOnSave.rules": [
-    "!prefer-const",
-    "!unused-imports/no-unused-imports",
-    "*"
-  ],
-  "eslint.rules.customizations": [
-    {
-      "rule": "no-console",
-      "severity": "warn"
-    }
-  ],
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "mdx",
-    "json",
-    "jsonc",
-    "json5",
-    "yaml",
-    "yml",
-    "toml",
-    "css"
-  ],
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
   "json.schemas": [
     {
       "fileMatch": ["registry-item.json"],

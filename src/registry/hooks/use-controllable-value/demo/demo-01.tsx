@@ -41,7 +41,7 @@ function ControlledInput() {
             Reset
           </Button>
         </div>
-        <p className='text-muted-foreground text-xs'>
+        <p className='text-xs text-muted-foreground'>
           Parent state: <code className='font-mono'>{value}</code>
         </p>
       </CardContent>
@@ -75,7 +75,7 @@ function UncontrolledInput() {
             Reset
           </Button>
         </div>
-        <p className='text-muted-foreground text-xs'>
+        <p className='text-xs text-muted-foreground'>
           Internal state: <code className='font-mono'>{inputValue}</code>
         </p>
       </CardContent>

@@ -43,7 +43,7 @@ export function Demo01() {
           }}
           placeholder='Type to throttle...'
         />
-        <div className='text-muted-foreground space-y-1 text-sm'>
+        <div className='space-y-1 text-sm text-muted-foreground'>
           <div>
             Input value: <span className='font-mono'>{input}</span>
           </div>

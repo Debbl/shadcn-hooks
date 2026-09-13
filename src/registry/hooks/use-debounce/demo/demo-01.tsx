@@ -28,7 +28,7 @@ export function Demo01() {
           onChange={(e) => setInput(e.target.value)}
           placeholder='Type to debounce...'
         />
-        <div className='text-muted-foreground space-y-1 text-sm'>
+        <div className='space-y-1 text-sm text-muted-foreground'>
           <div>
             Input value: <span className='font-mono'>{input}</span>
           </div>

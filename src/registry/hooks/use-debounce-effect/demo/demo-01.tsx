@@ -42,7 +42,7 @@ export function Demo01() {
           }}
           placeholder='Type to debounce...'
         />
-        <div className='text-muted-foreground space-y-1 text-sm'>
+        <div className='space-y-1 text-sm text-muted-foreground'>
           <div>
             Debounced value: <span className='font-mono'>{debouncedValue}</span>
           </div>

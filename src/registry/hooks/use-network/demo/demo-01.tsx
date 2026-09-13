@@ -29,7 +29,7 @@ export function Demo01() {
         {network.since && (
           <div>
             <span className='text-sm font-medium'>Last Updated: </span>
-            <span className='text-muted-foreground text-sm'>
+            <span className='text-sm text-muted-foreground'>
               {network.since.toLocaleTimeString()}
             </span>
           </div>
@@ -52,7 +52,7 @@ export function Demo01() {
         {typeof network.downlink === 'number' && (
           <div>
             <span className='text-sm font-medium'>Downlink: </span>
-            <span className='text-muted-foreground text-sm'>
+            <span className='text-sm text-muted-foreground'>
               {network.downlink} Mbps
             </span>
           </div>
@@ -61,7 +61,7 @@ export function Demo01() {
         {typeof network.rtt === 'number' && (
           <div>
             <span className='text-sm font-medium'>Round-Trip Time: </span>
-            <span className='text-muted-foreground text-sm'>
+            <span className='text-sm text-muted-foreground'>
               {network.rtt} ms
             </span>
           </div>
@@ -79,7 +79,7 @@ export function Demo01() {
         {typeof network.downlinkMax === 'number' && (
           <div>
             <span className='text-sm font-medium'>Max Downlink: </span>
-            <span className='text-muted-foreground text-sm'>
+            <span className='text-sm text-muted-foreground'>
               {network.downlinkMax} Mbps
             </span>
           </div>

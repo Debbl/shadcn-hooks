@@ -50,9 +50,9 @@ export function Demo01() {
           </Button>
         </div>
 
-        <p className='text-muted-foreground text-sm'>
+        <p className='text-sm text-muted-foreground'>
           Current hook value:{' '}
-          <span className='text-foreground font-medium'>{title}</span>
+          <span className='font-medium text-foreground'>{title}</span>
         </p>
       </CardContent>
     </Card>

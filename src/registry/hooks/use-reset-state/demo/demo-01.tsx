@@ -90,7 +90,7 @@ export function Demo01() {
           <div className='space-y-2'>
             <div className='space-y-1'>
               <p className='text-sm font-medium'>User Object</p>
-              <div className='bg-muted rounded-md p-3 text-sm'>
+              <div className='rounded-md bg-muted p-3 text-sm'>
                 <p>ID: {user.id}</p>
                 <p>Name: {user.name}</p>
                 <p>Age: {user.age}</p>

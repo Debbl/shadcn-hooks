@@ -158,9 +158,7 @@ type TargetValue<T> = T | undefined | null
 type TargetType = HTMLElement | Element | Window | Document
 
 type BasicTarget<T extends TargetType = Element> =
-  | (() => TargetValue<T>)
-  | TargetValue<T>
-  | RefObject<TargetValue<T>>
+  (() => TargetValue<T>) | TargetValue<T> | RefObject<TargetValue<T>>
 
 /**
  * A hook to create an effect with a target element

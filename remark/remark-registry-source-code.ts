@@ -29,7 +29,7 @@ const fn = (node: MdxJsxFlowElement) => {
   Object.assign(node, {
     type: 'code',
     lang: ext ?? 'ts',
-    meta: `title=\"${attrValue}.${ext}\"`,
+    meta: `title="${attrValue}.${ext}"`,
     value: content,
   })
 }

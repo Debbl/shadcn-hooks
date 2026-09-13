@@ -77,7 +77,7 @@ export function Demo01() {
           <div className='space-y-2'>
             <div className='flex items-center justify-between'>
               <Label htmlFor='every'>Update Frequency (frames)</Label>
-              <span className='text-muted-foreground text-sm'>
+              <span className='text-sm text-muted-foreground'>
                 Calculate FPS every {every} frame{every !== 1 ? 's' : ''}
               </span>
             </div>
@@ -97,7 +97,7 @@ export function Demo01() {
                 }
               }}
             />
-            <div className='text-muted-foreground flex justify-between text-xs'>
+            <div className='flex justify-between text-xs text-muted-foreground'>
               <span>1</span>
               <span>15</span>
               <span>30</span>
@@ -107,20 +107,20 @@ export function Demo01() {
           <div className='space-y-4'>
             <div className='flex items-center gap-4'>
               <div className='flex-1'>
-                <div className='text-muted-foreground text-sm'>Current FPS</div>
+                <div className='text-sm text-muted-foreground'>Current FPS</div>
                 <div className={`text-4xl font-bold ${getFpsColor(fps)}`}>
                   {fps}
                 </div>
               </div>
               <div className='flex-1'>
-                <div className='text-muted-foreground text-sm'>Status</div>
+                <div className='text-sm text-muted-foreground'>Status</div>
                 <Badge variant={getFpsBadgeVariant(fps)} className='text-lg'>
                   {getFpsStatus(fps)}
                 </Badge>
               </div>
             </div>
 
-            <div className='bg-muted relative h-6 w-full overflow-hidden rounded-full'>
+            <div className='relative h-6 w-full overflow-hidden rounded-full bg-muted'>
               <div
                 className={`h-full transition-all duration-300 ${getFpsBgColor(
                   fps,
@@ -138,11 +138,11 @@ export function Demo01() {
               <div className='space-y-2'>
                 <div className='flex items-center justify-between text-sm'>
                   <span className='text-muted-foreground'>FPS History</span>
-                  <span className='text-muted-foreground text-xs'>
+                  <span className='text-xs text-muted-foreground'>
                     Last {fpsHistory.length} readings
                   </span>
                 </div>
-                <div className='bg-muted/30 relative h-24 w-full overflow-hidden rounded-lg border p-2'>
+                <div className='relative h-24 w-full overflow-hidden rounded-lg border bg-muted/30 p-2'>
                   <div className='flex h-full items-end gap-0.5'>
                     {fpsHistory.map((value, index) => (
                       <div
@@ -165,13 +165,13 @@ export function Demo01() {
             <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
               <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
-                  <div className='text-muted-foreground text-xs'>Target</div>
+                  <div className='text-xs text-muted-foreground'>Target</div>
                   <div className='text-lg font-semibold'>60 FPS</div>
                 </CardContent>
               </Card>
               <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
-                  <div className='text-muted-foreground text-xs'>Average</div>
+                  <div className='text-xs text-muted-foreground'>Average</div>
                   <div
                     className={`text-lg font-semibold ${getFpsColor(averageFps)}`}
                   >
@@ -181,7 +181,7 @@ export function Demo01() {
               </Card>
               <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
-                  <div className='text-muted-foreground text-xs'>Min</div>
+                  <div className='text-xs text-muted-foreground'>Min</div>
                   <div
                     className={`text-lg font-semibold ${getFpsColor(minFps)}`}
                   >
@@ -191,7 +191,7 @@ export function Demo01() {
               </Card>
               <Card size='sm' className='shadow-none ring-0'>
                 <CardContent className='pt-3'>
-                  <div className='text-muted-foreground text-xs'>Max</div>
+                  <div className='text-xs text-muted-foreground'>Max</div>
                   <div
                     className={`text-lg font-semibold ${getFpsColor(maxFps)}`}
                   >
@@ -206,7 +206,7 @@ export function Demo01() {
 
       <Card className='shadow-none ring-0'>
         <CardContent className='pt-6'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             <strong>Tip:</strong> Lower the update frequency (fewer frames) for
             more stable readings, or increase it for more responsive updates.
             The default is 10 frames. Try scrolling or interacting with the page

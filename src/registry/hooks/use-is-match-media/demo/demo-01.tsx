@@ -23,7 +23,7 @@ export function Demo01() {
       <CardContent className='space-y-2'>
         <div className='text-sm'>
           <span className='font-medium'>Media Query: </span>
-          <code className='text-muted-foreground font-mono text-xs'>
+          <code className='font-mono text-xs text-muted-foreground'>
             (min-width: 768px)
           </code>
         </div>

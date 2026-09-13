@@ -69,7 +69,7 @@ export function Demo01() {
             <p className='text-sm'>
               Menu is: <strong>{isOpen ? 'Open' : 'Closed'}</strong>
             </p>
-            <p className='text-muted-foreground text-sm'>
+            <p className='text-sm text-muted-foreground'>
               Click away count: <strong>{clickAwayCount}</strong>
             </p>
           </div>

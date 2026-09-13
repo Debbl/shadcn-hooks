@@ -48,7 +48,7 @@ export function Demo01() {
             Cancel
           </Button>
         </div>
-        <div className='text-muted-foreground space-y-1 text-sm'>
+        <div className='space-y-1 text-sm text-muted-foreground'>
           <div>
             Throttled value: <span className='font-mono'>{throttledValue}</span>
           </div>

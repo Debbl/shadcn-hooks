@@ -73,7 +73,7 @@ export function Demo01() {
           <div
             ref={targetRef}
             style={{ width, height }}
-            className='bg-muted/30 resize overflow-auto rounded-md border p-4 text-sm'
+            className='resize overflow-auto rounded-md border bg-muted/30 p-4 text-sm'
           >
             Resize me to see <code>useElementSize</code> update in real time.
           </div>

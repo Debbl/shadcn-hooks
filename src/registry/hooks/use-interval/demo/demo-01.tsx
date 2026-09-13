@@ -46,10 +46,10 @@ export function Demo01() {
       </CardHeader>
       <CardContent className='space-y-4'>
         <div className='space-y-2'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Count: <span className='font-mono font-semibold'>{count}</span>
           </p>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             {message || 'Interval will execute every second after mount...'}
           </p>
         </div>

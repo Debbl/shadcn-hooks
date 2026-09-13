@@ -59,7 +59,7 @@ export function Demo01() {
           <CardDescription>Hover over this card</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Current hover state:{' '}
             <strong>{isCardHovered ? 'hovering' : 'not hovering'}</strong>
           </p>

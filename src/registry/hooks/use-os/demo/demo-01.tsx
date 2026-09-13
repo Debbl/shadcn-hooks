@@ -39,7 +39,7 @@ export function Demo01() {
           </Badge>
         </div>
 
-        <p className='text-muted-foreground text-sm'>
+        <p className='text-sm text-muted-foreground'>
           By default, the hook returns <code>undetermined</code> during SSR and
           resolves after hydration. Use{' '}
           <code>{`{ getValueInEffect: false }`}</code> in client-only components

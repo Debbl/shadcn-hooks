@@ -1,46 +1,44 @@
 {
   "name": "shadcn-hooks",
-  "type": "module",
   "version": "0.0.7",
-  "packageManager": "pnpm@12.4.1",
   "description": "shadcn hooks",
-  "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
-  "license": "MIT",
+  "keywords": [
+    "ahooks",
+    "hooks",
+    "react",
+    "react-hooks-ts",
+    "react-use",
+    "shadcn"
+  ],
   "homepage": "https://github.com/Debbl/shadcn-hooks#readme",
+  "bugs": "https://github.com/Debbl/shadcn-hooks/issues",
+  "license": "MIT",
+  "author": "Brendan Dash <me@aiwan.run> (https://aiwan.run)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Debbl/shadcn-hooks.git",
     "directory": "packages/shadcn-hooks"
   },
-  "bugs": "https://github.com/Debbl/shadcn-hooks/issues",
-  "keywords": [
-    "react",
-    "hooks",
-    "shadcn",
-    "react-use",
-    "ahooks",
-    "react-hooks-ts"
-  ],
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./package.json": "./package.json"
-  },
-  "types": "./dist/index.d.mts",
   "files": [
     "dist",
     "src"
   ],
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "dev": "node ./src/index.ts",
     "build": "tsdown",
     "test": "vitest",
     "sync": "pnpm dlx shadcn@latest add @shadcnhooks/all --overwrite",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
-  "peerDependencies": {
-    "react": ">=18"
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",
@@ -55,5 +53,9 @@
     "shadcn": "^4.21.0",
     "tsdown": "^0.23.0",
     "vitest": "^5.0.0"
-  }
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "packageManager": "pnpm@12.4.1"
 }

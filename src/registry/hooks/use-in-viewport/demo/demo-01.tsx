@@ -61,7 +61,7 @@ export function Demo01() {
         </CardHeader>
         <CardContent>
           <ScrollArea className='h-[300px] rounded-lg border p-4'>
-            <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
+            <div className='flex h-[400px] items-center justify-center text-sm text-muted-foreground'>
               Scroll down to see the target element
             </div>
             <Card
@@ -78,7 +78,7 @@ export function Demo01() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <div className='text-muted-foreground flex h-[400px] items-center justify-center text-sm'>
+            <div className='flex h-[400px] items-center justify-center text-sm text-muted-foreground'>
               Scroll up to see the target element again
             </div>
           </ScrollArea>
@@ -107,7 +107,7 @@ export function Demo01() {
             </p>
           </div>
           <ScrollArea className='h-[300px] rounded-lg border p-4'>
-            <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
+            <div className='flex h-[300px] items-center justify-center text-sm text-muted-foreground'>
               Scroll down to see the threshold example
             </div>
             <Card
@@ -124,7 +124,7 @@ export function Demo01() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <div className='text-muted-foreground flex h-[300px] items-center justify-center text-sm'>
+            <div className='flex h-[300px] items-center justify-center text-sm text-muted-foreground'>
               Scroll up to see the threshold example again
             </div>
           </ScrollArea>

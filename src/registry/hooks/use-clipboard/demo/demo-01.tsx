@@ -1,10 +1,11 @@
 'use client'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { Button } from '~/components/ui/button'
 import { Input } from '~/components/ui/input'
 import { useClipboard } from '..'
 
 export function Demo01() {
+  const inputId = useId()
   const [inputValue, setInputValue] = useState('Hello, World!')
   const { text, copied, copy, isSupported } = useClipboard({
     source: inputValue,
@@ -21,8 +22,8 @@ export function Demo01() {
 
   if (!isSupported) {
     return (
-      <div className='border-destructive bg-destructive/10 rounded-lg border p-4'>
-        <p className='text-destructive text-sm'>
+      <div className='rounded-lg border border-destructive bg-destructive/10 p-4'>
+        <p className='text-sm text-destructive'>
           Clipboard API is not supported in this browser.
         </p>
       </div>
@@ -32,8 +33,11 @@ export function Demo01() {
   return (
     <div className='space-y-4'>
       <div className='space-y-2'>
-        <label className='text-sm font-medium'>Text to copy</label>
+        <label className='text-sm font-medium' htmlFor={inputId}>
+          Text to copy
+        </label>
         <Input
+          id={inputId}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder='Enter text to copy'
@@ -49,7 +53,7 @@ export function Demo01() {
         </Button>
       </div>
 
-      <div className='bg-muted/50 space-y-2 rounded-lg border p-4'>
+      <div className='space-y-2 rounded-lg border bg-muted/50 p-4'>
         <div className='text-sm'>
           <span className='font-medium'>Copied:</span>{' '}
           <span className={copied ? 'text-green-600' : 'text-muted-foreground'}>
@@ -58,7 +62,7 @@ export function Demo01() {
         </div>
         <div className='text-sm'>
           <span className='font-medium'>Current clipboard text:</span>{' '}
-          <span className='text-muted-foreground font-mono'>
+          <span className='font-mono text-muted-foreground'>
             {text || '(empty)'}
           </span>
         </div>

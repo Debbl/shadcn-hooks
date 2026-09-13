@@ -24,13 +24,13 @@ export function Demo01() {
       </CardHeader>
       <CardContent className='space-y-4'>
         <div className='space-y-2'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Current count:{' '}
-            <span className='text-foreground font-medium'>{count}</span>
+            <span className='font-medium text-foreground'>{count}</span>
           </p>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Previous count:{' '}
-            <span className='text-foreground font-medium'>
+            <span className='font-medium text-foreground'>
               {previousCount !== undefined
                 ? previousCount
                 : 'undefined (initial render)'}

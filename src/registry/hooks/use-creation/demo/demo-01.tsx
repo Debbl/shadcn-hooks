@@ -35,25 +35,25 @@ export function Demo01() {
       </CardHeader>
       <CardContent className='space-y-4'>
         <div className='space-y-2'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             <span>User object: </span>
           </p>
-          <code className='text-foreground bg-muted block rounded p-2 font-mono text-xs font-medium'>
+          <code className='block rounded bg-muted p-2 font-mono text-xs font-medium text-foreground'>
             {JSON.stringify(user, null, 2)}
           </code>
           <div className='space-y-1 text-sm'>
             <p className='text-muted-foreground'>
               Created at:{' '}
-              <span className='text-foreground font-mono text-xs font-medium'>
+              <span className='font-mono text-xs font-medium text-foreground'>
                 {user.createdAt}
               </span>
             </p>
             <p className='text-muted-foreground'>
-              Name: <span className='text-foreground font-medium'>{name}</span>
+              Name: <span className='font-medium text-foreground'>{name}</span>
             </p>
             <p className='text-muted-foreground'>
               Count:{' '}
-              <span className='text-foreground font-medium'>{count}</span>
+              <span className='font-medium text-foreground'>{count}</span>
             </p>
           </div>
         </div>

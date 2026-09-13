@@ -184,26 +184,24 @@ describe('useNetwork', () => {
     setNavigatorOnline(true)
     const { result } = renderHook(() => useNetwork())
 
-    let changeListener: null | (() => void) = null
-    mockConnection.addEventListener.mock.calls.forEach((call: any) => {
-      if (call[0] === 'change') {
-        changeListener = call[1]
-      }
+    const changeListener = mockConnection.addEventListener.mock.calls.find(
+      (call: unknown[]) => call[0] === 'change',
+    )?.[1]
+    if (typeof changeListener !== 'function') {
+      throw new TypeError('Expected a connection change listener')
+    }
+
+    // Update connection properties
+    mockConnection.rtt = 100
+    mockConnection.downlink = 5
+
+    act(() => {
+      changeListener()
     })
 
-    if (changeListener) {
-      // Update connection properties
-      mockConnection.rtt = 100
-      mockConnection.downlink = 5
-
-      act(() => {
-        changeListener!()
-      })
-
-      expect(result.current.rtt).toBe(100)
-      expect(result.current.downlink).toBe(5)
-      expect(result.current.since).toBeInstanceOf(Date)
-    }
+    expect(result.current.rtt).toBe(100)
+    expect(result.current.downlink).toBe(5)
+    expect(result.current.since).toBeInstanceOf(Date)
   })
 
   it('should handle multiple instances', () => {

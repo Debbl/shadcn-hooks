@@ -54,13 +54,13 @@ export function Demo01() {
             <p>
               Window Size: {windowSize.width} × {windowSize.height}px
             </p>
-            <p className='text-muted-foreground text-sm'>
+            <p className='text-sm text-muted-foreground'>
               Try resizing your browser window
             </p>
           </div>
           <div>
             <p>Scroll Position: {scrollY}px</p>
-            <p className='text-muted-foreground text-sm'>
+            <p className='text-sm text-muted-foreground'>
               Try scrolling this page
             </p>
           </div>
@@ -73,7 +73,7 @@ export function Demo01() {
         </CardHeader>
         <CardContent className='space-y-2'>
           <Button ref={buttonRef}>Click me! (Clicked: {clickCount})</Button>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Click the button above to see the counter increase
           </p>
         </CardContent>
@@ -85,7 +85,7 @@ export function Demo01() {
         </CardHeader>
         <CardContent>
           <p>Last Key Pressed: {keyPressed || 'None'}</p>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Press any key on your keyboard
           </p>
         </CardContent>

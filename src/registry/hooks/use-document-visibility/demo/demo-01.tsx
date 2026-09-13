@@ -28,7 +28,7 @@ export function Demo01() {
             {visibilityState}
           </Badge>
         </div>
-        <p className='text-muted-foreground text-sm'>
+        <p className='text-sm text-muted-foreground'>
           Switch to another tab and come back to see the value update.
         </p>
       </CardContent>

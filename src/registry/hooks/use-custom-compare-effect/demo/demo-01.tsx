@@ -79,7 +79,7 @@ export function Demo01() {
           <p>ID: {user.id}</p>
           <p>Name: {user.name}</p>
           <p>Age: {user.age}</p>
-          <p className='text-muted-foreground mt-2 text-sm'>
+          <p className='mt-2 text-sm text-muted-foreground'>
             Effect execution count: {effectCount}
           </p>
         </CardContent>
@@ -117,7 +117,7 @@ export function Demo01() {
                   <div
                     // eslint-disable-next-line react/no-array-index-key
                     key={`log-${index}-${entry.slice(0, 10)}`}
-                    className='bg-muted rounded p-1 font-mono text-xs'
+                    className='rounded bg-muted p-1 font-mono text-xs'
                   >
                     {entry}
                   </div>

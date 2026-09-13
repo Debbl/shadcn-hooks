@@ -37,11 +37,11 @@ export function Demo01() {
       </CardHeader>
       <CardContent className='space-y-4'>
         <div className='space-y-2'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Render count:{' '}
             <span className='font-mono font-semibold'>{renderCount}</span>
           </p>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Count: <span className='font-mono font-semibold'>{count}</span>
           </p>
         </div>
@@ -55,7 +55,7 @@ export function Demo01() {
           </Button>
         </div>
 
-        <div className='text-muted-foreground text-xs'>
+        <div className='text-xs text-muted-foreground'>
           <p>• Click "Increment Count" to change state and trigger re-render</p>
           <p>
             • Click "Force Re-render" to trigger re-render without changing

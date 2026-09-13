@@ -89,7 +89,7 @@ export function Demo01() {
               className='relative flex min-h-50 flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-900'
             >
               <div className='space-y-4 text-center'>
-                <div className='bg-primary/10 mx-auto flex h-16 w-16 items-center justify-center rounded-full'>
+                <div className='mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='32'
@@ -109,7 +109,7 @@ export function Demo01() {
                   <h3 className='text-lg font-semibold'>
                     Fullscreen Container
                   </h3>
-                  <p className='text-muted-foreground mt-1 text-sm'>
+                  <p className='mt-1 text-sm text-muted-foreground'>
                     This element will be displayed in fullscreen mode when you
                     click the buttons above
                   </p>

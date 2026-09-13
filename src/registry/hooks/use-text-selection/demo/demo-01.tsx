@@ -32,14 +32,14 @@ export function Demo01() {
         <CardContent className='space-y-4'>
           <div
             ref={ref}
-            className='border-border bg-muted/30 selection:bg-primary/20 selection:text-primary-foreground rounded-lg border px-4 py-3 text-sm leading-relaxed'
+            className='rounded-lg border border-border bg-muted/30 px-4 py-3 text-sm leading-relaxed selection:bg-primary/20 selection:text-primary-foreground'
           >
             {sampleText}
           </div>
 
-          <div className='border-border bg-muted/20 space-y-2 rounded-lg border border-dashed p-4 text-sm'>
+          <div className='space-y-2 rounded-lg border border-dashed border-border bg-muted/20 p-4 text-sm'>
             <p className='font-medium'>Selection state:</p>
-            <dl className='text-muted-foreground grid gap-1.5'>
+            <dl className='grid gap-1.5 text-muted-foreground'>
               <div className='flex gap-2'>
                 <dt className='min-w-16'>text:</dt>
                 <dd className='font-mono'>

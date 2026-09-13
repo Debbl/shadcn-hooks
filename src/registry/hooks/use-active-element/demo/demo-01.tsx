@@ -49,7 +49,7 @@ export function Demo01() {
         </Button>
         <p className='text-sm'>
           Active element:{' '}
-          <code className='bg-muted rounded px-2 py-1 text-xs'>{label}</code>
+          <code className='rounded bg-muted px-2 py-1 text-xs'>{label}</code>
         </p>
       </CardContent>
     </Card>

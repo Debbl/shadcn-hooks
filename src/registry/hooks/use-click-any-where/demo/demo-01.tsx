@@ -38,7 +38,7 @@ export function Demo01() {
             Total clicks: <strong>{clickCount}</strong>
           </p>
           {lastClickPosition && (
-            <p className='text-muted-foreground text-sm'>
+            <p className='text-sm text-muted-foreground'>
               Last click position: ({lastClickPosition.x}, {lastClickPosition.y}
               )
             </p>

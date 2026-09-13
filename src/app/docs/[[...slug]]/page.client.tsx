@@ -86,7 +86,7 @@ export function LLMCopyButton({ slug, url }: { slug: string[]; url: string }) {
       <Button
         disabled={isLoading}
         variant='secondary'
-        className='border-border gap-2'
+        className='gap-2 border-border'
         onClick={onClick}
       >
         {checked ? (

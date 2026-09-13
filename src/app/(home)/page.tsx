@@ -46,11 +46,11 @@ export default function Page() {
             href={websiteConfig.githubUrl}
             rel='noreferrer noopener'
             target='_blank'
-            className='group group hover:bg-fd-accent hover:text-fd-accent-foreground text-fd-muted-foreground flex cursor-pointer items-center justify-center gap-x-2 rounded-md p-1.5 text-sm font-medium transition-colors duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50 sm:mt-1 [&_svg]:size-5 sm:[&_svg]:size-5.5'
+            className='group group flex cursor-pointer items-center justify-center gap-x-2 rounded-md p-1.5 text-sm font-medium text-fd-muted-foreground transition-colors duration-300 ease-in-out hover:bg-fd-accent hover:text-fd-accent-foreground disabled:pointer-events-none disabled:opacity-50 sm:mt-1 [&_svg]:size-5 sm:[&_svg]:size-5.5'
           >
             <GithubStarsLogo className='size-6' />
 
-            <span className='bg-accent flex items-center gap-x-1 rounded-lg py-1 pr-1.25 pl-1.5 text-sm select-none group-hover:bg-white dark:group-hover:bg-neutral-900'>
+            <span className='flex items-center gap-x-1 rounded-lg bg-accent py-1 pr-1.25 pl-1.5 text-sm select-none group-hover:bg-white dark:group-hover:bg-neutral-900'>
               <GithubStarsNumber />
               <GithubStarsParticles>
                 <GithubStarsIcon
@@ -64,7 +64,7 @@ export default function Page() {
         </GithubStars>
       </div>
 
-      <footer className='text-muted-foreground fixed bottom-4 mt-4 text-xs md:text-sm'>
+      <footer className='fixed bottom-4 mt-4 text-xs text-muted-foreground md:text-sm'>
         Built by{' '}
         <Link href='https://aiwan.run' className='underline' target='_blank'>
           Debbl66
