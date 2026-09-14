@@ -1,38 +1,14 @@
-import { remarkInstall } from 'fumadocs-docgen'
-import { remarkInclude } from 'fumadocs-mdx/config'
-import { remarkAutoTypeTable } from 'fumadocs-typescript'
-import { remark } from 'remark'
-import remarkGfm from 'remark-gfm'
-import remarkMdx from 'remark-mdx'
+import { websiteConfig } from '~/constants'
 import type { Page } from '~/lib/source'
 
-const processor = remark()
-  .use(remarkMdx)
-  .use(remarkInclude)
-  .use(remarkGfm)
-  .use(remarkAutoTypeTable)
-  .use(remarkInstall)
-
 export async function getLLMText(page: Page) {
-  const category =
-    {
-      ui: 'Fumadocs Framework',
-      headless: 'Fumadocs Core (core library of framework)',
-      mdx: 'Fumadocs MDX (the built-in content source)',
-      cli: 'Fumadocs CLI (the CLI tool for automating Fumadocs apps)',
-    }[page.slugs[0]] ?? page.slugs[0]
+  const content = await page.data.getText('processed')
 
-  const processed = await processor.process({
-    path: page.data.info.fullPath,
-    value: await page.data.getText('raw'),
-  })
+  return `# ${page.data.title}
+URL: ${new URL(page.url, websiteConfig.baseUrl)}
+Source: ${websiteConfig.githubUrl}/blob/main/${page.absolutePath}
 
-  return `# ${category}: ${page.data.title}
-URL: ${page.url}
+${page.data.description ?? ''}
 
-Source: https://raw.githubusercontent.com/Debbl/shadcn-hooks/refs/heads/main/${page.absolutePath}
-
-${page.data.description}
-        
-${processed.value}`
+${content}`
 }

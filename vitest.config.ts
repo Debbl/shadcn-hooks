@@ -7,7 +7,7 @@ export default defineConfig({
     },
   },
   test: {
-    include: ['src/registry/**/*.test.ts'],
+    include: ['src/registry/**/*.test.ts', 'tests/**/*.test.{ts,tsx}'],
     globals: true,
     environment: 'jsdom',
   },

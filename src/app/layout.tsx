@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Fragment>
         )}
       </head>
-      <body>
+      <body className='flex min-h-screen flex-col'>
         <Providers>{children}</Providers>
       </body>
       <GoogleAnalytics gaId='G-PZCVKTSB2B' />

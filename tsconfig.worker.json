@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "plugins": []
+  },
+  "include": ["worker.ts", "worker-configuration.d.ts", "tests/worker.test.ts"],
+  "exclude": ["node_modules"]
+}

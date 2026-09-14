@@ -1,21 +1,17 @@
 /// <reference types="./worker-configuration.d.ts" />
+import { isMarkdownPreferred } from 'fumadocs-core/negotiation'
 
 const markdownContentType = 'text/markdown; charset=utf-8'
 
-function acceptsMarkdown(request: Request): boolean {
-  const accept = request.headers.get('Accept')
-  if (!accept) return false
-
-  return accept.split(',').some((entry) => {
-    const [mediaType, ...parameters] = entry
-      .split(';')
-      .map((part) => part.trim().toLowerCase())
-
-    if (mediaType !== 'text/markdown') return false
-
-    const quality = parameters.find((parameter) => parameter.startsWith('q='))
-    return quality ? Number.parseFloat(quality.slice(2)) > 0 : true
-  })
+function varyByAccept(headers: Headers): void {
+  const vary =
+    headers
+      .get('Vary')
+      ?.split(',')
+      .map((value) => value.trim()) ?? []
+  if (vary.some((value) => value === '*' || value.toLowerCase() === 'accept'))
+    return
+  headers.set('Vary', [...vary, 'Accept'].join(', '))
 }
 
 function markdownPathname(pathname: string): string | undefined {
@@ -48,7 +44,7 @@ function markdownTokenCount(markdown: string): string {
 function markdownResponse(markdown: string, headers: Headers): Response {
   const nextHeaders = new Headers(headers)
   nextHeaders.set('Content-Type', markdownContentType)
-  nextHeaders.set('Vary', 'Accept')
+  varyByAccept(nextHeaders)
   nextHeaders.set('x-markdown-tokens', markdownTokenCount(markdown))
 
   return new Response(markdown, { headers: nextHeaders })
@@ -80,11 +76,20 @@ async function fetchMarkdownAsset(
 
 export default {
   async fetch(request: Request, env: Env) {
-    if (request.method === 'GET' && acceptsMarkdown(request)) {
+    if (request.method === 'GET' && isMarkdownPreferred(request)) {
       const response = await fetchMarkdownAsset(request, env)
       if (response) return response
     }
 
-    return env.ASSETS.fetch(request)
+    const response = await env.ASSETS.fetch(request)
+    if (!markdownPathname(new URL(request.url).pathname)) return response
+
+    const headers = new Headers(response.headers)
+    varyByAccept(headers)
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    })
   },
 } satisfies ExportedHandler<Env>

@@ -5,3 +5,12 @@
 /index.html
   Link: </.well-known/api-catalog>; rel="api-catalog", </docs>; rel="service-doc", </index.md>; rel="alternate"; type="text/markdown", </.well-known/agent-skills/index.json>; rel="service-desc"; type="application/json"
   Vary: Accept
+
+/docs
+  Vary: Accept
+
+/docs/*
+  Vary: Accept
+
+/llms.mdx/*
+  Content-Type: text/markdown; charset=utf-8

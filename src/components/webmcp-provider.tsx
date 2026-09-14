@@ -1,5 +1,6 @@
 'use client'
 
+import { staticClient } from 'fumadocs-core/search/client/orama-static'
 import { useEffect } from 'react'
 
 interface WebMcpInputSchema {
@@ -59,16 +60,7 @@ const tools: WebMcpTool[] = [
         return { error: 'query is required' }
       }
 
-      const response = await fetch(
-        `/api/search?query=${encodeURIComponent(query)}`,
-      )
-      const contentType = response.headers.get('content-type') ?? ''
-
-      if (contentType.includes('application/json')) {
-        return response.json()
-      }
-
-      return { text: await response.text() }
+      return staticClient().search(query)
     },
   },
   {

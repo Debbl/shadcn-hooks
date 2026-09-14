@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set node
         uses: actions/setup-node@v6
@@ -47,6 +49,9 @@ jobs:
 
       - name: Check formatting
         run: nr format:check
+
+      - name: Check documentation links
+        run: nr lint:links
 
   typecheck:
     runs-on: ubuntu-latest

@@ -22,12 +22,14 @@
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "start:worker": "wrangler dev",
-    "typecheck": "next typegen && tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit && pnpm typecheck:worker",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "prepare": "simple-git-hooks",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "lint:links": "tsx scripts/check-links.ts",
+    "typecheck:worker": "tsc --project tsconfig.worker.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -92,6 +94,7 @@
     "lint-staged": "^17.5.1",
     "mdast-util-mdx-jsx": "^3.2.0",
     "next-auto-import": "^0.0.4",
+    "next-validate-link": "^1.6.7",
     "oxfmt": "^0.67.0",
     "oxlint": "^1.82.0",
     "postcss": "^8.5.28",

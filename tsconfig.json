@@ -35,6 +35,7 @@
     "node_modules",
     "packages/**/*",
     "worker.ts",
-    "worker-configuration.d.ts"
+    "worker-configuration.d.ts",
+    "tests/worker.test.ts"
   ]
 }
