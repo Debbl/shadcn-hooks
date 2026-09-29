@@ -57,6 +57,7 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | [`useControllableValue`](references/useControllableValue.md) | Supports both controlled and uncontrolled component patterns      | AUTO       |
 | [`useCounter`](references/useCounter.md)                     | Counter with `inc`, `dec`, `set`, `reset` helpers                 | AUTO       |
 | [`useDebounce`](references/useDebounce.md)                   | Debounced reactive value                                          | AUTO       |
+| [`useLocalStorageState`](references/useLocalStorageState.md) | SSR-safe localStorage state with synchronization                  | AUTO       |
 | [`useResetState`](references/useResetState.md)               | State with a `reset` function to restore the initial value        | AUTO       |
 | [`useThrottle`](references/useThrottle.md)                   | Throttled reactive value                                          | AUTO       |
 | [`useToggle`](references/useToggle.md)                       | Toggle between two values with utility actions                    | AUTO       |

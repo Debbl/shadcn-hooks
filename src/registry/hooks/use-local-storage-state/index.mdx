@@ -1,0 +1,56 @@
+---
+title: useLocalStorageState
+description: A hook to persist state in localStorage with SSR-safe behavior
+---
+
+import { Demo01 } from './demo/demo-01'
+
+<Demo01 />
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab>
+    <InstallCLI value='use-local-storage-state' />
+  </Tab>
+  <Tab>
+    Copy and paste the following code into your project.
+    <RegistrySourceCode value='use-local-storage-state' />
+  </Tab>
+</Tabs>
+
+## API
+
+```ts
+import type { Dispatch, SetStateAction } from 'react'
+
+export interface UseLocalStorageStateOptions<T> {
+  serializer?: (value: T) => string
+  deserializer?: (value: string) => T
+  onError?: (error: unknown) => void
+}
+
+export type UseLocalStorageStateReturn<T> = [
+  T,
+  Dispatch<SetStateAction<T>>,
+  () => void,
+]
+
+/**
+ * A SSR-safe localStorage state hook with same-tab and cross-tab synchronization.
+ *
+ * @param key - localStorage key
+ * @param initialValue - Initial state value, used during SSR and when key does not exist
+ * @param options - Optional serializer, deserializer, and error callback
+ * @returns [state, setState, removeState]
+ */
+export function useLocalStorageState<T>(
+  key: string,
+  initialValue: T | (() => T),
+  options?: UseLocalStorageStateOptions<T>,
+): UseLocalStorageStateReturn<T>
+```
+
+## Credits
+
+- [useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)
